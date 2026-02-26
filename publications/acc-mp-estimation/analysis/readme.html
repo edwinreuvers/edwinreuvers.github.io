@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Home – Muscle property estimation</title>
+<title>Analysis – Muscle property estimation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6790a8849efb91e08b49b6924511a186.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../analysis/param-acc.html" rel="next">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6790a8849efb91e08b49b6924511a186.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,14 +75,14 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Muscle property estimation</span>
     </a>
   </div>
@@ -92,23 +93,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./data/readme.html"> 
+    <a class="nav-link" href="../data/readme.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="fa6-regular:floppy-disk" aria-label="Icon floppy-disk from fa6-regular Iconify.design set." title="Icon floppy-disk from fa6-regular Iconify.design set."></iconify-icon> Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./analysis/readme.html"> 
+    <a class="nav-link active" href="../analysis/readme.html" aria-current="page"> 
 <span class="menu-text"><iconify-icon inline="" icon="fa6-solid:magnifying-glass-chart" aria-label="Icon magnifying-glass-chart from fa6-solid Iconify.design set." title="Icon magnifying-glass-chart from fa6-solid Iconify.design set."></iconify-icon> Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./figures/all_figures.html"> 
+    <a class="nav-link" href="../figures/all_figures.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="carbon:qq-plot" aria-label="Icon qq-plot from carbon Iconify.design set." title="Icon qq-plot from carbon Iconify.design set."></iconify-icon> Figures</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tables/all_tables.html"> 
+    <a class="nav-link" href="../tables/all_tables.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="carbon:data-table" aria-label="Icon data-table from carbon Iconify.design set." title="Icon data-table from carbon Iconify.design set."></iconify-icon> Tables</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./manuscript/preprint.html"> 
+    <a class="nav-link" href="../manuscript/preprint.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="carbon:document" aria-label="Icon document from carbon Iconify.design set." title="Icon document from carbon Iconify.design set."></iconify-icon> Manuscript</span></a>
   </li>  
 </ul>
@@ -119,20 +120,74 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../analysis/readme.html">Analysis</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../analysis/readme.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../analysis/param-acc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parameter accuracy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../analysis/sens-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sensitivity analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../analysis/model-pred.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#parameter-accuracy" id="toc-parameter-accuracy" class="nav-link active" data-scroll-target="#parameter-accuracy">1. Parameter accuracy</a></li>
+  <li><a href="#sensitivity-analysis" id="toc-sensitivity-analysis" class="nav-link" data-scroll-target="#sensitivity-analysis">2. Sensitivity analysis</a></li>
+  <li><a href="#model-predictions" id="toc-model-predictions" class="nav-link" data-scroll-target="#model-predictions">3. Model predictions</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/edwinreuvers/acc-mp-estimation/blob/main/analysis/readme.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Evaluating the Accuracy of Muscle Property Estimations: Insights from Hill-Type Muscle Model Simulations</h1>
+<h1 class="title">Analysis</h1>
 </div>
 
 
@@ -149,30 +204,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This website presents the complete, reproducible workflow of our <a href="https://link.com">manuscript</a>. The entire project was built using <a href="https://quarto.org"><strong>Quarto</strong></a>, an open-source scientific and technical publishing system. By using Quarto, we seamlessly embedded all analysis, code, figures, tables, and results into our manuscript. This approach ensures that every result in the manuscript is <strong>directly traceable to its source code and data</strong>, with no ambiguity about how it was produced. Interested readers can reproduce our results by rendering the Quarto project in its entirety.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The manuscript of this project has not yet been peer-reviewed or formally published. Changes might be might throughout the peer-review process.</p>
-</div>
-</div>
-<p>On this website, you’ll find:</p>
-<ul>
-<li>📂 <a href="./data/readme.html">Data</a> – Full access to the <strong>raw data</strong> and simulations results</li>
-<li>🔬 <a href="./analysis/readme.html">Analysis</a> – A step-by-step walkthrough of the <strong>analysis pipeline</strong></li>
-<li>📊 <a href="./figures/all_figures.html">Figures</a> – Reproducible <strong>code for all figures</strong></li>
-<li>📋 <a href="./tables/all_tables.html">Tables</a> – Reproducible <strong>code for all tables</strong></li>
-<li>📄 <a href="./manuscript/preprint.html">Manuscript</a> – An integrated <strong>HTML version of the manuscript</strong></li>
-</ul>
+<p>On these pages, you can find the complete analysis accompanying our manuscript. The analysis is divided into three parts, corresponding to the three main sections in the Results of our manuscript.</p>
+<section id="parameter-accuracy" class="level2">
+<h2 class="anchored" data-anchor-id="parameter-accuracy">1. Parameter accuracy</h2>
+<p><em>Section: ‘Evaluating parameter value estimation accuracy – simulated data’</em></p>
+<p><a href="../analysis/param-acc.html">This page</a> contains the analyses used to assess how accurately muscle–tendon complex parameters can be retrieved from simulated experiments that mimic quick-release, step-ramp, and isometric experiments performed on real muscle.</p>
+<p>Using a Hill-type muscle–tendon complex model with known parameter values, we evaluated how well both the traditional estimation method (which does not account for muscle fibre shortening during quick-releases) and the improved estimation method (which accounts for muscle fibre shortening during quick-releases) recover the underlying muscle property values.</p>
+</section>
+<section id="sensitivity-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="sensitivity-analysis">2. Sensitivity analysis</h2>
+<p><em>Section: ‘Sensitivity analysis’</em></p>
+<p><a href="../analysis/sens-analysis.html">This page</a> contains the Monte Carlo simulation to examine the robustness of the estimated muscle properties and the analysis used to examine the interdependency of the estimated muscle properties. .</p>
+<p>Using Monte Carlo simulations with systematic perturbations of the experimental data, we quantified how variations in the data influence the estimated parameters. In the second analysis, we systematically varied individual muscle property values to assess the sensitivity of the estimation procedure and to quantify dependencies among the estimated muscle properties.</p>
+</section>
+<section id="model-predictions" class="level2">
+<h2 class="anchored" data-anchor-id="model-predictions">3. Model predictions</h2>
+<p><em>Section: ‘Evaluating model predictions – in situ data’</em></p>
+<p><a href="../analysis/model-pred.html">This page</a> contains the analyses used to estimate muscle properties from <em>in situ</em> data of rat <em>m. gastrocnemius medialis</em>.</p>
+<p>Using the estimated parameters, we predicted series elastic element (SEE) force. Model predictions were evaluated against quick-release, step-ramp, and isometric experiments, as well as independently measured stretch–shortening cycles.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -575,6 +627,15 @@ Important
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../analysis/param-acc.html" class="pagination-link" aria-label="Parameter accuracy">
+        <span class="nav-page-text">Parameter accuracy</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -583,7 +644,7 @@ Important
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/edwinreuvers/acc-mp-estimation/blob/main/analysis/readme.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a></p>
 </div>
