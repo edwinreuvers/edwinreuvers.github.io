@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Maximising average mechanical power output during stretch-shortening cycles of at medial gastrocnemius muscle – Rat-GM-AMPO</title>
+<title>Mechanical power output during stretch–shortening cycles of rat medial gastrocnemius muscle: influence of various muscle length trajectories – S2 File – Rat-GM-AMPO</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,28 +23,47 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c6d96c9de9d0fdb556d7e1edf7633628.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c6d96c9de9d0fdb556d7e1edf7633628.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,6 +104,35 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -95,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Rat-GM-AMPO</span>
     </a>
   </div>
@@ -105,23 +153,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./data/readme.html"> 
+    <a class="nav-link" href="../data/readme.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="fa6-regular:floppy-disk" aria-label="Icon floppy-disk from fa6-regular Iconify.design set." title="Icon floppy-disk from fa6-regular Iconify.design set."></iconify-icon> Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./analysis/readme.html"> 
+    <a class="nav-link" href="../analysis/readme.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="fa6-solid:magnifying-glass-chart" aria-label="Icon magnifying-glass-chart from fa6-solid Iconify.design set." title="Icon magnifying-glass-chart from fa6-solid Iconify.design set."></iconify-icon> Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./figures/all_figures.html"> 
+    <a class="nav-link" href="../figures/all_figures.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="carbon:qq-plot" aria-label="Icon qq-plot from carbon Iconify.design set." title="Icon qq-plot from carbon Iconify.design set."></iconify-icon> Figures</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tables/all_tables.html"> 
+    <a class="nav-link" href="../tables/all_tables.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="carbon:data-table" aria-label="Icon data-table from carbon Iconify.design set." title="Icon data-table from carbon Iconify.design set."></iconify-icon> Tables</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./manuscript/revision1-clean.html"> 
+    <a class="nav-link" href="../manuscript/revision1-clean.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="carbon:document" aria-label="Icon document from carbon Iconify.design set." title="Icon document from carbon Iconify.design set."></iconify-icon> Manuscript</span></a>
   </li>  
 </ul>
@@ -145,15 +193,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#optimisation-protocol-to-identify-optimal-mtc-length-over-time" id="toc-optimisation-protocol-to-identify-optimal-mtc-length-over-time" class="nav-link active" data-scroll-target="#optimisation-protocol-to-identify-optimal-mtc-length-over-time">Optimisation protocol to identify optimal MTC length over time</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="https://doi.org/10.1101/2025.09.25.678481"><i class="bi bi-pencil-square"></i>Preprint</a></li><li><a href="suppmat_S2_file.pdf"><i class="bi bi-file-pdf"></i>PDF (preprint)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><p>Maximising average mechanical power output during stretch-shortening cycles of at medial gastrocnemius muscle</p></h1>
+<h1 class="title"><p>Mechanical power output during stretch–shortening cycles of rat medial gastrocnemius muscle: influence of various muscle length trajectories – S2 File</p></h1>
 </div>
 
 
@@ -170,30 +225,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="optimisation-protocol-to-identify-optimal-mtc-length-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="optimisation-protocol-to-identify-optimal-mtc-length-over-time">Optimisation protocol to identify optimal MTC length over time</h3>
+<p>One of the aims of this study was to identify the optimal MTC length over time for maximal AMPO, when MTC length over time is entirely free to take any form. To predict this, we used a Hill-type MTC model. In our Hill-type MTC model, we assumed that both SEE and PEE were purely elastic elements <span class="citation" data-cites="anderson_dynamic_1999 van_soest_contribution_1993">(e.g., <a href="#ref-anderson_dynamic_1999" role="doc-biblioref">Anderson and Pandy 1999</a>; <a href="#ref-van_soest_contribution_1993" role="doc-biblioref">Soest and Bobbert 1993</a>)</span>. Therefore, during fully periodic SSC neither PEE nor SEE contributed to AMPO of the MTC. This also means that neither PEE nor SEE influences the optimal CE length over time that yields maximal AMPO over a full periodic SSC. We used this to simplify the optimisation problem. We reformulated to model such that we considered a Hill-type model of CE only. As such, CE length was no longer a state variable, but an input to the model. The model therefore had two inputs: CE length (<span class="math inline">\(L_{CE}\)</span>) and muscle stimulation (<span class="math inline">\(STIM\)</span>) over time. The only state variable was <span class="math inline">\(\gamma\)</span>, the normalised intrafilament <span class="math inline">\(Ca^{2+}\)</span> concentration. Given this formulation, <span class="math inline">\(L_{CE}\)</span>, <span class="math inline">\(STIM\)</span> and <span class="math inline">\(\gamma\)</span> were known at each time instant during the optimisation process. Consequently, CE velocity can be calculated by taking the time-derivative of CE length. Using CE velocity, CE force could then be computed using the CE force–velocity relationship. MTC length over time was subsequently obtained by taking the following steps: 1) PEE force was calculated from PEE length (which equals CE length); 2) SEE force was calculated by taking the sum of CE and PEE force; 3) SEE length was calculated from SEE force; 4) MTC length was calculated as the sum of CE and SEE length. By computing MTC length over time via these steps, we could also impose MTC length excursion.</p>
+<p>The optimisation problem was thus to find the periodic CE length, <span class="math inline">\(STIM\)</span> and <span class="math inline">\(\gamma\)</span> over time for maximal AMPO. Optimisations were performed for 1) imposed cycle frequencies (1.0–6.0 Hz in 0.5 Hz steps); 2) imposed FTS values (0.05–0.95 in 0.05 steps) and 3) imposed MTC length excursions (2–11 mm in 1 mm steps). For all optimisation, the following cost function was maximised (note that, in our formulation, CE shortening corresponds to negative CE velocity):</p>
+<p><span id="eq-objective"><span class="math display">\[
+J = -\int_{t_0}^{t_0+T_c} F_{CE}^{rel} \cdot v_{CE}^{rel} \ dt
+\tag{1}\]</span></span> where <span class="math inline">\(t_0\)</span> denotes the initial time and <span class="math inline">\(T_c\)</span> denotes the cycle time.</p>
+<p>The solution had to satisfy the differential equation describing the excitation dynamics: <span id="eq-dynamic-con"><span class="math display">\[
+\dot{\gamma} = f(\gamma(t),STIM(t))
+\tag{2}\]</span></span></p>
+<p>The following task constraints were added to achieve periodic behaviour: <span id="eq-task-con"><span class="math display">\[
+\begin{gathered}
+  L_{CE}(t_0) = L_{CE}(t_0+T_c) \\
+  \gamma(t_0) = \gamma(t_0+T_c)
+\end{gathered}
+\tag{3}\]</span></span></p>
+<p>Moreover, inequality constraints were imposed on <span class="math inline">\(\gamma(t)\)</span>, <span class="math inline">\(L_{CE}^{rel}(t)\)</span> and <span class="math inline">\(STIM(t)\)</span>: <span id="eq-ineq-con"><span class="math display">\[
+\begin{gathered}
+  \gamma_0 \leq \gamma(t) \leq 1 \\
+  (1-w) \leq L_{CE}^{rel}(t) \leq (1+w) \\
+  0 \leq STIM(t) \leq 1
+\end{gathered}
+\tag{4}\]</span></span> where <span class="math inline">\(L_{CE}^{rel}\)</span> denotes the CE length normalised to CE optimum length (i.e.&nbsp;the CE length yielding maximal isometric CE force).</p>
+<p>We implemented our problem as a Multiphase Optimal Control Problem to assure that CE shortening and lengthening occurred only once per full periodic cycle, which was done by inequality constraints on <span class="math inline">\(v_{CE}^{rel}(t)\)</span>: <span id="eq-fts-con"><span class="math display">\[
+\begin{aligned}
+  v_{CE}^{rel}(t_0 \ ... \ t_0 + T_c \cdot FTS) &amp;\leq 0 \\
+  v_{CE}^{rel}(t_0 + T_c \cdot FTS \ ... \ t_0 + T_c) &amp;\geq 0
+\end{aligned}
+\tag{5}\]</span></span> FTS was a numerical value (between 0.05 and 0.95) when FTS were imposed (see above). When FTS was not imposed, FTS was a control variable optimised for maximal AMPO.</p>
+<p>When MTC length excursion was imposed, an extra inequality constraint was added:<br>
+<span id="eq-lcecon"><span class="math display">\[
+  L_{MTC}(t_0) + L_{MTC}(t_0 + T_c \cdot FTS) = \textrm{MTC length excursion}
+\tag{6}\]</span></span></p>
+<p>The dynamic, task and (in)equality constraints were implemented in CasADi <span class="citation" data-cites="andersson_casadi_2019">(<a href="#ref-andersson_casadi_2019" role="doc-biblioref">Andersson et al. 2019</a>)</span> and the cost function was minimised using a Direct Collocation method using a nonlinear interior point method <span class="citation" data-cites="wachter_implementation_2006">(IPOPT, <a href="#ref-wachter_implementation_2006" role="doc-biblioref">Wächter and Biegler 2006</a>)</span>. The optimal control solution was checked by running forward simulations of the model with a linear-interpolated <span class="math inline">\(F_{CE}^{rel}(t)\)</span> and <span class="math inline">\(STIM(t)\)</span> as inputs to confirm that no relevant constraints were violated between the collocation points. This was done using SciPy’s ODE integrator with an Implicit Runge-Kutta method of Radau IIA family of order 5 <span class="citation" data-cites="hairer_implementation_1996">(<a href="#ref-hairer_implementation_1996" role="doc-biblioref">Hairer and Wanner 1996</a>)</span> and an absolute and relative tolerance of 1e-6 and a maximum timestep of 1e-3. This yielded only very small differences between the states at the collocation points and those at the same time instance of the forward simulation for all optimisations.</p>
+</section>
+<section id="references" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="references">References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-anderson_dynamic_1999" class="csl-entry" role="listitem">
+Anderson, Frank C., and Marcus G. Pandy. 1999. <span>“A <span>Dynamic</span> <span>Optimization</span> <span>Solution</span> for <span>Vertical</span> <span>Jumping</span> in <span>Three</span> <span>Dimensions</span>.”</span> <em>Computer Methods in Biomechanics and Biomedical Engineering</em> 2 (3): 201–31. <a href="https://doi.org/10.1080/10255849908907988">https://doi.org/10.1080/10255849908907988</a>.
 </div>
-<div class="callout-title-container flex-fill">
-Important
+<div id="ref-andersson_casadi_2019" class="csl-entry" role="listitem">
+Andersson, Joel A. E., Joris Gillis, Greg Horn, James B. Rawlings, and Moritz Diehl. 2019. <span>“<span>CasADi</span>: A Software Framework for Nonlinear Optimization and Optimal Control.”</span> <em>Mathematical Programming Computation</em> 11 (1): 1–36. <a href="https://doi.org/10.1007/s12532-018-0139-4">https://doi.org/10.1007/s12532-018-0139-4</a>.
+</div>
+<div id="ref-hairer_implementation_1996" class="csl-entry" role="listitem">
+Hairer, Ernst, and Gerhard Wanner. 1996. <span>“Implementation of <span>Implicit</span> <span>Runge</span>-<span>Kutta</span> <span>Methods</span>.”</span> In <em>Solving <span>Ordinary</span> <span>Differential</span> <span>Equations</span> <span>II</span>: <span>Stiff</span> and <span>Differential</span>-<span>Algebraic</span> <span>Problems</span></em>, edited by Ernst Hairer and Gerhard Wanner. Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-642-05221-7_8">https://doi.org/10.1007/978-3-642-05221-7_8</a>.
+</div>
+<div id="ref-van_soest_contribution_1993" class="csl-entry" role="listitem">
+Soest, Arthur J. van, and Maarten F. Bobbert. 1993. <span>“The Contribution of Muscle Properties in the Control of Explosive Movements.”</span> <em>Biological Cybernetics</em> 69 (3): 195–204. <a href="https://doi.org/10.1007/BF00198959">https://doi.org/10.1007/BF00198959</a>.
+</div>
+<div id="ref-wachter_implementation_2006" class="csl-entry" role="listitem">
+Wächter, Andreas, and Lorenz T. Biegler. 2006. <span>“On the Implementation of an Interior-Point Filter Line-Search Algorithm for Large-Scale Nonlinear Programming.”</span> <em>Mathematical Programming</em> 106 (1): 25–57. <a href="https://doi.org/10.1007/s10107-004-0559-y">https://doi.org/10.1007/s10107-004-0559-y</a>.
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>The manuscript of this project has not yet been peer-reviewed or formally published. Changes might be might throughout the peer-review process.</p>
-</div>
-</div>
-<p>This website presents the complete, reproducible workflow of our manuscript. The entire project was built using <a href="https://quarto.org">Quarto</a>, an open-source scientific and technical publishing system. By using Quarto, we seamlessly embedded all analysis, code, figures, tables, and results into a single, executable document. This approach ensures that every result in the manuscript is directly traceable to its source code and data, with no ambiguity about how it was produced. Interested readers can reproduce our results by rendering the Quarto project in its entirety.</p>
-<p>On this website, you’ll find:</p>
-<ul>
-<li>📂 <a href="./data/readme.html">Data</a> – Full access to the <strong>raw and processed data</strong> as well as <strong>simulations results</strong></li>
-<li>🔬 <a href="./analysis/readme.html">Analysis</a> – A step-by-step walkthrough of the <strong>analysis pipeline</strong></li>
-<li>📊 <a href="./figures/all_figures.html">Figures</a> – Reproducible <strong>code for all figures</strong></li>
-<li>📋 <a href="./tables/all_tables.html">Tables</a> – Reproducible <strong>code for all tables</strong></li>
-<li>📄 <a href="./manuscript/revision1-clean.html">Manuscript</a> – Integrated version of the <strong>manuscript</strong></li>
-</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
