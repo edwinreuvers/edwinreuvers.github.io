@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Bookshelf – Edwin Reuvers</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -35,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-59dc71af29a3c9121fd7f882f0e95a47.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-537c71cf715dc920f6a61b997e31f25e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
@@ -109,10 +112,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="mailto:edwin.reuvers.academia@pm.me"> 
-<span class="menu-text"><iconify-icon inline="" icon="bi:envelope" aria-label="Icon envelope from bi Iconify.design set." title="e-mail"></iconify-icon></span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://bsky.app/profile/edwinreuvers.bsky.social"> 
 <span class="menu-text"><iconify-icon inline="" icon="bi:bluesky" aria-label="Icon bluesky from bi Iconify.design set." title="Bluesky"></iconify-icon></span></a>
   </li>  
@@ -164,6 +163,8 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><strong>1864:</strong> Rudolf Heidenhain — <em>Mechanische Leistung, Wärmeentwicklung und Stoffumsatz bei Muskeltätigkeit</em></p></li>
 <li><p><strong>1881:</strong> Adolf Fick — <em>Mechanische Arbeit und Wärmeentwicklung bei der Muskeltätigkeit</em></p></li>
+<li><p><strong>1900:</strong> Edward Albert Sharpey-Schafer — <em>Text-Book of Physiology</em></p></li>
+<li><p><strong>1931:</strong> Archibald Vivian Hill — <em>Adventures in Biophysics</em></p></li>
 <li><p><strong>1965:</strong> Archibald Vivian Hill — <em>Trails and Trials in Physiology</em></p></li>
 <li><p><strong>1970:</strong> Archibald Vivian Hill — <em>First and Last Experiments in Muscle Mechanics</em></p></li>
 <li><p><strong>1977:</strong> Andrew Huxley — <em>Reflections on muscle</em></p></li>
@@ -173,9 +174,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="books-id-like-to-own" class="level2">
 <h2 class="anchored" data-anchor-id="books-id-like-to-own">Books I’d like to own</h2>
 <ul>
-<li><p><strong>1848:</strong> Johannes Müller — <em>Archiv für Anatomie</em> <br> (This edition contains the famous Hermann von Helmholtz paper on the principle of conservation of energy, pages 144-164)</p></li>
-<li><p><strong>1900:</strong> Edward Albert Sharpey-Schafer — <em>Textbook of physiology</em></p></li>
-<li><p><strong>1903:</strong> Adolf Fick — <em>Gesammelte schriften</em></p></li>
+<li><p><strong>1847:</strong> Hermann von Helmholtz — <em>Über die Erhaltung der Kraft</em></p></li>
+<li><p><strong>1889:</strong> Adolf Fick — <em>Myothermische Untersuchungen</em></p></li>
+<li><p><strong>1903:</strong> Adolf Fick — <em>Gesammelte Schriften</em></p></li>
+<li><p><strong>1927:</strong> Archibald Vivian Hill — <em>Living Machinery</em></p></li>
 <li><p><strong>1975:</strong> Herbert Hatze — <em>A control model of skeletal muscle and its application to a time-optimal bio-motion</em></p></li>
 </ul>
 
@@ -234,13 +236,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
