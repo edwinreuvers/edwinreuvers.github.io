@@ -1,0 +1,152 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: MTC property estimation\n",
+        "---\n",
+        "\n",
+        "The analysis of this page corresponds to the sections 'MTC property\n",
+        "estimation'.\n",
+        "\n",
+        "Specifically, the following steps were taken:\n",
+        "\n",
+        "-   Define participants and experimental conditions.\n",
+        "-   ??\n",
+        "\n",
+        "Custom functions used:\n",
+        "\n",
+        "-   `hillmodel.act_state(gamma,lcerel,muspar)`\n",
+        "    : Computes the active state based on intrafilament Ca2+ and CE length\n",
+        "-   `stimulation.get_stim_timing(time,stim)`\n",
+        "    : Detect stimulation onset and offset time in a signal.\n",
+        "    \n",
+        "MTC properties were estimated based on the 'improved method' in the following \n",
+        "paper:\n",
+        "    Reuvers, E.D.H.M. & Kistemaker, D.A. (2025)\n",
+        "    Accuracy of experimentally estimated muscle properties: Evaluation and \n",
+        "    improvement using a newly developed toolbox.\n",
+        "    https://doi.org/10.1101/2025.09.29.678508 \n",
+        "\n",
+        "## Load packages & set directories"
+      ],
+      "id": "6cfcd0ca"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import os, glob, pickle, sys\n",
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "from pathlib import Path\n",
+        "\n",
+        "# Set directories\n",
+        "cwd = Path.cwd()\n",
+        "baseDir = cwd.parent.parent\n",
+        "dataDir = baseDir / 'data'\n",
+        "funcDir = baseDir / 'analysis' / 'functions'\n",
+        "sys.path.append(str(funcDir))\n",
+        "\n",
+        "import hillmodel, stimulation"
+      ],
+      "id": "5ff24a5e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Experimental half rise time\n",
+        "Here we compute the time to reach 50% of maximal SEE force based on the\n",
+        "experimental isometric contractions."
+      ],
+      "id": "0f5d955c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "tHalfRiseExp = []\n",
+        "\n",
+        "exp = 'ISOM'\n",
+        "iSel = [[9,10,11], [1,7,11], [2,4,7]]\n",
+        "for iMus,mus in enumerate(['GMe1', 'GMe2', 'GMe3']):\n",
+        "    parFile = os.path.join(dataDir,mus,mus+'_IM.pkl')\n",
+        "    muspar,dataQR,dataSR,dataISOM = pickle.load(open(parFile, 'rb'))\n",
+        "    \n",
+        "    \n",
+        "    files = sorted(glob.glob(os.path.join(dataDir,mus,'dataExp',exp,'*.csv')))\n",
+        "    selFiles = [files[i] for i in iSel[iMus]] # select only at max. Lmtc (closest to LmtcOpt)\n",
+        "    for iFile,filename in enumerate(selFiles):\n",
+        "        df = pd.read_csv(filename)\n",
+        "        data = df.to_numpy()\n",
+        "        time,lmtc,stim,fsee = data.T[0:4]\n",
+        "        \n",
+        "        # Slice first, we want only force development\n",
+        "        tStimOn,tStimOff = stimulation.get_stim_timing(time,stim)\n",
+        "        iOn = int(tStimOn[0]/time[1])\n",
+        "        iMax = np.argmax(fsee)\n",
+        "        \n",
+        "        time = time[iOn:iMax]-time[iOn]\n",
+        "        lmtc = lmtc[iOn:iMax]\n",
+        "        stim = stim[iOn:iMax]\n",
+        "        fsee = fsee[iOn:iMax]\n",
+        "        \n",
+        "        # Now find where 50% Fcemax occurs\n",
+        "        iHalf = np.argmin(abs(fsee-0.5*muspar['fmax']))\n",
+        "        tHalfRiseExp.append(time[iHalf])\n",
+        "\n",
+        "tHalfRiseExpMean = np.mean(tHalfRiseExp)*1e3 # avg + to ms\n",
+        "tHalfRiseExpStd = np.std(tHalfRiseExp) # std + to ms\n",
+        "print(f\"Experimental half rise times are: {tHalfRiseExpMean:.1f}±{tHalfRiseExpStd:.1f} ms\")"
+      ],
+      "id": "0ecaf4e2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Half rise time @ constant CE length\n",
+        "Here we compute the time to reach 50% of maximal SEE force when CE length\n",
+        "would be constant. "
+      ],
+      "id": "2180e223"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "tH50F = []\n",
+        "for mus in ['GMe1', 'GMe2', 'GMe3']:\n",
+        "    parFile = os.path.join(dataDir,mus,mus+'_IM.pkl')\n",
+        "    muspar,dataQR,dataSR,dataISOM = pickle.load(open(parFile, 'rb'))\n",
+        "    \n",
+        "    _,_,gamma05 = hillmodel.act_state(np.nan,1,muspar) # [ ] [ ] value of gamma at which q=0.5\n",
+        "    muspar['tHRise'] = -muspar['tact']*np.log(1-gamma05) # [s] \"half-rise time\"\n",
+        "    tH50F.append(muspar['tHRise'])\n",
+        "tH50FAvg = np.mean(tH50F)*1e3 # avg + to ms\n",
+        "tH50FStd = np.std(tH50F) # std + to ms\n",
+        "print(f\"Time to reach 50% isometric force: {tH50FAvg:.1f}±{tH50FStd:.1f} ms\")"
+      ],
+      "id": "b24a6b13",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/home/david/anaconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

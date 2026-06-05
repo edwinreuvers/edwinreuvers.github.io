@@ -1,0 +1,56 @@
+---
+title: "Imposed SSCs with constant MTC shortening/lengthening velocity"
+execute:
+  eval: false
+---
+
+The analysis of this page corresponds to the sections 'Imposed stretch-shortening cycles — constant MTC shortening/lengthening velocity'.
+
+Because the analysis is relatively extensive, it is split into separate scripts included on this page:
+
+1.  Predict the maximally attainable AMPO for various combinations of cycle frequency, FTS and MTC length excursion.
+2.  Predict the maximally attainable AMPO for one imposed SSC parameter, while optimising the other two. 
+3.  Analyse the simulation results.
+
+Custom functions used:
+
+-   `derive_predictions.opt_stim(x, stim, cf, fts, mle, lmtc_avg, muspar, initial_guess={})`
+    :   Optimise stimulation onset and offset to maximise average mechanical power.
+-   `derive_predictions.opt_ssc_par(stim, cf, fts, mle, lmtc_avg, muspar, initial_guess={})`
+    :   Optimise SSC parameters using bounded numerical minimisation.
+-   `helpers.load_sims(cf_set, fts_set, mle_set, mus, data_dir)`
+    :   Load simulation data and compute AMPO values for given SSC parameter grid.
+-   `interpolation.do_4d(data, grid, **kwargs)`
+    :   Interpolate 3D grid data onto a finer grid.
+-   `stats.find_max(data, grid)`
+    :   Find the maximum value in an N-dimensional array and its corresponding values from the provided grid arrays.
+
+## Compute AMPO for various combinations of SSC parameters
+
+```{python}
+{{< include ssc-cv-impose-all.py >}}
+```
+
+## Compute AMPO for imposed cycle frequency
+
+```{python}
+{{< include ssc-cv-impose-cf.py >}}
+```
+
+## Compute AMPO for imposed FTS
+
+```{python}
+{{< include ssc-cv-impose-fts.py >}}
+```
+
+## Compute AMPO for imposed MTC length excursion
+
+```{python}
+{{< include ssc-cv-impose-mle.py >}}
+```
+
+## Analyse simulation results
+
+```{python}
+{{< include ssc-cv-analyse.py >}}
+```

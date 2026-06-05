@@ -1,0 +1,105 @@
+project:
+  title: "Rat-GM-AMPO"
+  type: website
+  render:
+    - "*.ipynb"
+    - "*.qmd"
+    - "*.md"
+    - "!figures/readme.md"
+    - "!tables/readme.md"
+
+website:
+  page-navigation: true
+  page-footer: 
+    left: |
+      All content licensed under [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 
+      {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} {{< fa brands creative-commons-sa >}}
+    right: |
+      Made with [Quarto](https://quarto.org/)
+    background: primary
+  navbar:
+    pinned: true
+    search: false
+    left:
+      - href: data/readme.md
+        text: "{{< iconify fa6-regular floppy-disk >}} Data"
+      - href: analysis/readme.md
+        text: "{{< iconify fa6-solid magnifying-glass-chart >}} Analysis"
+      - href: figures/all_figures.ipynb
+        text: "{{< iconify carbon qq-plot >}} Figures"
+      - href: tables/all_tables.ipynb
+        text: "{{< iconify carbon data-table >}} Tables"
+      - href: manuscript/revision1-clean.qmd
+        text: "{{< iconify carbon document >}} Manuscript"
+    right:
+      - href: https://bsky.app/profile/edwinreuvers.bsky.social
+        text: "{{< iconify bi bluesky title='Bluesky' >}}"
+      - href: https://github.com/edwinreuvers
+        text: "{{< iconify bi github title='GitHub' >}}"
+
+  sidebar:
+    - id: analysis
+      collapse-level: 2
+      contents:
+        - section: "Analysis"
+          href: analysis/readme.md
+          contents:
+            - section: "*In situ* experiment"
+              contents:
+              - text: "Reliability experiments"
+                href: analysis/in-situ/reliability-experiments.qmd
+              - text: "MTC property estimation"
+                href: analysis/in-situ/mtc-properties.qmd
+              - text: "Experimental SSCs"
+                href: analysis/in-situ/exp-ssc-ampo.qmd
+            - section: "MTC model"
+              contents:
+              - text: "Measurements against predictions"
+                href: analysis/mtc-model/measured-vs-predicted.qmd
+              - text: "SSCs: constant velocity"
+                href: analysis/mtc-model/ssc-cv.qmd
+              - text: "SSCs: optimal velocity"
+                href: analysis/mtc-model/ssc-oc.qmd
+            - Text: "Custom modules"
+              href: analysis/modules.qmd
+ 
+format:
+  html:
+    theme: 
+      light: [flatly, _resources/custom.scss]
+    toc: true
+    toc-location: right
+    code-fold: true
+    code-tools: false
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
+    include-in-header: "_resources/mathjax.html"
+    default-image-extension: svg
+
+execute:
+  freeze: auto  # re-render only when source changes
+  echo: true
+  eval: false
+  output: true
+
+bibliography: "_resources/references.bib"
+
+crossref:
+  custom:
+    - kind: float
+      key: suppfig
+      latex-env: suppfig
+      reference-prefix: Figure S
+      space-before-numbering: false
+      latex-list-of-description: Supplementary Figure
+    - kind: float
+      key: supptbl
+      latex-env: supptbl
+      reference-prefix: Table S
+      space-before-numbering: false
+      latex-list-of-description: Supplementary Table
+      caption-location: top
+      
+editor: source

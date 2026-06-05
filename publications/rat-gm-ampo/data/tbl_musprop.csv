@@ -1,0 +1,16 @@
+type,description,symbol,unit,GMe1,GMe2,GMe3e
+MTC properties,Hill constant,$a^{rel}$,-,0.569,0.712,0.649
+MTC properties,Hill constant,$b^{rel}$,-,5.97,7.15,6.80
+MTC properties,maximal isometric CE force,$F_{CE}^{max}$,N,15.5,14.1,17.0
+MTC properties,PEE stiffness scaling factor,$k_{PEE}$,N/mm<sup>2</sup>,28.7,24.1,34.8
+MTC properties,SEE stiffness scaling factor,$k_{SEE}$,N/mm<sup>2</sup>,952,1255,1050
+MTC properties,CE optimum length,$L_{CE}^{opt}$,mm,13.7,14.7,13.3
+MTC properties,PEE slack length,$L_{PEE}^0$,mm,15.1,15.6,14.5
+MTC properties,SEE slack length,$L_{SEE}^0$,mm,28.8,29.3,25.2
+MTC properties,Calcium dynamics activation time constant,$\tau_{act}$,ms,55.2,57.7,41.6
+MTC properties,Calcium dynamics deactivation time constant,$\tau_{deact}$,ms,27.1,25.3,22.4
+Derived metrics,MTC length yielding maximal isometric SEE force,$L_{MTC}^{opt}$,mm,46.6,47.3,42.5
+Derived metrics,maximal instantaneous CE power,$P_{CE}^{max}$,mW,316,319,352
+Derived metrics,`half-rise time',$t_{HRT}$,ms,13.2,13.8,9.97
+Derived metrics,maximal CE shortening velocity,$v_{CE}^{max}$,mm/s,144,147,140
+Derived metrics,CE velocity at $P_{CE}^{max}$,$v_{CE}^{opt}$,mm/s,54.1,57.8,53.8

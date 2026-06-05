@@ -1,0 +1,29 @@
+---
+title: Measurements against predictions
+execute:
+  eval: false
+---
+
+The analysis of this page corresponds to the sections 'Evaluation of measured 
+versus predicted maximally attainable AMPO'.
+
+First, we simulate the experimental conditions using experimentally measured
+MTC length and stimulation over time as inputs for the Hill-type MTC model. 
+Second, we evaluate measurements against predictions.
+
+Custom functions used:
+
+-   `hillmodel.force_eq(lmtc,gamma,muspar)`
+    : Finds relative CE length such that SEE force equals the sum of CE and 
+    PEE force.
+-   `hillmodel.solve_simu_mtc(gamma0, lcerel0, muspar, inputs, ode_opts)`
+    : Forward simulation of a Hill-type muscle-tendon complex (MTC) model.
+-   `stimulation.get_stim_timing(time, stim)`
+    :   Detects stimulation pulse trains in a signal and returns their onset and offset time.
+-   `stats.pdiff(x,y)`
+    :   Compute the percentage difference with x w.r.t. y.
+
+## Code
+```{python}
+{{< include measured-vs-predicted.py >}}
+```

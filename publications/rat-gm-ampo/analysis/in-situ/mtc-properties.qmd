@@ -1,0 +1,37 @@
+---
+title: MTC property estimation
+execute:
+  eval: false
+---
+
+The analysis of this page corresponds to the sections 'MTC property
+estimation'.
+
+Specifically, the following steps were taken:
+
+-   Load the estimated MTC properties for each rat.
+-   Compute the experimental half-rise time from selected isometric contractions
+    at the MTC length closest to optimum.
+-   Compute the half-rise time expected at constant CE length from the estimated
+    activation dynamics.
+-   Compare both half-rise time estimates to quantify the influence of SEE
+    compliance on force development.
+
+Custom functions used:
+
+-   `hillmodel.act_state(gamma,lcerel,muspar)`
+    : Computes the active state based on intrafilament Ca2+ and CE length.
+-   `stimulation.get_stim_timing(time,stim)`
+    : Detect stimulation onset and offset time in a signal.
+    
+MTC properties were estimated based on the 'improved method' in the following 
+paper:
+    Reuvers, E.D.H.M. & Kistemaker, D.A. (2025)
+    Accuracy of experimentally estimated muscle properties: Evaluation and 
+    improvement using a newly developed toolbox.
+    https://doi.org/10.1101/2025.09.29.678508
+
+## Code
+```{python}
+{{< include mtc-properties.py >}}
+```

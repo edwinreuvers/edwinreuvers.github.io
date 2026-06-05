@@ -1,0 +1,17 @@
+```{=latex}
+\renewcommand{\thesection}{S\arabic{section}}
+\setcounter{section}{1}
+```
+
+::: {.content-hidden when-format="pdf"}
+{{< embed ../tables/all_tables.ipynb#supptbl-sscpa >}}
+:::
+::: {.content-visible when-format="pdf"}
+:::: {#supptbl-sscpa supptbl-pos='H'}
+```{=latex}
+\centering
+\input{../tables/supptbl-sscpa.tex}
+```
+SSC parameters, stimulation durations, and measured AMPO of experimental stretch-shortening cycles with a 4 mm MTC length excursion. Stimulation onset was set at the start of MTC shortening in all conditions.
+::::
+:::

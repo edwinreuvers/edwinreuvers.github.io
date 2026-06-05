@@ -1,0 +1,44 @@
+---
+title: "Imposed SSCs with optimal MTC shortening/lengthening velocity"
+execute:
+  eval: false
+---
+
+The analysis of this page corresponds to the sections 'Imposed stretch-shortening cycles —  optimal MTC shortening/lengthening velocity'.
+
+Because the analysis is relatively extensive, it is split into separate scripts included on this page:
+
+1.  Predict the maximally attainable AMPO for one imposed SSC parameter (i.e. cycle frequency, FTS or MTC length excursion), while leaving CE length, MTC length and stimulation over time otherwise unconstrained.
+2.  Check convergence of the optimal control solutions by comparing repeated optimisation runs for each imposed parameter value and specimen.
+3.  Compare the maximally attainable AMPO of the unconstrained optimal-control SSCs with the constant MTC shortening/lengthening velocity SSCs.
+
+Custom functions used:
+
+-   `run_ssc_ocp(muspar, cf=None, fts=None, mle=None, N=200, d=3, do_plot=False, do_print=True)`
+    :   Solve the optimal control problem for one specimen and one imposed SSC parameter, returning MTC length, stimulation, SEE force, active state and CE length over time.
+-   `ca_func.create_funcs(muspar)`
+    :   Create CasADi functions for the Hill-type MTC dynamics, mechanical power objective and helper variables used in the optimal control problem.
+-   `ca_func.get_sim_guess(f_dyn, cf0, fts0, mle0, N)`
+    :   Generate an initial guess for the optimal control problem from a constant-velocity SSC simulation.
+-   `ca_func.ode(x, u, muspar, b=1e3)`
+    :   Evaluate excitation dynamics, CE force, CE velocity, MTC length, active state and SEE force for the Hill-type MTC model.
+-   `helpers.get_ampo(filepaths)`
+    :   Load simulation files and compute AMPO values for comparison between constant-velocity and optimal-control SSCs.
+
+## Compute AMPO for imposed SSC parameters
+
+```{python}
+{{< include ssc-oc-run-predictions.py >}}
+```
+
+## Check convergence of Optimal Control solutions
+
+```{python}
+{{< include ssc-oc-convergence.py >}}
+```
+
+## Compare optimal-control and constant-velocity SSCs
+
+```{python}
+{{< include ssc-oc-diff-cv-vs-oc.py >}}
+```

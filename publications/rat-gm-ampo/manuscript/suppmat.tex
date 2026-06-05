@@ -1,0 +1,767 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+  a4paper]{article}
+\usepackage{xcolor}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+\fi
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{iftex}
+
+% % Minion Pro
+\usepackage[lf]{MinionPro}
+\usepackage{MyriadPro}
+
+% IBM Plex
+% \usepackage{fontspec}
+% \usepackage{unicode-math}
+% \setmainfont{IBM Plex Serif}
+% \setsansfont{IBM Plex Sans}
+% \setmonofont{IBM Plex Mono}
+% \setmathfont{IBM Plex Math Beta 240212}
+
+% STIX Two
+% \usepackage{fontspec}
+% \setmainfont{Stix Two Text}
+% \setmathfont{Stix Two Math}
+% \setsansfont[Scale=0.9608140457]{Fira Sans} % 7.2489/7.54454
+
+% Libertinus Serif + Libertinus Math + Source Sans Pro + Source Code Pro
+% \ifPDFTeX
+% \usepackage[mono=false,osf]{libertine}
+% \usepackage[libertine]{newtxmath}
+% % \usepackage[scale=1,osf]{sourcesanspro} % 7.1832/7.1832
+% % \usepackage[scale=0.8772671637]{sourcecodepro} % 7.1832/7.36934*0.9
+% \usepackage[scale=0.9181263229,osf]{roboto} % 7.1832/7.82376
+% \usepackage[scale=0.8132241635]{roboto-mono} % 7.1832/7.94969*0.9
+% \else
+% \usepackage[mono=false,osf]{libertine}
+% \setmathfont[Scale=MatchUppercase]{libertinusmath-regular.otf}
+% % \usepackage[scale=0.9850312868,osf]{sourcesanspro} % 7.2051/7.31459
+% % \usepackage[scale=0.8865281581]{sourcecodepro} % 7.2051/7.31459*0.9
+% \usepackage[scale=0.9126225152,osf]{roboto} % 7.2051/7.89494
+% \usepackage[scale=0.8213602637]{roboto-mono} % 7.2051/7.89494*0.9
+% \fi
+
+% Enable section and paragraph numbering
+\setcounter{secnumdepth}{4} % Numbering down to paragraph level
+\setcounter{tocdepth}{4} % Include paragraphs in the ToC
+
+%%% CUSTOMIZE SECTION SIZES
+\makeatletter
+\renewcommand{\section}{%
+  \@startsection{section}{1}
+    {0pt} 					% indent
+    {1.0em plus 0.2em minus 0.2em} 	% beforeskip
+    {0.001em plus 0.001em minus 0.001em}    	% afterskip
+    {\Large\bfseries\sffamily}%
+}
+\renewcommand{\subsection}{%
+  \@startsection{subsection}{2}
+    {0pt} 					% indent
+    {1.0em plus 0.2em minus 0.2em} 	% beforeskip
+    {0.001em plus 0.001em minus 0.001em}    	% afterskip
+    {\large\bfseries\sffamily}%
+}
+\renewcommand{\subsubsection}{%
+  \@startsection{subsubsection}{3}
+    {0pt} 					% indent
+    {1.0em plus 0.2em minus 0.2em} 	% beforeskip
+    {0.001em plus 0.001em minus 0.001em}    	% afterskip
+    {\normalsize\bfseries\sffamily}%
+}
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}
+    {0pt} 					% indent
+    {1.0em plus 0.2em minus 0.2em} 	% beforeskip
+    {0.001em plus 0.001em minus 0.001em}    	% afterskip
+    {\normalsize\bfseries\sffamily}%
+}
+\makeatother
+
+%%% GENERAL PACKAGES
+\usepackage{hyphenat} % don't hyphenat titles
+\usepackage{graphicx}
+\usepackage{tabularx} 
+\usepackage{marvosym} % Mail logo
+\usepackage{enumitem} % Enumerate items (list)
+\usepackage{amsmath} % for enhanced math features
+\usepackage[labelfont=bf,justification=justified,singlelinecheck=false]{caption} % Figures caption setup
+\usepackage[rightcaption]{sidecap} % figure with sidecaption
+\usepackage[]{lineno} % Line numbers
+\usepackage{ragged2e} % justify
+\usepackage{array}
+\usepackage{lscape} % landscape tables
+\usepackage{rotating} % landscape tables
+\usepackage{bm} % bold math
+
+%%%% ORCID LOGO
+\usepackage{academicons}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\usepackage{orcidlink}
+
+%%%% LAYOUT 
+\tolerance=200
+\emergencystretch=2em
+\hyphenpenalty=1000
+\hbadness=2000
+\widowpenalty=1000 % widow penalty
+\clubpenalty=1000 % orphans penalty
+\renewcommand{\baselinestretch}{1.3333333333333333333333333333} % line spacing
+
+\renewcommand{\arraystretch}{1.3333}
+\makeatletter
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{plain}
+\@ifundefined{c@chapter}{\newfloat{suppfig}{h}{losuppfig}}{\newfloat{suppfig}{h}{losuppfig}[chapter]}
+\floatname{suppfig}{Figure S}
+\newcommand*\quartosuppfigref[1]{Figure \hyperref[#1]{S\ref{#1}}}
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\DeclareCaptionLabelFormat{quartosuppfigreflabelformat}{#1#2}
+\captionsetup[suppfig]{labelformat=quartosuppfigreflabelformat}
+\newcommand*\listofsuppfigs{\listof{suppfig}{List of Supplementary Figures}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{plain}
+\@ifundefined{c@chapter}{\newfloat{supptbl}{h}{losupptbl}}{\newfloat{supptbl}{h}{losupptbl}[chapter]}
+\floatname{supptbl}{Table S}
+\floatstyle{plaintop}
+\restylefloat{supptbl}
+\newcommand*\quartosupptblref[1]{Table \hyperref[#1]{S\ref{#1}}}
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\DeclareCaptionLabelFormat{quartosupptblreflabelformat}{#1#2}
+\captionsetup[supptbl]{labelformat=quartosupptblreflabelformat}
+\newcommand*\listofsupptbls{\listof{supptbl}{List of Supplementary Tables}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Supplementary Material -- Title??},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Supplementary Material -- Title??}
+\author{}
+\date{}
+\begin{document}
+
+\begin{titlepage}
+% This is a combination of Pandoc templating and LaTeX
+% Pandoc templating https://pandoc.org/MANUAL.html#templates
+% See the README for help
+\begin{titlepage}
+
+\raggedright
+% Title and subtitle
+{\sffamily\LARGE\bfseries\nohyphens{Supplementary Material --
+Title??}}\\[2\baselineskip]
+
+
+% Authors
+% This hairy bit of code is just to get "and" between the last 2 authors.
+	
+\vspace{0.5\baselineskip}
+
+%%%%%% Affiliations & Corresponding author
+
+\vspace{1\baselineskip}
+
+%%%%%% Project website
+
+\vspace{1\baselineskip}
+
+%%%%%% Abstract
+
+\vfill
+\vspace{0.1\textheight}
+\end{titlepage}\end{titlepage}
+
+\linenumbers
+
+\renewcommand{\thesection}{S\arabic{section}}
+\setcounter{section}{0}
+
+\phantomsection
+
+\section{Selection of experimental SSC
+conditions}\label{selection-of-experimental-ssc-conditions}
+
+In the experiment, we aimed to measure an informative and representative
+subset of stretch-shortening cycles (SSCs) to investigate the effect of
+the SSC parameters --- cycle frequency, FTS and MTC length excursion ---
+on the maximally attainable AMPO. Yet, a key question was: Which SSCs
+should be selected? To make an informed decision, we performed
+preliminary simulations using a Hill-type MTC model with parameter
+values from literature for three rat m. gastrocnemius medialis
+(\citeproc{ref-van_zandwijk_twitch_1996}{Zandwijk et al., 1996}).
+
+We predicted maximal AMPO across various combinations of cycle frequency
+and FTS at five distinct MTC length excursions (2, 4, 6, 8 and 10 mm),
+each centred at an average MTC length \textasciitilde3\,mm below the MTC
+length yielding maximal isometric GM force. Muscle stimulation onset
+time (i.e., the instance at which stimulation switches from 0 to its
+maximal value) was set to the start of MTC shortening. Muscle
+stimulation duration (i.e., the time period during which stimulation
+remains at its maximal value before returning to 0) was optimized using
+the Nelder-Mead simplex method (\citeproc{ref-gao_implementing_2012}{Gao
+and Han, 2012}). To ensure periodic behaviour, optimisations were run
+for at least five cycles and until the muscle force at the beginning of
+the cycle deviated less than 20 mN from its value at the end of the
+cycle. Maximal AMPO was calculated for last cycle.
+
+We then made contour plots for every MTC length excursion
+(\quartosuppfigref{suppfig-s-prelim}), showing the influence of cycle
+frequency and FTS on maximal AMPO at each MTC length excursion. For the
+experimental SSC conditions, we limited the range of FTS between 0.2 and
+0.8 because values outside this range will yield very short shortening
+or lengthening durations. Within this FTS range, we observed that AMPO
+peaked at about 5 and 3 Hz for an MTC length excursion of 4 and 8\,mm
+respectively. Again, to prevent short shortening and lengthening
+duration, we set the maximum cycle frequencies accordingly. Based on
+these findings, we selected three subsets of SSC conditions: 1) constant
+FTS, varying cycle frequency; 2) constant cycle frequency, varying FTS;
+3) varying both cycle frequency and FTS. Because there was overlap in
+the SSC conditions, this yielded 13 unique SSC conditions for each MTC
+length excursion, such that there were 26 different SSC conditions in
+total.
+
+\begin{suppfig}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{../../figures/s_prelim.pdf}}
+
+}
+
+\caption{\label{suppfig-s-prelim}\textbf{Preliminary predictions of
+maximal AMPO as a function of cycle frequency and FTS.} The contour
+lines depict the maximally attainable AMPO (in mW) averaged over three
+parameter sets. These preliminary predictions were derived with a
+Hill-type MTC model with parameters obtained from literature
+(\citeproc{ref-van_zandwijk_twitch_1996}{Zandwijk et al., 1996}) and
+were used to inform the selection of experimental SSC conditions.}
+
+\end{suppfig}%
+
+\newpage{}
+
+\renewcommand{\thesection}{S\arabic{section}}
+\setcounter{section}{1}
+
+\phantomsection
+
+\section{Experimental SSC conditions and experimentally measured
+AMPO}\label{experimental-ssc-conditions-and-experimentally-measured-ampo}
+
+\begin{supptbl}[H]
+
+\caption{\label{supptbl-sscpa}SSC parameters, stimulation durations, and
+measured AMPO of experimental stretch-shortening cycles with a 4 mm MTC
+length excursion. Stimulation onset was set at the start of MTC
+shortening in all conditions}
+
+\centering{
+
+\centering
+\rotatebox{90}{
+  \begin{minipage}{\textheight}
+    \centering
+    \input{../../tables/supptbl-sscpa.tex}
+  \end{minipage}
+}
+
+}
+
+\end{supptbl}%
+
+\begin{supptbl}[H]
+
+\caption{\label{supptbl-sscpb}SSC parameters, stimulation durations, and
+measured AMPO of experimental stretch-shortening cycles with a 8 mm MTC
+length excursion. Stimulation onset was set at the start of MTC
+shortening in all conditions}
+
+\centering{
+
+\centering
+\rotatebox{90}{
+  \begin{minipage}{\textheight}
+    \centering
+    \input{../../tables/supptbl-sscpb.tex}
+  \end{minipage}
+}
+
+}
+
+\end{supptbl}%
+
+\newpage{}
+
+\renewcommand{\thesection}{S\arabic{section}}
+\setcounter{section}{2}
+
+\phantomsection
+
+\section{Optimisation protocol to identify optimal MTC length over
+time}\label{optimisation-protocol-to-identify-optimal-mtc-length-over-time}
+
+One of the aims of this study was to identify the optimal MTC length
+over time for maximal AMPO, when MTC length over time is entirely free
+to take any form. To predict this, we used a Hill-type MTC model. In our
+Hill-type MTC model, we assumed that both SEE and PEE were purely
+elastic elements (e.g., \citeproc{ref-anderson_dynamic_1999}{Anderson
+and Pandy, 1999}; \citeproc{ref-van_soest_contribution_1993}{Soest and
+Bobbert, 1993}). Therefore, during fully periodic SSC neither PEE nor
+SEE contributed to AMPO of the MTC. This also means that neither PEE nor
+SEE influences the optimal CE length over time that yields maximal AMPO
+over a full periodic SSC. We used this to simplify the optimisation
+problem. We reformulated to model such that we considered a Hill-type
+model of CE only. As such, CE length was no longer a state variable, but
+an input to the model. The model therefore had two inputs: CE length
+(\(L_{CE}\)) and muscle stimulation (\(STIM\)) over time. The only state
+variable was \(\gamma\), the normalised intrafilament \(Ca^{2+}\)
+concentration. Given this formulation, \(L_{CE}\), \(STIM\) and
+\(\gamma\) were known at each time instant during the optimisation
+process. Consequently, CE velocity can be calculated by taking the
+time-derivative of CE length. Using CE velocity, CE force could then be
+computed using the CE force--velocity relationship. MTC length over time
+was subsequently obtained by taking the following steps: 1) PEE force
+was calculated from PEE length (which equals CE length); 2) SEE force
+was calculated by taking the sum of CE and PEE force; 3) SEE length was
+calculated from SEE force; 4) MTC length was calculated as the sum of CE
+and SEE length. By computing MTC length over time via these steps, we
+could also impose MTC length excursion.
+
+The optimisation problem was thus to find the periodic CE length,
+\(STIM\) and \(\gamma\) over time for maximal AMPO. Optimisations were
+performed for 1) imposed cycle frequencies (1.0--6.0 Hz in 0.5 Hz
+steps); 2) imposed FTS values (0.05--0.95 in 0.05 steps) and 3) imposed
+MTC length excursions (2--11\,mm in 1\,mm steps). For all optimisation,
+the following cost function was maximised (note that, in our
+formulation, CE shortening corresponds to negative CE velocity):
+
+\begin{equation}\protect\phantomsection\label{eq-objective}{
+J = -\int_{t_0}^{t_0+T_c} F_{CE}^{rel} \cdot v_{CE}^{rel} \ dt
+}\end{equation} where \(t_0\) denotes the initial time and \(T_c\)
+denotes the cycle time.
+
+The solution had to satisfy the differential equation describing the
+\hl{contraction and excitation} \st{activation} dynamics:
+\begin{equation}\protect\phantomsection\label{eq-dynamic-con}{
+\dot{\gamma} = f(\gamma(t),STIM(t))
+}\end{equation}
+
+The following task constraints were added to achieve periodic behaviour:
+\begin{equation}\protect\phantomsection\label{eq-task-con}{
+  L_{CE}(t_0) = L_{CE}(t_0+T_c) \\
+  \gamma(t_0) = \gamma(t_0+T_c)
+}\end{equation}
+
+Moreover, inequality constraints were imposed on \(\gamma(t)\),
+\(L_{CE}^{rel}(t)\) and \(STIM(t)\):
+\begin{equation}\protect\phantomsection\label{eq-ineq-con1}{
+  \gamma_0 \leq \gamma(t) \leq 1 
+}\end{equation}
+
+\[
+  (1-w) \leq L_{CE}^{rel}(t) \leq (1+w) \\
+  0 \leq STIM(t) \leq 1
+\] where \(L_{CE}^{rel}\) denotes the CE length normalised the optimum
+CE length (i.e.~the CE length yielding maximal isometric CE force).
+
+We implemented our problem as a Multiphase Optimal Control Problem to
+assure that CE shortening and lengthening occurred only once per full
+periodic cycle, which was done by inequality constraints on
+\(v_{CE}^{rel}(t)\):
+\begin{equation}\protect\phantomsection\label{eq-fts-con}{
+\begin{aligned}
+  v_{CE}^{rel}(t_0 \ ... \ t_0 + T_c \cdot FTS) &\leq 0 \\
+  v_{CE}^{rel}(t_0 + T_c \cdot FTS \ ... \ t_0 + T_c) &\geq 0
+\end{aligned}
+}\end{equation} FTS was a numerical value (between 0.05 and 0.95) when
+FTS were imposed (see above). When FTS was not imposed, FTS was a
+control variable optimised for maximal AMPO.
+
+When MTC length excursion was imposed, an extra inequality constraint
+was added:
+
+\begin{equation}\protect\phantomsection\label{eq-lcecon}{
+  L_{MTC}(t_0) + L_{MTC}(t_0 + T_c \cdot FTS) = \textrm{MTC length excursion}
+}\end{equation}
+
+The dynamic, task and (in)equality constraints were implemented in
+CasADi (\citeproc{ref-andersson_casadi_2019}{Andersson et al., 2019})
+and the cost function was minimised using a Direct Collocation method
+using a nonlinear interior point method (IPOPT,
+\citeproc{ref-wachter_implementation_2006}{Wächter and Biegler, 2006}).
+The optimal control solution was checked by running forward simulations
+of the model with a linear-interpolated \(F_{CE}^{rel}(t)\) and
+\(STIM(t)\) as inputs to confirm that no relevant constraints were
+violated between the collocation points. This was done using SciPy's ODE
+integrator with an Implicit Runge-Kutta method of Radau IIA family of
+order 5 (\citeproc{ref-hairer_implementation_1996}{Hairer and Wanner,
+1996}) and an absolute and relative tolerance of 1e-6 and a maximum
+timestep of 1e-3. This yielded only very small differences between the
+states at the collocation points and those at the same time instance of
+the forward simulation for all optimisations.
+
+\newpage{}
+
+\renewcommand{\thesection}{S\arabic{section}}
+\setcounter{section}{3}
+
+\phantomsection
+
+\section{Optimal CE length over time: influence of FTS and MTC length
+excursion}\label{optimal-ce-length-over-time-influence-of-fts-and-mtc-length-excursion}
+
+Using the Hill-type MTC model, we identified the optimal CE length over
+time for maximal AMPO without imposing any constraints on MTC length
+over time (in contrast to section \textbf{?@sec-r-am}, where MTC
+shortening and lengthening velocity were constant). When imposing cycle
+frequency, the resulting MTC length over time was reasonably similar to
+those when with constant MTC shortening and lengthening velocity (see
+\textbf{?@sec-r-oc} and \textbf{?@fig-r-oc}). However, when imposing FTS
+or MTC length excursion the shape of CE and MTC length over time
+dramatically changed.
+
+For imposed FTS values below the optimal value, CE lengthening velocity
+was found to be almost zero at the onset of CE lengthening
+(\quartosuppfigref{suppfig-s-oc}A). This infinitely low velocity at the
+start of CE lengthening was optimal for AMPO because it allowed the
+active state to decrease fully before lengthening occurred, thereby
+reducing the amount of negative mechanical work performed. On top of
+that, it allowed the active state to remain high throughout most part of
+CE shortening to enable substantial positive mechanical work. Towards
+the end of CE lengthening, CE velocity again approached zero, which made
+it possible to initiate muscle stimulation before CE shortening began.
+This resulted to a high active state at the onset of CE shortening to
+enhance positive mechanical work. For imposed FTS values above the
+optimal value, CE shortening velocity decreased over time at the end of
+CE shortening (\quartosuppfigref{suppfig-s-oc}A). To avoid substantial
+negative mechanical work during the subsequent CE lengthening, muscle
+stimulation ceased well before the end of CE shortening. While CE could
+theoretically maintain a constant shortening velocity throughout the
+shortening phase, any additional positive mechanical work gained near
+the end was outweighed by the increased negative mechanical work. Thus,
+an almost isometric phase preceding CE lengthening is optimal for
+maximising AMPO. In sum, the CE length over time for imposed FTS values
+mostly results from the effect of the excitation dynamics.
+
+For imposed MTC length excursions above the optimal value, CE shortening
+velocity was found to be higher at the beginning and end of the
+shortening phase compared to the middle part
+(\quartosuppfigref{suppfig-s-oc}B). At the start and end of the
+shortening phase, only limited positive mechanical work could be
+produced due to the low active state and the suboptimal CE length (that
+is due to the CE force-length relationship). While CE could
+theoretically shorten at a constant velocity throughout the entire
+shortening phase, this would reduce the positive mechanical work during
+the middle part due to the effect of the force-velocity relationship. At
+the same time, little additional positive mechanical work could be
+achieved at the beginning and end of the shortening phase (due to the
+low active state and suboptimal CE length). Consequently, a non-constant
+CE shortening velocity --- with CE shortening first decreasing and then
+increasing during the shortening phase --- is optimal for maximising
+AMPO at imposed MTC length excursions above the optimal value. For
+imposed MTC length excursions below the optimal value, the opposite
+pattern was found: CE shortening velocity was found to be slower at the
+beginning and end of the shortening phase compared to the middle part
+(\quartosuppfigref{suppfig-s-oc}B). As explained, only limited positive
+mechanical work could be produced at the beginning and end of the
+shortening phase due to the low active state. If CE would shorten with a
+constant velocity throughout the entire shortening phase, it would
+decrease the shortening distance during the middle part (at which the
+active state is high) and thereby reducing the positive mechanical work.
+As a result, a non-constant CE shortening velocity --- with a slow
+shortening velocity at the end and beginning of the shortening phase ---
+is optimal for maximising AMPO at imposed MTC length excursions above
+the optimal value. In sum, the optimal CE length over time for imposed
+MTC length excursions shows the intricate trade-off between the CE
+force-length relationship, CE force-velocity relationship and the and
+excitation dynamics.
+
+\begin{suppfig}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{../../figures/s_oc.pdf}}
+
+}
+
+\caption{\label{suppfig-s-oc}\textbf{Predicted CE length over time for
+maximally attainable AMPO, shown for two imposed FTS values (A) and two
+imposed MTC length excursions (B), at a cycle frequency of 3.5 Hz for
+rat 1}. In panel A, only cycle frequency and FTS were imposed, while in
+panel B only cycle frequency and MTC length excursions were imposed.
+Apart from these two constraints, CE and MTC length over time were
+completely unconstrained and thus the shape of CE length over time could
+be different between every combination of imposed cycle frequency and
+FTS (A) or imposed cycle frequency and MTC length excursion (B). CE
+stimulation was maximal during the period indicated by the coloured bars
+and off elsewhere.}
+
+\end{suppfig}%
+
+\begin{suppfig}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{../../figures/s_ampo.pdf}}
+
+}
+
+\caption{\label{suppfig-s-ampo}\textbf{Predicted influence of cycle
+frequency (A), FTS (B) and MTC length excursion (C) on the maximum
+attainable AMPO}. The maximally attainable AMPO --- averaged across the
+three rats --- slightly increased when there was no constraint on MTC
+length over time (orange lines), compared to SSCs with a constant MTC
+shortening and lengthening velocity (black lines).}
+
+\end{suppfig}%
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
+\bibitem[\citeproctext]{ref-anderson_dynamic_1999}
+\textbf{Anderson, F. C. and Pandy, M. G.} (1999).
+\href{https://doi.org/10.1080/10255849908907988}{A {Dynamic}
+{Optimization} {Solution} for {Vertical} {Jumping} in {Three}
+{Dimensions}}. \emph{Computer Methods in Biomechanics and Biomedical
+Engineering} \textbf{2}, 201--231.
+
+\bibitem[\citeproctext]{ref-andersson_casadi_2019}
+\textbf{Andersson, J. A. E., Gillis, J., Horn, G., Rawlings, J. B. and
+Diehl, M.} (2019).
+\href{https://doi.org/10.1007/s12532-018-0139-4}{{CasADi}: A software
+framework for nonlinear optimization and optimal control}.
+\emph{Mathematical Programming Computation} \textbf{11}, 1--36.
+
+\bibitem[\citeproctext]{ref-gao_implementing_2012}
+\textbf{Gao, F. and Han, L.} (2012).
+\href{https://doi.org/10.1007/s10589-010-9329-3}{Implementing the
+{Nelder}-{Mead} simplex algorithm with~adaptive parameters}.
+\emph{Computational Optimization and Applications} \textbf{51},
+259--277.
+
+\bibitem[\citeproctext]{ref-hairer_implementation_1996}
+\textbf{Hairer, E. and Wanner, G.} (1996).
+\href{https://doi.org/10.1007/978-3-642-05221-7_8}{Implementation of
+{Implicit} {Runge}-{Kutta} {Methods}}. In \emph{Solving {Ordinary}
+{Differential} {Equations} {II}: {Stiff} and {Differential}-{Algebraic}
+{Problems}} (ed. Hairer, E.) and Wanner, G.), pp. 118--130. Berlin,
+Heidelberg: Springer Berlin Heidelberg.
+
+\bibitem[\citeproctext]{ref-van_soest_contribution_1993}
+\textbf{Soest, A. J. van and Bobbert, M. F.} (1993).
+\href{https://doi.org/10.1007/BF00198959}{The contribution of muscle
+properties in the control of explosive movements}. \emph{Biological
+Cybernetics} \textbf{69}, 195--204.
+
+\bibitem[\citeproctext]{ref-wachter_implementation_2006}
+\textbf{Wächter, A. and Biegler, L. T.} (2006).
+\href{https://doi.org/10.1007/s10107-004-0559-y}{On the implementation
+of an interior-point filter line-search algorithm for large-scale
+nonlinear programming}. \emph{Mathematical Programming} \textbf{106},
+25--57.
+
+\bibitem[\citeproctext]{ref-van_zandwijk_twitch_1996}
+\textbf{Zandwijk, J. P. van, Bobbert, M. F., Baan, G. C. and Huijing, P.
+A.} (1996). \href{https://doi.org/10.1007/s004220050306}{From twitch to
+tetanus: Performance of excitation dynamics optimized for a twitch in
+predicting tetanic muscle forces}. \emph{Biological Cybernetics}
+\textbf{75}, 409--417.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

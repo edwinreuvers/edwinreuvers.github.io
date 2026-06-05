@@ -1,0 +1,24 @@
+---
+title: |
+  Supplementary Material – Title??
+format:
+  preprint-pdf:
+    lineno: false
+    suppmat: true
+    shift-heading-level-by: -2
+    keep-tex: true
+---
+
+{{< include _suppmat-sel-exp-cond.qmd >}}
+
+{{< pagebreak >}}
+
+{{< include _suppmat-exp-ampo-tables.qmd >}}
+
+{{< pagebreak >}}
+
+{{< include _suppmat-opt-protocol.qmd >}}
+
+{{< pagebreak >}}
+
+{{< include _suppmat-oc-results.qmd >}}

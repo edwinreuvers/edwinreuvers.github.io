@@ -1,0 +1,26 @@
+---
+title: |
+  Mechanical power output during stretch–shortening cycles of rat medial gastrocnemius muscle: influence of various muscle length trajectories – S1 File
+format:
+  preprint-pdf:
+    lineno: false
+    suppmat: true
+    shift-heading-level-by: -2
+    keep-tex: true
+---
+
+```{=latex}
+\renewcommand{\thesection}{S\arabic{section}}
+\setcounter{section}{0}
+\floatname{suppfig}{Figure }
+\renewcommand{\thesuppfig}{\thesection.\arabic{suppfig}}
+\renewcommand*\quartosuppfigref[1]{Figure~\ref{#1}}
+```
+
+{{< include _suppmat-sel-exp-cond.qmd >}}
+
+{{< pagebreak >}}
+
+### References {.unnumbered}
+::: {#refs}
+:::

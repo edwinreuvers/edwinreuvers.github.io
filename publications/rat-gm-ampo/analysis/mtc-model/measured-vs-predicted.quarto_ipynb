@@ -1,0 +1,169 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: Measurements against predictions\n",
+        "---\n",
+        "\n",
+        "The analysis of this page corresponds to the sections 'Evaluation of measured \n",
+        "versus predicted maximally attainable AMPO'.\n",
+        "\n",
+        "First, we simulate the experimental conditions using experimentally measured\n",
+        "MTC length and stimulation over time as inputs for the Hill-type MTC model. \n",
+        "Second, we evaluate measurements against predictions.\n",
+        "\n",
+        "Custom functions used:\n",
+        "\n",
+        "-   `hillmodel.force_eq(lmtc,gamma,muspar)`\n",
+        "    : Finds relative CE length such that SEE force equals the sum of CE and \n",
+        "    PEE force.\n",
+        "-   `hillmodel.solve_simu_mtc(gamma0, lcerel0, muspar, inputs, ode_opts)`\n",
+        "    : Forward simulation of a Hill-type muscle-tendon complex (MTC) model.\n",
+        "-   `stimulation.get_stim_timing(time, stim)`\n",
+        "    :   Detects stimulation pulse trains in a signal and returns their onset and offset time.\n",
+        "-   `stats.pdiff(x,y)`\n",
+        "    :   Compute the percentage difference with x w.r.t. y.\n",
+        "\n",
+        "## Load packages & set directories"
+      ],
+      "id": "0008a112"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pickle, os, sys, glob\n",
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "import scipy.stats\n",
+        "from pathlib import Path\n",
+        "\n",
+        "# Set directories\n",
+        "cwd = Path.cwd()\n",
+        "baseDir = cwd.parent\n",
+        "dataDir = baseDir / 'data'\n",
+        "funcDir = baseDir / 'analysis' / 'functions'\n",
+        "sys.path.append(str(funcDir))\n",
+        "\n",
+        "import hillmodel, stats, stimulation"
+      ],
+      "id": "e99df58b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Simulate experimental conditions"
+      ],
+      "id": "7e1c84fd"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| eval: false\n",
+        "\n",
+        "muscles = ['GMe1', 'GMe2', 'GMe3']\n",
+        "for mus in muscles:\n",
+        "    for exp in ['QR','SR','ISOM','SSC_PA','SSC_PB']: \n",
+        "        parFile = os.path.join(dataDir,mus,mus+'_IM.pkl')\n",
+        "        muspar = pickle.load(open(parFile, 'rb'))[0]\n",
+        "        \n",
+        "        dataDirExp = os.path.join(dataDir,mus,'dataExp',exp,'')\n",
+        "        dataDirSim = os.path.join(dataDir,mus,'simsExp',exp,'')\n",
+        "        \n",
+        "        # files = glob.glob(dataDirSim+r'\\*')    \n",
+        "        # for iFile,filename in enumerate(files):\n",
+        "        #     os.remove(filename)\n",
+        "        \n",
+        "        files = glob.glob(os.path.join(dataDirExp, '*.csv')) \n",
+        "        for iFile,filepath in enumerate(files):\n",
+        "            filename = filepath.rsplit('\\\\', 1)[-1][:-4]\n",
+        "            data = pd.read_csv(filepath).T.to_numpy()\n",
+        "            time, lmtc, stim, fseeData, *_ = data\n",
+        "            _,tStimOn,tStimOff = stimulation.get_stim_timing(time,stim)\n",
+        "            \n",
+        "            gamma0  = muspar['gamma_0']\n",
+        "            lcerel0 = hillmodel.force_eq(lmtc[0],gamma0,muspar)[1]\n",
+        "            \n",
+        "            solmat = {}\n",
+        "            solmat['time'] = time\n",
+        "            solmat['lmtc'] = lmtc\n",
+        "            solmat['t_stim'] = np.vstack((tStimOn,tStimOff)).T\n",
+        "            \n",
+        "            ode_opts = {'atol': 1e-9, 'rtol': 1e-6, 'max_step': 1e-3, 't_eval': time}\n",
+        "            solstr = hillmodel.solve_simu_mtc(gamma0,lcerel0,muspar,solmat,ode_opts)[1]\n",
+        "            fsee = solstr[9]\n",
+        "              \n",
+        "            # Store\n",
+        "            dataSim = np.vstack((time,lmtc,stim,fsee)).T\n",
+        "            filepath = os.path.join(dataDirSim,filename+'_IM.csv')\n",
+        "            pd.DataFrame(dataSim).to_csv(filepath,index=False, \n",
+        "                                      header=['time [s]','Lmtc [m]','STIM [ ]','Fsee [N]'])"
+      ],
+      "id": "b42ea737",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Evaluate measurements vs. predictions"
+      ],
+      "id": "cfaf51d6"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "dataExps, simsExps, r2 = [], [], []\n",
+        "for iMus,mus in enumerate(['GMe1','GMe2','GMe3']):\n",
+        "    dataDirMus = os.path.join(dataDir,mus,'')\n",
+        "    dataExp = pd.read_excel(dataDirMus+str(mus)+'_dataAMPO.xlsx').to_numpy()[:,5:].astype(float)\n",
+        "    simsExp = pd.read_excel(dataDirMus+str(mus)+'_simsAMPO.xlsx').to_numpy()[:,5:].astype(float)\n",
+        "    \n",
+        "    dataExp[dataExp<1] = np.nan\n",
+        "    simsExp[simsExp<1] = np.nan\n",
+        "    \n",
+        "    dataExps.append(dataExp)\n",
+        "    simsExps.append(simsExp)\n",
+        "    \n",
+        "    iNan = np.isnan(dataExp)\n",
+        "    dataExp = dataExp[~iNan]\n",
+        "    simsExp = simsExp[~iNan]\n",
+        "\n",
+        "    r2.append(scipy.stats.pearsonr(dataExp,simsExp)[0])   \n",
+        "    \n",
+        "dataExps = np.array(dataExps).flatten()\n",
+        "simsExps = np.array(simsExps).flatten()\n",
+        "\n",
+        "procDiff = stats.pdiff(dataExps,simsExps) # procentual difference\n",
+        "diffMean = np.nanmean(procDiff)\n",
+        "diffStd = np.nanstd(procDiff)\n",
+        "print(f\"Measured AMPO / Simulated AMPO is on average: {diffMean:.1f} +- {diffStd:.1f} %\")\n",
+        "\n",
+        "r2_formatted = [f\"{x:.4f}\" for x in r2]\n",
+        "print(f\"r^2 values for rat 1,2,3 are: {', '.join(r2_formatted)}\")"
+      ],
+      "id": "f9dfaee7",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/home/david/anaconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

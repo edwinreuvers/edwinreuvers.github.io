@@ -1,0 +1,38 @@
+---
+title: "Experimental SSCs"
+execute:
+  eval: false
+---
+
+The analysis of this page corresponds to the sections 'stretch-shortening cycles'.
+
+Because the analysis is relatively extensive, it is split into three separate scripts included on this page:
+
+1.  Compute AMPO for each cycle for every rat, condition, and trial. The results are stored in a spreadsheet.
+2.  Perform statistical analyses on the effects of cycle frequency and FTS on the measured AMPO.
+3.  Calculate differences in measured AMPO between conditions.
+
+Custom functions used:
+
+-   `stimulation.get_stim_timing(time, stim)`
+    :   Detects stimulation pulse trains in a signal and returns their onset and offset time.
+-   `stats.pdiff(x,y)`
+    :   Compute the percentage difference with x w.r.t. y.
+
+## Make table
+
+```{python}
+{{< include exp-ssc-ampo-maketable.py >}}
+```
+
+## Statistics
+
+```{python}
+{{< include exp-ssc-ampo-stats.py >}}
+```
+
+## Compute differences in AMPO
+
+```{python}
+{{< include exp-ssc-ampo-differences.py >}}
+```
