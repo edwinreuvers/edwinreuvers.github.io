@@ -1,40 +1,5 @@
 [
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Dinant A. Kistemaker, Robert M. Terwiel, Edwin D.H.M. Reuvers, & Maarten F. Bobbert. Limiting radial pedal forces greatly reduces maximal power output and efficiency in sprint cycling; an optimal control study. Journal of Applied Physiology, 134: 980–991, 2023. https://doi.org/10.1152/japplphysiol.00733.2021"
-  },
-  {
-    "objectID": "publications.html#section",
-    "href": "publications.html#section",
-    "title": "Publications",
-    "section": "",
-    "text": "Dinant A. Kistemaker, Robert M. Terwiel, Edwin D.H.M. Reuvers, & Maarten F. Bobbert. Limiting radial pedal forces greatly reduces maximal power output and efficiency in sprint cycling; an optimal control study. Journal of Applied Physiology, 134: 980–991, 2023. https://doi.org/10.1152/japplphysiol.00733.2021"
-  },
-  {
-    "objectID": "bookshelf.html",
-    "href": "bookshelf.html",
-    "title": "Bookshelf",
-    "section": "",
-    "text": "I’m deeply interested in the history of muscle mechanics. I collect books covering the work of early pioneers. Below is a list of books that I own, and next to that books that I’m looking for. If you have any books on my list, please let me know!"
-  },
-  {
-    "objectID": "bookshelf.html#books-i-own",
-    "href": "bookshelf.html#books-i-own",
-    "title": "Bookshelf",
-    "section": "Books I own",
-    "text": "Books I own\n\n1864: Rudolf Heidenhain — Mechanische Leistung, Wärmeentwicklung und Stoffumsatz bei Muskeltätigkeit\n1881: Adolf Fick — Mechanische Arbeit und Wärmeentwicklung bei der Muskeltätigkeit\n1965: Archibald Vivian Hill — Trails and Trials in Physiology\n1970: Archibald Vivian Hill — First and Last Experiments in Muscle Mechanics\n1977: Andrew Huxley — Reflections on muscle\n1981: Herbert Hatze — A general myocybernetic control model of skeletal muscle"
-  },
-  {
-    "objectID": "bookshelf.html#books-id-like-to-own",
-    "href": "bookshelf.html#books-id-like-to-own",
-    "title": "Bookshelf",
-    "section": "Books I’d like to own",
-    "text": "Books I’d like to own\n\n1848: Johannes Müller — Archiv für Anatomie  (This edition contains the famous Hermann von Helmholtz paper on the principle of conservation of energy, pages 144-164)\n1900: Edward Albert Sharpey-Schafer — Textbook of physiology\n1903: Adolf Fick — Gesammelte schriften\n1975: Herbert Hatze — A control model of skeletal muscle and its application to a time-optimal bio-motion"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -56,17 +21,80 @@
     "text": "Education\n\nMSc (Research) Human Movement Sciences | 2017 — 2021  Vrije Universiteit Amsterdam, Amsterdam, the Netherlands\nBSc Human Movement Sciences | 2013 — 2017  Vrije Universiteit Amsterdam, Amsterdam, the Netherlands"
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Soon, I will post my first blogpost here! :)"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Edwin Reuvers",
     "section": "",
     "text": "I am a PhD candidate at the Department of Human Movement Sciences at the Vrije Universiteit in Amsterdam, specialising in the intricate relationship between musculoskeletal motion, muscle stimulation, and (human) performance.\nMy approach combines experimental work with advanced musculoskeletal models and optimal control techniques. These biophysical models allow me to derive predictions that would be (near-)impossible to obtain through experiments alone, which I then thoroughly test in experiments.\nThis intertwined approach helps me investigate the fundamental physiological mechanisms that drive performance. My goal is to contribute meaningful insights to biomechanics and sports science, and, hopefully soon, rehabilitation.\nIn addition to my scientific work, I’m deeply interested in the history of muscle mechanics. I collect books covering the work of early pioneers. For a list of books I own (and hope to own), please see here."
+  },
+  {
+    "objectID": "blog/sims-hill1938/index.html",
+    "href": "blog/sims-hill1938/index.html",
+    "title": "Simulation of Hill 1938",
+    "section": "",
+    "text": "In 1938, A.V. Hill fundamentally changed our understanding of how muscles generate force and mechanical work. Until then, he had considered muscles to behave like viscoelastic bodies. However, after years of meticulous experiments using highly sensitive and fast-responding thermocouples, Hill demonstrated that muscle behavior could not be explained by his (visco-)elastic theory. Based on these observations, he proposed a three-component muscle model comprising the contractile element (CE), the series elastic element (SEE), and the parallel elastic element (PEE). In this model, SEE and PEE are mainly elastic, while the CE actively generates force and exhibits the characteristic force–velocity relationship. This framework—still central in modern biomechanics—captures the dynamic interplay between active contraction and passive elasticity in muscle function.\nIn his famous 1938 paper, A.V. Hill explored the heat output of muscle during two distinct experiments:\n\nThe muscle was first allowed to rise isometrically to a set force level, followed by a drop in force. Between trials, the magnitude of the force drop was kept constant, but the allowed shortening distance varied. After each allowed shortening distance, the muscle remained isometrically.\nThe muscle was again first allowed to rise isometrically to a set force level and followed by a drop in force. But this time the force drop was varied between trials, while the allowed shortening distance was kept constant.\n\nFrom Experiment 1, Hill observed that the total heat produced by the muscle was linearly dependent on the shortening distance (see Fig. 9E). Since the muscle force was constant, this also implied that the work done by the muscle was linearly proportional to the shortening distance. This led to the first fundamental equation:\n\\[\nE = (F + a) \\cdot \\Delta L\n\\]\nwhere \\(F\\) is the muscle force during shortening, \\(\\Delta L\\) is the shortening distance, and \\(a\\) is a constant (i.e. shortening heat).\nFrom Experiment 2, Hill found that the rate of heat production was linearly dependent on the muscle force (see Fig. 9F) and was 0 at maximal isometric force. This led to the second fundamental equation:\n\\[\n\\dot{E} = b \\cdot (F_0 - F)\n\\]\nwhere \\(F_0\\) is the maximal isometric muscle force, (\\(F\\)) is the muscle force during shortening, and \\(b\\) is a proportionality constant.\nBy integrating the first equation over time and combining it with the second, Hill derived the force–velocity relationship of muscle:\n\\[\n\\dot{E} = (F+a) \\cdot v = b \\cdot (F_0 - F)\n\\]\nfrom which the shortening velocity \\(v\\) can be expressed as:\n\\[\nv = b \\cdot \\frac{F_0 - F}{F_s+a}\n\\]"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Simulation of Hill 1938\n\n\n\nmuscle physiology\n\nclassics\n\nhill\n\npython\n\n\n\n\n\n\n\nEdwin D.H.M. Reuvers\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nBikepacking to CNB and ISB\n\n\n\ncongress\n\ncycling\n\nholiday\n\n\n\n\n\n\n\nEdwin D.H.M. Reuvers\n\n\nJul 6, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/bikepacking-to-cnb-and-isb/index.html",
+    "href": "blog/bikepacking-to-cnb-and-isb/index.html",
+    "title": "Bikepacking to CNB and ISB",
+    "section": "",
+    "text": "This summer, I had the opportunity to attend two scientific congresses: the Comparative Neuromuscular Biomechanics Technical Group (CNB) meeting in Helsinki and the International Society of Biomechanics (ISB) congress in Stockholm.\nHowever, I was determined not to travel by plane. In a time of an accelerating climate crisis, I believe academics have a responsibility to lead by example and actively consider the environmental impact of their travel decisions—especially when sustainable alternatives are available.\nSo that’s how the idea of a bikepacking trip came about."
+  },
+  {
+    "objectID": "blog/bikepacking-to-cnb-and-isb/index.html#trip-summary",
+    "href": "blog/bikepacking-to-cnb-and-isb/index.html#trip-summary",
+    "title": "Bikepacking to CNB and ISB",
+    "section": "Trip Summary",
+    "text": "Trip Summary\nCycling all the way from Amsterdam to Helsinki was a bit too ambitious given the available time. I therefore decided to take the train to Warsaw and cycle from there to Vilnius, Riga, and Tallinn, before taking the ferry to Helsinki.\nInitially, I planned to potentially skip the Vilnius–Riga section by train if time became tight. In the end, I did cycle that stretch, but took a train from Tartu to Tallinn to save two days at the end because I had to make the ferry on the 23rd.\nOver the course of 12 cycling days (and 3 rest days), I covered a total of 1,273 kilometers. The full route is shown below, followed by a day-by-day journal of the trip."
+  },
+  {
+    "objectID": "blog/bikepacking-to-cnb-and-isb/index.html#daily-log",
+    "href": "blog/bikepacking-to-cnb-and-isb/index.html#daily-log",
+    "title": "Bikepacking to CNB and ISB",
+    "section": "Daily Log",
+    "text": "Daily Log\n\nDay 0 (July 6): All-day in the train, Warsaw reached\nOn Sunday, July 6, my bikepacking trip to CNB in Helsinki and ISB in Stockholm began! As Helsinki is a bit too far from Amsterdam, I decided to start the bikepacking trip in Warsaw. My goal for this day was to reach the border of Germany with Poland in Frankfurt (Oder) and, if lucky, to catch a train from there to Warsaw. To my surprise, everything went smoothly. There were only minor delays, but nothing serious. I even made the last (delayed) train from Frankfurt (Oder) to Warsaw.\nThere was one issue, though: I couldn’t reserve a bike ticket for the train between Frankfurt (Oder) and Warsaw. The Polish PKP Intercity website only allows bike reservations when buying a ticket, which I did not want as I had an Interrail pass. Thankfully, the conductor was super friendly and let me put my bike in the corridor. A bit after midnight, I arrived in Warsaw, found a hostel, and went straight to bed.\n\n\nDay 1 (July 7): Off to Brok… euhh Ostrów Mazowiecka\nFirst day on the bike! And first mistake: I started too late (10:30 AM). The beginning was pretty dull, mostly riding on state roads to get out of Warsaw. But things got more interesting (and rougher) later on: a mix of asphalt, Polish gravel, forest singletracks, and even barely rideable paths.\nI arrived in a small town called Brok around 5 PM, where I had planned to stay. I had even confirmed the booking earlier in the day, but upon arrival, they told me there was no room. Great. I tried a few more places, but no luck. I then decided to ride 20 km further to Ostrów Mazowiecka. I quickly planned a gravel route with Komoot which turned out to be extremely adventurous, haha! After a shower, some food, and a grocery run, I finally slept.\n\n\nDay 2 (July 8): Getting to know Polish gravel roads on my way to Tykocin\nThe day started well with a great breakfast, which even was accompanied by live traditional Polish music! I set out for a campsite near Tykocin, once again following a Komoot-planned gravel route. I learned it the hard way, Polish ‘gravel’ really means anything: from solid and fast to deep sand (check the photos!). It was a challenge!\nAlong the way, I saw signs for a route called ‘Green Velo’ (more on this later). After a few rain stops, I arrived before dinner. The campsite owner was very friendly and even lent me some plastic to cover the soil against the forecasted storm. Later that night, I reached Green Velo and discoverd that there are multiple load-distance cycling routes. I figured that a route called EuroVelo 11 runs all the way from northern Norway to Greece, passing through Warsaw, Vilnius, and more. So the plan was made for the next days!\n\n\nDay 3 (July 9): Rain, rain and more heavy rain\nWhile the plan was made to follow EuroVelo 11 to Vilnius, I decided to not jump on the bike today. It was raining all day long with several hours of more than 15mm/h. It was a boring day in the tent, with a very short sprint to Tykocin to get some groceries when the weather allowed.\n\n\nDay 4 (July 10): Riding EuroVelo 11 to Augustów\nAll right, the weather was better and off I went to Augustów. The plan was to mostly follow EuroVelo 11 to Augustów, so for that I had to go ‘back’ the first 10km in the direction I came from two days ago. This was not a bad decision: the first part of the ride went through Biebraznski National park. Here, I had to follow an asphalted road with great views for more than 20km, not bad!\nThe second half of the ride wasn’t as pleasant: cold wind and intermittent rain made it tough. My sweater and rain jacket were definitely a live-safer here! I arrived late at the campsite and opted for a cottage to dry out my gear. Smart decision!\n\n\nDay 5 (July 11): Crossing the first border with a longer than anticipated ride\nThe plan was to ride ~110 km of EuroVelo 11 and cross into Lithuania. The morning was absolutely amazing: I was just into the forest when a deer crossed the road in front of me. After 60 serene kilometers through the woods, I reached Sejny to resupply. I tried calling my intended campsite, but no answer. So I had to make the route ~ 20 km longer to reach another campsite.\nAt the store, I met Roman, a fellow cyclist heading for Vilnius. He waited so we could ride together. That was fun, but he rode quite fast! After crossing the border together our ways quickly separated. My route showed I had to take a left-turn at a crossing where Roman had to go right. Later I discovered that Roman stayed on the EuroVelo 11 route, while I took off! I do not know how this happened – as my plan was EuroVelo 11 – but it was not bad. There was a really nice gravel section (a bit sandy though!) in the south through the forest! Interestingly enough, there were ‘sign’ (read: stickers) of EuroVelo 11 here. So are there two versions of EuroVelo 11? I am lost!\nThen the rain started — on and off, annoying. To top it off, I lost my glasses and had to ride another 15 km to find them. All in all, I covered nearly 150 km and spent about 7 hours on the bike. Exhausted, but I made it to Druskininkai. Based on my brief 10-minute experience this is a really nice charming town!\n\n\nDay 6 (July 12): Another big push on the bike!\nAnd off for another day! Getting out of Drunkinkai was very nice. The EuroVelo 11 route went through a park actually starting in Drunkinkai. The road was very nice, but technically challenging. While still having a lot of energy these ~20km were fun! The rest of the route was nice, with some parts really nice, but also quite a lot of asphalt.\nThe best part of the day, however, took place at my last grocery store-stop: I found a Lithuanian jar with ready-to-eat beans and vegetables containing over 1000 kcal per pot, wow! The camping where I stayed was nice: on a hill next to (another, there are many!) beautiful lake.\n\n\nDay 7 (July 13): Hello Vilnius\nThanks to the long rides the two days before, I had just 70 km left to Vilnius. I took it easy, stopping in Trakai to admire its stunning lake and castle. A truly beautiful place (with good coffee!).\nOddly, the last stretch into Vilnius was tough. Only 30 km in, my knees started hurting and I felt left out of energy. To make it worse, my bike computer went nuts and tried to send me onto the highway.. Anyway, I made it, and after a quick ride through the city, I headed to a very well-deserved hotel stay.\n\n\nDay 8 (July 14): Resting, laundry and no sight-seeing in Vilnius\nThe day was planned to do my (much-needed) laundry and some sight-seeing in Vilnius. However, I slept long and did the laundry quite late. Then, it started pouring once the laundry was done. So, no sight-seeing. Nevertheless, from what I saw of Vilnius I have to say that it is clean and well-organised (people here follow traffic rules!), I like it!.\n\n\nDay 9 (July 15): A shortcut to Riga leads to some problems\nThe last couple of days I enjoyed EuroVelo 11 a lot. However, the problems is that the EuroVelo 11 route from Vilnius to Riga is ~800, while the direct route is less than 300 km. For this reason I decided for today to follow EuroVelo 11 and then take a ‘shortcut’ to Riga, as I have to make Helsinki in time!\nWhile the first ~25km out of Vilnius was surprisingly nice, the 25km that followed were boring: asphalt, lots of traffic and no views. Because my legs did also feel absolutely terrible, I decided to revise my plan and take an earlier shortcut in the direction of Riga. Unfortunately, there were no proper campsites nearby. I even followed a sign to one, but it was completely abandoned, damn!\nThen, it became even worse: I ran out of phone credit. Luckily, I found a riverside spot where kayakers launch and camp on weekends. A kind man not only let me camp there but also lent me his phone so I could message my partner Gwen to top up my credit. Many thanks to this man (and Gwen of course)!\n\n\nDay 10 (July 16): A surprise from the Mayor in Kupiškis\nToday the plan was to follow the shortcut to Riga, with a route of ~130 km to Biržai. The first one and a half hour was a bit dull, just passing through the Lithuanian fields. But then I had a fun section through a forest on a road only for cyclist and hikers, that was nice.\nAt my stop in Kupiškis, I met six fellow cyclists at the grocery store. Five French guys and one man from the UK, who met each other on their way to. We took lunch on the town square, where accidently a man approached us asking if we were tourists. He introduced himself as the mayor and handed us a box of chocolates! How fun!\nThe final part of the ride was mostly along gravel paths through the forest. With lots of mosquitoes and also large groups of butterflies on the road, which would fly up right in front of me. Beautiful, but I did get bitten quite a lot. The camping in Biržai was nicely located next to the lake, perfect to relax after another long day in the saddle.\n\n\nDay 11 (July 17): Almost in Riga\nFrom Biržai it was only about 100km left to Riga. Although, that was the fastest way by car. I planned a slightly longer route to pass by two cities to stop for groceries. I did not pay a lot of attention to the route, so after 20km I realised that the route went over the highway! I re-routed on-the-fly and made it into Latvia after about two hours of riding.\nAfter my first stop, I took another route to the second city as it started raining. I then discovered I was just half hour to late to avoid the clouds, damn! After a shelter of more than an hour I continued my – somewhat boring – route.\nAt my second stop I tried to make a route to a camping just before Riga. As Komoot really tried to send me over the highway I set it to ‘Gravel ride’ again, which in the end gave me quite an ‘alternative road’ with lots of fun sections, but a darn lot of mosquitoes. After being badly bitten by mosquitoes, I reached the campsite: Riga was only 15 km away!\n\n\nDay 12 (July 18): Sight-seeing in Riga and off to the national park\nI started the day with no set plan except to reach Riga. I explored the city briefly and had a nice early lunch but felt unsure what to do with my bike and gear. So, I decided to continue onward to Gauja National Park, something I was looking forward to when planning this trip!\nTo save time, I took a train to Sigulda, then biked to Cēsis. The route was absolutely amazing! Nice gravel roads, but even better views in the forest! When reaching my camping just outside Cēsis, there was absolutely no one! Fortunately, there was another camping only ~5km away. Time to rest.\n\n\nDay 13 (July 19): Rest day at the campsite\nI had a terrible night sleep last night; thanks to my loud neighbours. Well, I already anticipated to take a day off here, so I decided to do so. The best thing I did that day was moving my tent to another place on the campsite. In the end, just a lazy day.\n\n\nDay 14 (July 20): Into Estonia\nWith Tallinn too far to reach by bike before my ferry on July 23, the plan was to reach Tartu over two days and then take the train. Meaning for today, that I wanted to reach Estonia and from there see how far I can get – I had no camping planned as I could not found any in that area.\nThe first part of the day my legs felt absolutely terrible – again, after a rest day. Fortunately my legs started to feel better and better during the day such that I reached Estonia at 4PM. After restocking and having an early dinner along the route I was looking for a place to camp. But then I signed showed up that there actually was a camping 14km away. I decided to go there.\nWhen arriving at the camping I got welcomed by a very nice host. He had lots of stories and he was just doing the camping-business for fun; he told me that the season in Estonia is so short (June – August) that running a campsite is simply not profitable. Anyway, after talking for some while I took a fresh shower, something I did not expect earlier that day. Great!\n\n\nDay 15 (July 21): Getting the train in Tartu to Tallinn\nBecause I made a good push the day before, Tartu was only ~80km away. The route today was a bit boring, lots of asphalt; but after a while you’ve seen the forest and fields I guess.\nI reached Tallinn just around lunchtime, had a great pizza and took the 3PM train to Tallinn. After a supercomfy ride I reached Tallinn by 6PM. Destination reached!"
+  },
+  {
+    "objectID": "bookshelf.html",
+    "href": "bookshelf.html",
+    "title": "Bookshelf",
+    "section": "",
+    "text": "I’m deeply interested in the history of muscle mechanics. I collect books covering the work of early pioneers. Below is a list of books that I own, and next to that books that I’m looking for. If you have any books on my list, please let me know!"
+  },
+  {
+    "objectID": "bookshelf.html#books-i-own",
+    "href": "bookshelf.html#books-i-own",
+    "title": "Bookshelf",
+    "section": "Books I own",
+    "text": "Books I own\n\n1864: Rudolf Heidenhain — Mechanische Leistung, Wärmeentwicklung und Stoffumsatz bei Muskeltätigkeit\n1881: Adolf Fick — Mechanische Arbeit und Wärmeentwicklung bei der Muskeltätigkeit\n1900: Edward Albert Sharpey-Schafer — Text-Book of Physiology\n1931: Archibald Vivian Hill — Adventures in Biophysics\n1965: Archibald Vivian Hill — Trails and Trials in Physiology\n1970: Archibald Vivian Hill — First and Last Experiments in Muscle Mechanics\n1977: Andrew Huxley — Reflections on muscle\n1981: Herbert Hatze — A general myocybernetic control model of skeletal muscle"
+  },
+  {
+    "objectID": "bookshelf.html#books-id-like-to-own",
+    "href": "bookshelf.html#books-id-like-to-own",
+    "title": "Bookshelf",
+    "section": "Books I’d like to own",
+    "text": "Books I’d like to own\n\n1847: Hermann von Helmholtz — Über die Erhaltung der Kraft\n1889: Adolf Fick — Myothermische Untersuchungen\n1903: Adolf Fick — Gesammelte Schriften\n1927: Archibald Vivian Hill — Living Machinery\n1975: Herbert Hatze — A control model of skeletal muscle and its application to a time-optimal bio-motion"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Dinant A. Kistemaker, Robert M. Terwiel, Edwin D.H.M. Reuvers, & Maarten F. Bobbert. Limiting radial pedal forces greatly reduces maximal power output and efficiency in sprint cycling; an optimal control study. Journal of Applied Physiology, 134: 980–991, 2023. https://doi.org/10.1152/japplphysiol.00733.2021"
+  },
+  {
+    "objectID": "publications.html#section",
+    "href": "publications.html#section",
+    "title": "Publications",
+    "section": "",
+    "text": "Dinant A. Kistemaker, Robert M. Terwiel, Edwin D.H.M. Reuvers, & Maarten F. Bobbert. Limiting radial pedal forces greatly reduces maximal power output and efficiency in sprint cycling; an optimal control study. Journal of Applied Physiology, 134: 980–991, 2023. https://doi.org/10.1152/japplphysiol.00733.2021"
   }
 ]
