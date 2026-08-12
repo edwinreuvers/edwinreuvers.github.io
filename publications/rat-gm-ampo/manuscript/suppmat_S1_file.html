@@ -140,7 +140,7 @@ div.csl-indent {
 <span class="menu-text"><iconify-icon inline="" icon="carbon:data-table" aria-label="Icon data-table from carbon Iconify.design set." title="Icon data-table from carbon Iconify.design set."></iconify-icon> Tables</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../manuscript/revision1-clean.html"> 
+    <a class="nav-link" href="../manuscript/accepted-version.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="carbon:document" aria-label="Icon document from carbon Iconify.design set." title="Icon document from carbon Iconify.design set."></iconify-icon> Manuscript</span></a>
   </li>  
 </ul>
@@ -172,7 +172,7 @@ div.csl-indent {
   <li><a href="#selection-of-experimental-ssc-conditions" id="toc-selection-of-experimental-ssc-conditions" class="nav-link active" data-scroll-target="#selection-of-experimental-ssc-conditions">Selection of experimental SSC conditions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="https://doi.org/10.1101/2025.09.25.678481"><i class="bi bi-pencil-square"></i>Preprint</a></li><li><a href="suppmat_S1_file.pdf"><i class="bi bi-file-pdf"></i>PDF (preprint)</a></li></ul></div><div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="../figures/all_figures.html"><i class="bi bi-journal-code"></i>Figures</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="https://doi.org/10.1101/2025.09.25.678481"><i class="bi bi-pencil-square"></i>Preprint</a></li><li><a href="accepted-version.pdf"><i class="bi bi-file-earmark-check"></i>Accepted version</a></li><li><a href="https://doi.org/10.1371/journal.pcbi.1014587"><i class="bi bi-file-earmark-text"></i>Journal version</a></li><li><a href="suppmat_S1_file.pdf"><i class="bi bi-file-pdf"></i>PDF (preprint)</a></li></ul></div><div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="../figures/all_figures.html"><i class="bi bi-journal-code"></i>Figures</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -202,7 +202,7 @@ div.csl-indent {
 <p>We predicted maximal AMPO across various combinations of cycle frequency and FTS at five distinct MTC length excursions (2, 4, 6, 8 and 10 mm), each centred at an average MTC length ~3 mm below the MTC length yielding maximal isometric GM force. Muscle stimulation onset time (i.e., the instance at which stimulation switches from 0 to its maximal value) was set to the start of MTC shortening. Muscle stimulation duration (i.e., the time period during which stimulation remains at its maximal value before returning to 0) was optimised using the Nelder-Mead simplex method <span class="citation" data-cites="gao_implementing_2012">(<a href="#ref-gao_implementing_2012" role="doc-biblioref">Gao and Han 2012</a>)</span>. To ensure periodic behaviour, optimisations were run for at least five cycles and until the muscle force at the beginning of the cycle deviated less than 20 mN from its value at the end of the cycle. Maximal AMPO was calculated for the last cycle.</p>
 <p>We then made contour plots for every MTC length excursion (<a href="#suppfig-s-prelim" class="quarto-xref">Figure S1</a>), showing the influence of cycle frequency and FTS on maximal AMPO at each MTC length excursion. For the experimental SSC conditions, we limited the range of FTS between 0.2 and 0.8 because values outside this range will yield very short shortening or lengthening durations. Within this FTS range, we observed that AMPO peaked at about 5 and 3 Hz for an MTC length excursion of 4 and 8 mm respectively. Again, to prevent short shortening and lengthening duration, we set the maximum cycle frequencies accordingly. Based on these findings, we selected three subsets of SSC conditions: 1) constant FTS, varying cycle frequency; 2) constant cycle frequency, varying FTS; 3) varying both cycle frequency and FTS. Because there was overlap in the SSC conditions, this yielded 13 unique SSC conditions for each MTC length excursion, such that there were 26 different SSC conditions in total.</p>
 <div class="quarto-embed-nb-cell">
-<div id="cell-suppfig-s-prelim" class="cell" data-execution_count="22">
+<div id="cell-suppfig-s-prelim" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div id="suppfig-s-prelim" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-suppfig figure">
@@ -649,6 +649,15 @@ Zandwijk, Jan Peter van, Maarten F. Bobbert, Guus C. Baan, and Peter A. Huijing.
 </div>
   </div>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".quarto-alternate-formats a").forEach(a => {
+    if (a.textContent.trim() === "PDF (preprint)") {
+      a.closest("li")?.remove() ?? a.remove();
+    }
+  });
+});
+</script>
 
 
 

@@ -169,7 +169,7 @@ window.Quarto = {
 <span class="menu-text"><iconify-icon inline="" icon="carbon:data-table" aria-label="Icon data-table from carbon Iconify.design set." title="Icon data-table from carbon Iconify.design set."></iconify-icon> Tables</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../manuscript/revision1-clean.html"> 
+    <a class="nav-link" href="../manuscript/accepted-version.html"> 
 <span class="menu-text"><iconify-icon inline="" icon="carbon:document" aria-label="Icon document from carbon Iconify.design set." title="Icon document from carbon Iconify.design set."></iconify-icon> Manuscript</span></a>
   </li>  
 </ul>
@@ -201,7 +201,7 @@ window.Quarto = {
   <li><a href="#optimisation-protocol-to-identify-optimal-mtc-length-over-time" id="toc-optimisation-protocol-to-identify-optimal-mtc-length-over-time" class="nav-link active" data-scroll-target="#optimisation-protocol-to-identify-optimal-mtc-length-over-time">Optimisation protocol to identify optimal MTC length over time</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="https://doi.org/10.1101/2025.09.25.678481"><i class="bi bi-pencil-square"></i>Preprint</a></li><li><a href="suppmat_S2_file.pdf"><i class="bi bi-file-pdf"></i>PDF (preprint)</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="https://doi.org/10.1101/2025.09.25.678481"><i class="bi bi-pencil-square"></i>Preprint</a></li><li><a href="accepted-version.pdf"><i class="bi bi-file-earmark-check"></i>Accepted version</a></li><li><a href="https://doi.org/10.1371/journal.pcbi.1014587"><i class="bi bi-file-earmark-text"></i>Journal version</a></li><li><a href="suppmat_S2_file.pdf"><i class="bi bi-file-pdf"></i>PDF (preprint)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -698,6 +698,15 @@ Wächter, Andreas, and Lorenz T. Biegler. 2006. <span>“On the Implementation o
 </div>
   </div>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".quarto-alternate-formats a").forEach(a => {
+    if (a.textContent.trim() === "PDF (preprint)") {
+      a.closest("li")?.remove() ?? a.remove();
+    }
+  });
+});
+</script>
 
 
 
