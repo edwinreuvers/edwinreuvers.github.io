@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dinant A. Kistemaker">
+<meta name="author" content="Robert M. Terwiel">
+<meta name="author" content="Maarten F. Bobbert">
+<meta name="author" content="Edwin D.H.M. Reuvers">
+
+<title>5&nbsp; Limiting radial pedal forces greatly reduces maximal power output and efficiency in sprint cycling; an optimal control study – Muscles as a Motor</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/general-discussion.html" rel="next">
+<link href="../chapters/hq-ampo.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8ccdbc61b1c52a0c41ef9dc4637550e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/frad-sprint-ampo.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 5</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Muscles as a Motor</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/edwinreuvers/muscles-as-a-motor" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="../Muscles-as-a-Motor.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapter 1</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/acc-mp-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/rat-gm-ampo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 3</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/hq-ampo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 4</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/frad-sprint-ampo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 5</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/general-discussion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 6</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/samenvatting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Samenvatting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#sec-introduction" id="toc-sec-introduction" class="nav-link" data-scroll-target="#sec-introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#sec-methods" id="toc-sec-methods" class="nav-link" data-scroll-target="#sec-methods"><span class="header-section-number">5.2</span> Methods</a>
+  <ul class="collapse">
+  <li><a href="#musculoskeletal-model" id="toc-musculoskeletal-model" class="nav-link" data-scroll-target="#musculoskeletal-model"><span class="header-section-number">5.2.1</span> Musculoskeletal model</a></li>
+  <li><a href="#constrained-optimization" id="toc-constrained-optimization" class="nav-link" data-scroll-target="#constrained-optimization"><span class="header-section-number">5.2.2</span> Constrained Optimization</a></li>
+  <li><a href="#optimal-cycling-frequency-and-saddle-position" id="toc-optimal-cycling-frequency-and-saddle-position" class="nav-link" data-scroll-target="#optimal-cycling-frequency-and-saddle-position"><span class="header-section-number">5.2.3</span> Optimal Cycling Frequency and Saddle Position</a></li>
+  <li><a href="#index-of-effectiveness" id="toc-index-of-effectiveness" class="nav-link" data-scroll-target="#index-of-effectiveness"><span class="header-section-number">5.2.4</span> Index of Effectiveness</a></li>
+  <li><a href="#pdr-average-muscle-mechanical-power-dissipation-ratio" id="toc-pdr-average-muscle-mechanical-power-dissipation-ratio" class="nav-link" data-scroll-target="#pdr-average-muscle-mechanical-power-dissipation-ratio"><span class="header-section-number">5.2.5</span> PDR; Average Muscle Mechanical Power Dissipation Ratio</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">5.3</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#optimal-saddle-position-and-cycle-frequency" id="toc-optimal-saddle-position-and-cycle-frequency" class="nav-link" data-scroll-target="#optimal-saddle-position-and-cycle-frequency"><span class="header-section-number">5.3.1</span> Optimal Saddle Position and Cycle Frequency</a></li>
+  <li><a href="#convergence-of-optimal-control-solutions" id="toc-convergence-of-optimal-control-solutions" class="nav-link" data-scroll-target="#convergence-of-optimal-control-solutions"><span class="header-section-number">5.3.2</span> Convergence of Optimal Control Solutions</a></li>
+  <li><a href="#comparison-with-literature" id="toc-comparison-with-literature" class="nav-link" data-scroll-target="#comparison-with-literature"><span class="header-section-number">5.3.3</span> Comparison with Literature</a></li>
+  <li><a href="#influence-of-limiting-radial-pedal-forces-on-maximal-attainable-ampo" id="toc-influence-of-limiting-radial-pedal-forces-on-maximal-attainable-ampo" class="nav-link" data-scroll-target="#influence-of-limiting-radial-pedal-forces-on-maximal-attainable-ampo"><span class="header-section-number">5.3.4</span> Influence of Limiting Radial Pedal Forces on Maximal Attainable AMPO</a></li>
+  <li><a href="#influence-of-limiting-radial-pedal-forces-on-maximal-tangential-pedal-forces" id="toc-influence-of-limiting-radial-pedal-forces-on-maximal-tangential-pedal-forces" class="nav-link" data-scroll-target="#influence-of-limiting-radial-pedal-forces-on-maximal-tangential-pedal-forces"><span class="header-section-number">5.3.5</span> Influence of Limiting Radial Pedal Forces on Maximal Tangential Pedal Forces</a></li>
+  <li><a href="#influence-of-limiting-radial-pedal-forces-on-muscle-power" id="toc-influence-of-limiting-radial-pedal-forces-on-muscle-power" class="nav-link" data-scroll-target="#influence-of-limiting-radial-pedal-forces-on-muscle-power"><span class="header-section-number">5.3.6</span> Influence of Limiting Radial Pedal Forces on Muscle Power</a></li>
+  </ul></li>
+  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">5.4</span> Discussion</a>
+  <ul class="collapse">
+  <li><a href="#why-does-ampo-decrease-when-avoiding-radial-pedal-forces" id="toc-why-does-ampo-decrease-when-avoiding-radial-pedal-forces" class="nav-link" data-scroll-target="#why-does-ampo-decrease-when-avoiding-radial-pedal-forces"><span class="header-section-number">5.4.1</span> Why Does AMPO Decrease When Avoiding Radial Pedal Forces?</a></li>
+  <li><a href="#ie-and-efficiency" id="toc-ie-and-efficiency" class="nav-link" data-scroll-target="#ie-and-efficiency"><span class="header-section-number">5.4.2</span> IE and Efficiency</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">5.4.3</span> Conclusions</a></li>
+  </ul></li>
+  <li><a href="#sec-frad-appendix" id="toc-sec-frad-appendix" class="nav-link" data-scroll-target="#sec-frad-appendix"><span class="header-section-number">5.5</span> Appendix</a>
+  <ul class="collapse">
+  <li><a href="#contribution-of-muscle-forces-to-pedal-forces" id="toc-contribution-of-muscle-forces-to-pedal-forces" class="nav-link" data-scroll-target="#contribution-of-muscle-forces-to-pedal-forces"><span class="header-section-number">5.5.1</span> Contribution of Muscle Forces to Pedal Forces</a></li>
+  </ul></li>
+  <li><a href="#data-availability" id="toc-data-availability" class="nav-link" data-scroll-target="#data-availability">Data availability</a></li>
+  <li><a href="#supplemental-data" id="toc-supplemental-data" class="nav-link" data-scroll-target="#supplemental-data">Supplemental data</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#disclosures" id="toc-disclosures" class="nav-link" data-scroll-target="#disclosures">Disclosures</a></li>
+  <li><a href="#author-contributions" id="toc-author-contributions" class="nav-link" data-scroll-target="#author-contributions">Author contributions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-frad-sprint-ampo" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Limiting radial pedal forces greatly reduces maximal power output and efficiency in sprint cycling; an optimal control study</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dinant A. Kistemaker </p>
+             <p>Robert M. Terwiel </p>
+             <p>Maarten F. Bobbert </p>
+             <p>Edwin D.H.M. Reuvers </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="abstract" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="abstract">Abstract</h2>
+<p>A cyclist’s performance depends critically on the generated average mechanical power output (AMPO). The instantaneous mechanical power output equals the product of crank angular velocity, crank length, and the tangential pedal force. Radial pedal forces do not contribute to mechanical power. It has been suggested that radial pedal forces arise from suboptimal pedaling technique and that limiting these would increase AMPO and efficiency. Here, we presented an optimal control musculoskeletal model of a cyclist (consisting of five segments driven by nine Hill-type muscle-tendon units) to predict maximal AMPO during sprint cycling at different levels of allowed radial pedal forces. Our findings showed that limiting radial pedal forces has a detrimental effect on maximal AMPO; it dropped from 1,115 W without a limit on radial forces to 528 W when no radial forces were allowed (both at 110 rpm). We explained that avoiding radial pedal forces causes ineffective use of muscles: muscles deliver less positive power and have a higher muscle power dissipation ratio (average mechanical power dissipated per unit of average positive power delivered). We concluded that radial pedal forces are an unavoidable by-product when optimizing for maximal AMPO and that limiting these leads to a performance decrease. </p>
+</section>
+<section id="sec-introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<p>The question has often been raised in the literature that pedaling technique in cycling leads to maximal performance <span class="citation" data-cites="bini_pedal_2013 blake_muscle_2012 korff_effect_2007 leirdal_relationship_2011 mornieux_effects_2008 mornieux_influence_2006 theurel_effects_2012">(e.g., see <a href="references.html#ref-bini_pedal_2013" role="doc-biblioref">Bini et al. 2013</a>; <a href="references.html#ref-blake_muscle_2012" role="doc-biblioref">Blake et al. 2012</a>; <a href="references.html#ref-korff_effect_2007" role="doc-biblioref">Korff et al. 2007</a>; <a href="references.html#ref-leirdal_relationship_2011" role="doc-biblioref">Leirdal and Ettema 2011</a>; <a href="references.html#ref-mornieux_effects_2008" role="doc-biblioref">Mornieux et al. 2008</a>, <a href="references.html#ref-mornieux_influence_2006" role="doc-biblioref">2006</a>; <a href="references.html#ref-theurel_effects_2012" role="doc-biblioref">Theurel et al. 2012</a>)</span>. Performance of a cyclist depends critically on the average mechanical power output (AMPO) generated by the cyclist and the average mechanical power lost to the environment <span class="citation" data-cites="ingen_schenau_power_1990">(<a href="references.html#ref-ingen_schenau_power_1990" role="doc-biblioref">Ingen Schenau and Cavanagh 1990</a>)</span>. To start with the obvious, mechanical power is produced by the force on the pedals. This pedal force does not influence the (typical) circular pedal path that is a consequence of the design of the bike (i.e., a stiff crank that revolves around the bottom bracket). Therefore, the cyclist has the freedom to choose the direction of the pedal force without influencing the pedal path. However, the direction of the pedal force does influence the crank power. The instantaneous mechanical power delivered to the crank by the cyclist equals the product of crank angular velocity and the moment produced by the cyclist on the crank. This moment, in turn, is the product of crank length and the so-called “effective force”; the component of the force from the cyclist’s pedal (<span class="math inline">\(F_p\)</span>) on the crank that is tangential to the crank motion (<span class="math inline">\(F_{tan}\)</span>, see <a href="#fig-m-musmodel" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>). The radial component of the pedal force (<span class="math inline">\(F_{rad}\)</span>) is known as the “ineffective force” <span class="citation" data-cites="bini_pedal_2013 blake_muscle_2012 leirdal_relationship_2011">(e.g., see <a href="references.html#ref-bini_pedal_2013" role="doc-biblioref">Bini et al. 2013</a>; <a href="references.html#ref-blake_muscle_2012" role="doc-biblioref">Blake et al. 2012</a>; <a href="references.html#ref-leirdal_relationship_2011" role="doc-biblioref">Leirdal and Ettema 2011</a>)</span> or “wasted force” <span class="citation" data-cites="faria_energy_1992">(<a href="references.html#ref-faria_energy_1992" role="doc-biblioref">Faria 1992</a>)</span>, because it does not contribute to power output.</p>
+<p>The fact that the radial component does not contribute to the mechanical power output has led <span class="citation" data-cites="lafortune_effectiveness_1983">Lafortune and Cavanagh (<a href="references.html#ref-lafortune_effectiveness_1983" role="doc-biblioref">1983</a>)</span> to introduce the index of effectiveness (IE): the magnitude of <span class="math inline">\(F_{tan}\)</span> and the magnitude of <span class="math inline">\(F_p\)</span> are each integrated over a complete crank cycle, and IE is calculated as the ratio of the two integrals, also known as the “motive efficiency” <span class="citation" data-cites="bohm_effects_2008 davis_measurement_1981">(<a href="references.html#ref-bohm_effects_2008" role="doc-biblioref">Böhm et al. 2008</a>; <a href="references.html#ref-davis_measurement_1981" role="doc-biblioref">Davis and Hull 1981</a>)</span> or “force effectiveness” <span class="citation" data-cites="leirdal_relationship_2011">(e.g., see <a href="references.html#ref-leirdal_relationship_2011" role="doc-biblioref">Leirdal and Ettema 2011</a>)</span>. In all-out sprint cycling, the value of IE has a maximum of ~0.8 at low pedaling rates and drops to values below 0.3 at high pedaling rates <span class="citation" data-cites="dorel_force-velocity_2010">(<a href="references.html#ref-dorel_force-velocity_2010" role="doc-biblioref">Dorel et al. 2010</a>)</span>. In a 1-h endurance time trial on an ergometer, IE values range from ~0.6 to ~0.8 among top cyclists <span class="citation" data-cites="coyle_physiological_1991">(<a href="references.html#ref-coyle_physiological_1991" role="doc-biblioref">Coyle et al. 1991</a>)</span>. From the finding that IE over a full cycle is less than 1, it follows that the pedal force is not purely tangential over the full crank cycle. In fact, it has been shown that substantial radial pedal forces occur, especially during the down stroke and around bottom-dead-center <span class="citation" data-cites="dorel_force-velocity_2010 beelen_effect_1991">(<a href="references.html#ref-dorel_force-velocity_2010" role="doc-biblioref">Dorel et al. 2010</a>; <a href="references.html#ref-beelen_effect_1991" role="doc-biblioref">Beelen and Sargeant 1991</a>)</span>. Various authors have taken the value IE to be an indicator of pedaling technique <span class="citation" data-cites="korff_effect_2007 leirdal_relationship_2011 mornieux_effects_2008 dorel_influence_2009 dorel_changes_2009 jobson_gross_2012 rossato_cadence_2008 zameziati_relationship_2006">(<a href="references.html#ref-korff_effect_2007" role="doc-biblioref">Korff et al. 2007</a>; <a href="references.html#ref-leirdal_relationship_2011" role="doc-biblioref">Leirdal and Ettema 2011</a>; <a href="references.html#ref-mornieux_effects_2008" role="doc-biblioref">Mornieux et al. 2008</a>; <a href="references.html#ref-dorel_influence_2009" role="doc-biblioref">Dorel, Couturier, et al. 2009</a>; <a href="references.html#ref-dorel_changes_2009" role="doc-biblioref">Dorel, Drouet, et al. 2009</a>; <a href="references.html#ref-jobson_gross_2012" role="doc-biblioref">Jobson et al. 2012</a>; <a href="references.html#ref-rossato_cadence_2008" role="doc-biblioref">Rossato 2008</a>; <a href="references.html#ref-zameziati_relationship_2006" role="doc-biblioref">Zameziati et al. 2006</a>)</span> and thus implicitly assumed that the radial pedal forces during cycling arise from suboptimal pedaling technique. Based on this assumption, it has been proposed that improving IE is beneficial for mechanical power output <span class="citation" data-cites="bini_pedal_2013">(<a href="references.html#ref-bini_pedal_2013" role="doc-biblioref">Bini et al. 2013</a>)</span> and gross efficiency in endurance cycling <span class="citation" data-cites="leirdal_relationship_2011">Patterson and Moreno (<a href="references.html#ref-patterson_bicycle_1990" role="doc-biblioref">1990</a>)</span>. In fact, commercially available power meters (e.g., Pioneer Pedaling Monitor System) have the option to provide riders with IE and supporting material states that cyclists should train such to increase IE to arrive at a better cycling technique/higher cycling efficiency.</p>
+<p>Why would a cyclist produce metabolically costly muscle forces to generate radial pedal forces that do not contribute to mechanical power output? Is human (elite) cycling indeed suboptimal, or are radial pedal forces an unavoidable by-product when maximizing AMPO? In the first case, avoiding radial pedal forces may increase maximal attainable AMPO. In the second case, it is expected that limiting or avoiding radial pedal forces will decrease maximal attainable AMPO. In general, if a cyclist’s goal is to optimize the controls (i.e., muscle activations over time) to deliver maximal AMPO during a full cycle, first principles of optimal control theory tells us that the addition of a constraint on the controls (i.e., to avoid radial pedal forces) can never lead to an increase in AMPO. Furthermore, several studies indeed indicate that limiting radial pedal forces is not a good idea. For example, <span class="citation" data-cites="kautz_theoretical_1993">Kautz and Hull (<a href="references.html#ref-kautz_theoretical_1993" role="doc-biblioref">1993</a>)</span> decomposed pedal forces in cycling and showed that radial pedal forces were partly caused by outwardly directed inertial forces, which increased with cycle frequency, and by gravity. The authors argued that eliminating nonmuscular radial force contributions would require muscles to produce opposite radial pedal forces, which is metabolically costly. In line with this argument, <span class="citation" data-cites="hochtl_prediction_2010">Höchtl et al. (<a href="references.html#ref-hochtl_prediction_2010" role="doc-biblioref">2010</a>)</span> showed that radial pedal forces also occur if muscle activation in a forward simulation model of cycling is optimized for minimal metabolic energy consumption at a given AMPO, causing them to conclude that a certain amount of radial pedal force is needed for a pedaling technique that is optimal for efficiency.</p>
+<p>Although it is true that inertial forces and gravity contribute to radial pedal forces, there is also a (much more substantial) muscular contribution to radial pedal forces <span class="citation" data-cites="kautz_theoretical_1993">(<a href="references.html#ref-kautz_theoretical_1993" role="doc-biblioref">Kautz and Hull 1993</a>)</span>. <span class="citation" data-cites="onasch_active_2024">Onasch and Herzog (<a href="references.html#ref-onasch_active_2024" role="doc-biblioref">2024</a>)</span> studied isometric situations on a bicycle and as such cancelled these inertial forces. They showed for different crank angles that the maximal isometric “effective” tangential pedal force was smaller when subjects were required to direct the pedal force perpendicular to the crank than when they were free to choose the force direction. Their explanation was as follows. Orienting the force on the pedal in a specific direction requires a specific muscle synergy. If the task is to produce a maximal tangential pedal force without constraint on the direction of the pedal force, subjects are free to choose the optimal synergy that yields the largest tangential force; in that case the corresponding direction of the pedal force is an irrelevant outcome <span class="citation" data-cites="doorenbosch_effectiveness_1997">(<a href="references.html#ref-doorenbosch_effectiveness_1997" role="doc-biblioref">Doorenbosch et al. 1997</a>)</span>. Yet, if the direction of the pedal force to be produced is constrained, subjects are forced to choose a synergy different from the optimal one; the corresponding maximal tangential force component of that synergy will be smaller than in the unconstrained condition. This result indicates that the radial pedal forces in cycling may occur as a “by-product” for maximal tangential pedal force. An analysis of cycling as done by <span class="citation" data-cites="onasch_active_2024">Onasch and Herzog (<a href="references.html#ref-onasch_active_2024" role="doc-biblioref">2024</a>)</span> provides valuable insight in the maximal static tangential pedal force, but does not necessarily translate to actual sprint cycling: in sprint cycling the task is to maximize the AMPO and this is not the same as maximizing the tangential pedal force at each pedal position (see <a href="#sec-discussion" class="quarto-xref"><span>Section 5.4</span></a>). Furthermore, a static analysis by definition cannot answer the question why limiting or avoiding radial pedal forces would lead to a reduced maximal attainable AMPO and by how much it would be reduced.</p>
+<p>In this study, we present an optimal control musculoskeletal model of a human cyclist to predict maximal AMPO during sprint cycling at different levels of allowed radial pedal forces. In previous simulation studies on sprint cycling, we used so-called “bang-bang” control (meaning that muscles were either switched fully on or off), which resulted in a straightforward optimization problem that can be readily tackled with conventional shooting optimization techniques <span class="citation" data-cites="bobbert_effect_2020 bobbert_relationship_2016 van_soest_which_2000">(<a href="references.html#ref-bobbert_effect_2020" role="doc-biblioref">Bobbert et al. 2020</a>; <a href="references.html#ref-bobbert_relationship_2016" role="doc-biblioref">Bobbert, Casius, et al. 2016</a>; <a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">Soest and Casius 2000</a>)</span>. In the present study, we will impose constraints to limit radial pedal forces, which greatly increase the complexity of the optimization problem (e.g., “bang-bang” control is no longer optimal). To allow for continuous change in muscle activation, we applied techniques from the optimal control framework [e.g., direct collocation and a sparse nonlinear optimizer; see Refs. <span class="citation" data-cites="bobbert_searching_2016">Bobbert, Kistemaker, et al. (<a href="references.html#ref-bobbert_searching_2016" role="doc-biblioref">2016</a>)</span>; <span class="citation" data-cites="kistemaker_control_2013">Kistemaker et al. (<a href="references.html#ref-kistemaker_control_2013" role="doc-biblioref">2013</a>)</span>; <span class="citation" data-cites="kistemaker_central_2010">Kistemaker et al. (<a href="references.html#ref-kistemaker_central_2010" role="doc-biblioref">2010</a>)</span>; <span class="citation" data-cites="van_den_bogert_implicit_2011">Bogert et al. (<a href="references.html#ref-van_den_bogert_implicit_2011" role="doc-biblioref">2011</a>)</span>]. For the interested reader on applying the optimal control framework to musculoskeletal models, we refer to the excellent work of the group of van den Bogert <span class="citation" data-cites="ackermann_optimality_2010 van_den_bogert_direct_2009 van_den_bogert_implicit_2011">(<a href="references.html#ref-ackermann_optimality_2010" role="doc-biblioref">Ackermann and Bogert 2010</a>; <a href="references.html#ref-van_den_bogert_direct_2009" role="doc-biblioref">Van den Bogert and Ackermann 2009</a>; <a href="references.html#ref-van_den_bogert_implicit_2011" role="doc-biblioref">Bogert et al. 2011</a>)</span> and of De Groote <span class="citation" data-cites="de_groote_evaluation_2016 falisse_algorithmic_2019">(<a href="references.html#ref-de_groote_evaluation_2016" role="doc-biblioref">De Groote et al. 2016</a>; <a href="references.html#ref-falisse_algorithmic_2019" role="doc-biblioref">Falisse et al. 2019</a>)</span>. Using our optimal control model of a human cyclist, we will show and explain that constraining pedal forces to avoid radial pedal forces—although leading to a higher IE—will lead to a substantially lowered maximal attainable AMPO and increased negative muscle power in sprint cycling.</p>
+</section>
+<section id="sec-methods" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-methods"><span class="header-section-number">5.2</span> Methods</h2>
+<section id="musculoskeletal-model" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="musculoskeletal-model"><span class="header-section-number">5.2.1</span> Musculoskeletal model</h3>
+<p>We used a two-dimensional musculoskeletal model (see <a href="#fig-m-musmodel" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>) similar to models used in studying vertical jumping <span class="citation" data-cites="van_soest_contribution_1993">Zandwijk et al. (<a href="references.html#ref-van_zandwijk_control_2000" role="doc-biblioref">2000</a>)</span> and sprint cycling <span class="citation" data-cites="bobbert_effect_2020 van_soest_which_2000">(<a href="references.html#ref-bobbert_effect_2020" role="doc-biblioref">Bobbert et al. 2020</a>; <a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">Soest and Casius 2000</a>)</span>. In short, the skeletal model consisted of five rigid segments connected in frictionless hinge joints. These segments represented the crank (0.17 m), foot (from ankle to crank: 0.165 m), lower leg (0.458 m), upper leg (0.485 m), and the “head-arms-trunk” (HAT; 0.82 m). The position of the hip and angle of HAT were fixed in space. The crank angle (<span class="math inline">\(\phi_{cr}\)</span>) was defined to be zero when the crank was upright (top-dead-center) and crank angular velocity was defined positive when rotating clockwise (see <a href="#fig-m-musmodel" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>). The crank’s origin was fixed in space and the crank angular velocity was fixed to have a constant value. Setting the crank velocity to a fixed value results in isokinetic cycling and is mechanically similar to having an infinite “effective inertia” [i.e., the inertia “felt” on the crank that depends on (rotational) inertia of the bike components and gear ratio; see <span class="citation" data-cites="fregly_bicycle_2000">Fregly et al. (<a href="references.html#ref-fregly_bicycle_2000" role="doc-biblioref">2000</a>)</span>]. Since maximal AMPO is typically delivered at high speeds and thus involving high gear ratios, effective inertia of a sprint cyclist is very high and hence cycling is well approximated by a fixed angular velocity <span class="citation" data-cites="van_soest_which_2000">(see <a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">Soest and Casius 2000</a>)</span>. The advantage of having a fixed crank angular velocity is that it greatly simplifies the optimization problem, as the two legs are mechanically decoupled (the torques delivered by one leg do not influence the accelerations of the other) and there is no need to model all the resistive and inertial forces acting on the cyclists <span class="citation" data-cites="fregly_bicycle_2000">(see <a href="references.html#ref-fregly_bicycle_2000" role="doc-biblioref">Fregly et al. 2000</a>)</span>. As such, only the muscle activations of one leg need to be optimized; the total AMPO is then simply twice that of one leg. Equations of motion for the skeletal model plus crank were derived using a Newton–Euler approach as described in <span class="citation" data-cites="casius_forward_2004">Casius et al. (<a href="references.html#ref-casius_forward_2004" role="doc-biblioref">2004</a>)</span>. The position of the hip relative to the crank’s origin was optimized for maximal AMPO (see later).</p>
+<div id="fig-m-musmodel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-m-musmodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/frad-sprint-ampo/m_musmodel.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-m-musmodel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: <strong>Schematic representation of the musculoskeletal model used to simulate cycling.</strong> The skeleton and crank were modeled as rigid segments connected in frictionless hinge joints and actuated by nine Hill-type muscle-tendon complexes. Pedal forces (<span class="math inline">\(F_p\)</span>; black arrow) are defined as the force from the pedal on the crank. Also shown are the radial (<span class="math inline">\(F_{rad}\)</span>; orange arrow) and tangential (<span class="math inline">\(F_{tan}\)</span>; green arrow) pedal force component. GAS, m. gastrocnemius; GLU, m. gluteus maximus; HAMb, bi-articular hamstring; HAMm, mono-articular hamstring; ILI, m. iliopsoas; REC, m. rectus femoris; SOL, m. soleus; TIB, m. tibialis anterior; VAS, mm. vastii.
+</figcaption>
+</figure>
+</div>
+<p>The model was driven by nine Hill-type muscle tendon units representing m. iliopsoas (ILI), m. gluteus maximus (GLU), mm. vastii (m. vastus medialis + m. vastus lateralis + m. vastus intermedius; VAS), m. rectus femoris (REC), the bi-articular hamstring (m. biceps femoris caput longum, m. semimembranosus, m. semitendinosus; HAMb), the mono-articular hamstring (m. biceps femoris caput breve), m. gastrocnemius (GAS), m. soleus (SOL), and m. tibialis anterior (TIB). Every muscle tendon complex consisted of a contractile element (CE) and a series elastic element (SE). In contrast to previous work, we removed the parallel elastic element (PE) as we found that it was not delivering force in the optimal cycling motions but did slow down convergence to the optimal solutions. Activation dynamics, describing the relation between neural input to the muscle (STIM) and active state (<span class="math inline">\(q\)</span>), here defined as the relative amount of Ca<sup>2+</sup> bound to troponinC <span class="citation" data-cites="ebashi_calcium_1968">(<a href="references.html#ref-ebashi_calcium_1968" role="doc-biblioref">Ebashi and Endo 1968</a>)</span>, was modeled according to Hatze <span class="citation" data-cites="hatze_myocybernetic_1981">Kistemaker et al. (<a href="references.html#ref-kistemaker_length-dependent_2005" role="doc-biblioref">2005</a>)</span>. This model of activation dynamics first describes the dynamical relationship between the relative amount of intracellular Ca<sup>2+</sup> (<span class="math inline">\(\gamma_{rel}\)</span>) and STIM, the normalized <span class="math inline">\(\alpha\)</span>-motoneuron firing frequency. The model then nonlinearly relates active state (<span class="math inline">\(q\)</span>) to <span class="math inline">\(\gamma\)</span> and the length on the CE (<span class="math inline">\(l_{CE}\)</span>). This last step accounts for the <span class="math inline">\(l_{CE}\)</span> dependent [Ca<sup>2+</sup>] sensitivity of muscle fibers <span class="citation" data-cites="kistemaker_length-dependent_2005">(see <a href="references.html#ref-kistemaker_length-dependent_2005" role="doc-biblioref">Kistemaker et al. 2005</a>)</span>. Contraction dynamics describes how the muscle delivers force depending on <span class="math inline">\(q\)</span>, <span class="math inline">\(l_{CE}\)</span>, and CE contraction velocity (<span class="math inline">\(v_{CE}\)</span>) and was modeled in two steps. First, we used a parabola to describe the maximal isometric force-length relationship of CE. This force is multiplied with <span class="math inline">\(q\)</span>, and thus together with the activation dynamics describes the muscle activation-dependent isometric force. Second, CE force was nonlinearly dependent on <span class="math inline">\(v_{CE}\)</span>. The eccentric force was modeled using a hyperbola. The concentric part was described using a classical Hill curve for which the maximal shortening speed was made dependent on <span class="math inline">\(q\)</span> and <span class="math inline">\(l_{CE}\)</span>. For a detailed overview of all modeled steps and all nonmuscle-specific parameters, please refer to our previous papers <span class="citation" data-cites="van_soest_contribution_1993">Kistemaker et al. (<a href="references.html#ref-kistemaker_equilibrium_2007" role="doc-biblioref">2007</a>)</span>.</p>
+<div class="quarto-embed-nb-cell" data-notebook="/home/david/Nextcloud/Edwin/VU/Thesis/thesis/tables/frad-sprint-ampo/all_tables.ipynb" data-notebook-title="Tables" data-notebook-cellid="cell-tbl-ch5-m-parms">
+<div class="cell">
+<div id="tbl-ch5-m-parms" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ch5-m-parms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: Muscle-specific parameters
+</figcaption>
+<div aria-describedby="tbl-ch5-m-parms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+
+
+<meta charset="utf-8">
+
+
+<div id="shkwcjtxzq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>
+#shkwcjtxzq table {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+#shkwcjtxzq thead, tbody, tfoot, tr, td, th { border-style: none !important; }
+ tr { background-color: transparent !important; }
+#shkwcjtxzq p { margin: 0 !important; padding: 0 !important; }
+ #shkwcjtxzq .gt_table { display: table !important; border-collapse: collapse !important; line-height: normal !important; margin-left: auto !important; margin-right: auto !important; color: #333333 !important; font-size: 14px !important; font-weight: normal !important; font-style: normal !important; background-color: #FFFFFF !important; width: auto !important; border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #A8A8A8 !important; border-right-style: none !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #A8A8A8 !important; border-left-style: none !important; border-left-width: 2px !important; border-left-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_caption { padding-top: 4px !important; padding-bottom: 4px !important; }
+ #shkwcjtxzq .gt_title { color: #333333 !important; font-size: 125% !important; font-weight: initial !important; padding-top: 4px !important; padding-bottom: 4px !important; padding-left: 5px !important; padding-right: 5px !important; border-bottom-color: #FFFFFF !important; border-bottom-width: 0 !important; }
+ #shkwcjtxzq .gt_subtitle { color: #333333 !important; font-size: 85% !important; font-weight: initial !important; padding-top: 3px !important; padding-bottom: 5px !important; padding-left: 5px !important; padding-right: 5px !important; border-top-color: #FFFFFF !important; border-top-width: 0 !important; }
+ #shkwcjtxzq .gt_heading { background-color: #FFFFFF !important; text-align: center !important; border-bottom-color: #FFFFFF !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_bottom_border { border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_col_headings { border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_col_heading { color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: bold !important; text-transform: inherit !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; vertical-align: bottom !important; padding-top: 5px !important; padding-bottom: 5px !important; padding-left: 5px !important; padding-right: 5px !important; overflow-x: hidden !important; }
+ #shkwcjtxzq .gt_column_spanner_outer { color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: bold !important; text-transform: inherit !important; padding-top: 0 !important; padding-bottom: 0 !important; padding-left: 4px !important; padding-right: 4px !important; }
+ #shkwcjtxzq .gt_column_spanner_outer:first-child { padding-left: 0 !important; }
+ #shkwcjtxzq .gt_column_spanner_outer:last-child { padding-right: 0 !important; }
+ #shkwcjtxzq .gt_column_spanner { border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; vertical-align: bottom !important; padding-top: 5px !important; padding-bottom: 5px !important; overflow-x: hidden !important; display: inline-block !important; width: 100% !important; }
+ #shkwcjtxzq .gt_spanner_row { border-bottom-style: hidden !important; }
+ #shkwcjtxzq .gt_group_heading { padding-top: 8px !important; padding-bottom: 8px !important; padding-left: 5px !important; padding-right: 5px !important; color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: initial !important; text-transform: inherit !important; border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; vertical-align: middle !important; text-align: left !important; }
+ #shkwcjtxzq .gt_empty_group_heading { padding: 0.5px !important; color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: initial !important; border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; vertical-align: middle !important; }
+ #shkwcjtxzq .gt_from_md> :first-child { margin-top: 0 !important; }
+ #shkwcjtxzq .gt_from_md> :last-child { margin-bottom: 0 !important; }
+ #shkwcjtxzq .gt_row { padding-top: 8px !important; padding-bottom: 8px !important; padding-left: 5px !important; padding-right: 5px !important; margin: 10px !important; border-top-style: solid !important; border-top-width: 1px !important; border-top-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; vertical-align: middle !important; overflow-x: hidden !important; }
+ #shkwcjtxzq .gt_stub { color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: initial !important; text-transform: inherit !important; border-right-style: solid !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; padding-left: 5px !important; padding-right: 5px !important; }
+ #shkwcjtxzq .gt_indent_1 { text-indent: 5px !important; }
+ #shkwcjtxzq .gt_indent_2 { text-indent: calc(5px * 2) !important; }
+ #shkwcjtxzq .gt_indent_3 { text-indent: calc(5px * 3) !important; }
+ #shkwcjtxzq .gt_indent_4 { text-indent: calc(5px * 4) !important; }
+ #shkwcjtxzq .gt_indent_5 { text-indent: calc(5px * 5) !important; }
+ #shkwcjtxzq .gt_stub_row_group { color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: initial !important; text-transform: inherit !important; border-right-style: solid !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; padding-left: 5px !important; padding-right: 5px !important; vertical-align: top !important; }
+ #shkwcjtxzq .gt_row_group_first td { border-top-width: 2px !important; }
+ #shkwcjtxzq .gt_row_group_first th { border-top-width: 2px !important; }
+ #shkwcjtxzq .gt_striped { color: #333333 !important; background-color: #F4F4F4 !important; }
+ #shkwcjtxzq .gt_table_body { border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_summary_row { color: #333333 !important; background-color: #FFFFFF !important; text-transform: inherit !important; padding-top: 8px !important; padding-bottom: 8px !important; padding-left: 5px !important; padding-right: 5px !important; }
+ #shkwcjtxzq .gt_first_summary_row { border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_last_summary_row_top { border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_grand_summary_row { color: #333333 !important; background-color: #FFFFFF !important; text-transform: inherit !important; padding-top: 8px !important; padding-bottom: 8px !important; padding-left: 5px !important; padding-right: 5px !important; }
+ #shkwcjtxzq .gt_first_grand_summary_row_bottom { border-top-style: double !important; border-top-width: 6px !important; border-top-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_last_grand_summary_row_top { border-bottom-style: double !important; border-bottom-width: 6px !important; border-bottom-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_sourcenotes { color: #333333 !important; background-color: #FFFFFF !important; border-bottom-style: none !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 2px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_sourcenote { font-size: 90% !important; padding-top: 4px !important; padding-bottom: 4px !important; padding-left: 5px !important; padding-right: 5px !important; text-align: left !important; }
+ #shkwcjtxzq .gt_left { text-align: left !important; }
+ #shkwcjtxzq .gt_center { text-align: center !important; }
+ #shkwcjtxzq .gt_right { text-align: right !important; font-variant-numeric: tabular-nums !important; }
+ #shkwcjtxzq .gt_font_normal { font-weight: normal !important; }
+ #shkwcjtxzq .gt_font_bold { font-weight: bold !important; }
+ #shkwcjtxzq .gt_font_italic { font-style: italic !important; }
+ #shkwcjtxzq .gt_super { font-size: 65% !important; }
+ #shkwcjtxzq .gt_footnotes { color: font-color(#FFFFFF) !important; background-color: #FFFFFF !important; border-bottom-style: none !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 2px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_footnote { margin: 0px !important; font-size: 90% !important; padding-top: 4px !important; padding-bottom: 4px !important; padding-left: 5px !important; padding-right: 5px !important; }
+ #shkwcjtxzq .gt_sourcenotes { color: #333333 !important; background-color: #FFFFFF !important; border-bottom-style: none !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 2px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; }
+ #shkwcjtxzq .gt_sourcenote { font-size: 90% !important; padding-top: 4px !important; padding-bottom: 4px !important; padding-left: 5px !important; padding-right: 5px !important; text-align: left !important; }
+ #shkwcjtxzq .gt_footnote_marks { font-size: 75% !important; vertical-align: 0.4em !important; position: initial !important; }
+ #shkwcjtxzq .gt_asterisk { font-size: 100% !important; vertical-align: 0 !important; }
+ 
+</style>
+
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Muscle" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Muscle</th>
+<th id="Fmax" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$F_{max}$ [N]</th>
+<th id="lce_opt" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$l_{CE,opt}$ [m]</th>
+<th id="lsee_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$l_{SEE,0}$ [m]</th>
+<th id="alpha_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$\alpha_0$ [m]</th>
+<th id="alpha_1A" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$\alpha_{1A}$ [m]</th>
+<th id="alpha_1K" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$\alpha_{1K}$ [m]</th>
+<th id="alpha_1H" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$\alpha_{1H}$ [m]</th>
+<th id="alpha_2A" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$\alpha_{2A}$ [m]</th>
+<th id="alpha_2K" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">$\alpha_{2K}$ [m]</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left">TIB</td>
+<td class="gt_row gt_center">1200</td>
+<td class="gt_row gt_center">0.087</td>
+<td class="gt_row gt_center">0.317</td>
+<td class="gt_row gt_center">0.448</td>
+<td class="gt_row gt_center">0.037</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left">SOL</td>
+<td class="gt_row gt_center">3000</td>
+<td class="gt_row gt_center">0.055</td>
+<td class="gt_row gt_center">0.246</td>
+<td class="gt_row gt_center">0.230</td>
+<td class="gt_row gt_center">-0.0627</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">-0.0081</td>
+<td class="gt_row gt_center">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left">GAS</td>
+<td class="gt_row gt_center">1500</td>
+<td class="gt_row gt_center">0.055</td>
+<td class="gt_row gt_center">0.382</td>
+<td class="gt_row gt_center">0.394</td>
+<td class="gt_row gt_center">-0.0627</td>
+<td class="gt_row gt_center">-0.0186</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">-0.0081</td>
+<td class="gt_row gt_center">0.0015</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left">VAS</td>
+<td class="gt_row gt_center">5250</td>
+<td class="gt_row gt_center">0.093</td>
+<td class="gt_row gt_center">0.160</td>
+<td class="gt_row gt_center">0.231</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0.042</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left">REC</td>
+<td class="gt_row gt_center">1750</td>
+<td class="gt_row gt_center">0.081</td>
+<td class="gt_row gt_center">0.340</td>
+<td class="gt_row gt_center">0.418</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0.042</td>
+<td class="gt_row gt_center">0.035</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left">GLU</td>
+<td class="gt_row gt_center">2750</td>
+<td class="gt_row gt_center">0.200</td>
+<td class="gt_row gt_center">0.150</td>
+<td class="gt_row gt_center">0.255</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">-0.062</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left">HAMb</td>
+<td class="gt_row gt_center">1925</td>
+<td class="gt_row gt_center">0.104</td>
+<td class="gt_row gt_center">0.370</td>
+<td class="gt_row gt_center">0.410</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">-0.026</td>
+<td class="gt_row gt_center">-0.077</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left">HAMm</td>
+<td class="gt_row gt_center">275</td>
+<td class="gt_row gt_center">0.110</td>
+<td class="gt_row gt_center">0.200</td>
+<td class="gt_row gt_center">0.339</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">-0.026</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left">ILI</td>
+<td class="gt_row gt_center">4000</td>
+<td class="gt_row gt_center">0.102</td>
+<td class="gt_row gt_center">0.115</td>
+<td class="gt_row gt_center">0.248</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0.05</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">0</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="10" class="gt_sourcenote"><span class="gt_from_md">Muscle-specific parameters. $F_{max}$ = maximal isometric contractile element (CE) force, $l_{CE,opt}$ = optimum CE length and $l_{SEE,0}$ = series elastic element slack length. Parameters a define the muscle-tendon complex length (lMTC) as a function of the ankle ($\alpha_A$), knee ($\alpha_K$), and hip ($\alpha_H$) joint angle. The muscle-tendon complex length for each muscle as a function of the joint angles is given by a sum of second order polynomials with the polynomial constants provided in this table. For example, $l_{MTC\_HAMb} = \alpha_0 + \alpha_{1A} \cdot \phi_A + \alpha_{2A} \cdot {\phi_A}^2 + \alpha_{1K} \cdot \phi_K + \alpha_{2K} \cdot {\phi_K}^2 + \alpha_{1H} \cdot \phi_H + \alpha_{2H} \cdot {\phi_H}^2$. Since $\alpha_{1A}$, $\alpha_{2A}$, and $\alpha_{2K}$ are zero for this muscle, and that $\alpha_{2H}$ is zero for all muscles (and not given in this table), this simplifies to: $l_{MTC\_HAMb} = \alpha_0 + \alpha_{1K} \cdot \phi_K + \alpha_{1H} \cdot \phi_H$. The moment arm (arm) of a particular muscle around a particular joint is found by taking the partial derivative of $l_{MTC}$ with respect to that joint. For example, $\mathrm{arm}_{HAMb} = \alpha_{1K}$ (note that since $\alpha_{2K} = 0$, the moment arm of the bi-articular hamstring (HAMb) around the knee is constant, and not dependent on the knee joint angle [this in contrast to, for example, the moment arm of m. gastrocnemius (GAS)]. TIB, m. tibialis anterior; SOL, m. soleus; GAS, m. gastrocnemius; VAS, mm. Vastii; REC, m. rectus femoris; GLU, m. gluteus maximus; HAMb, bi-articular hamstrings; HAMm, mono-articular hamstrings; ILI, m. Iliopsoas.</span></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>All muscle-specific parameters were the same as used in our previous studies on sprint cycling <span class="citation" data-cites="bobbert_effect_2020">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span>, apart from the hamstrings that were split in a mono- and bi-articular part <span class="citation" data-cites="ward_are_2009">(parameters based on <a href="references.html#ref-ward_are_2009" role="doc-biblioref">Ward et al. 2009</a>)</span> and are shown in <a href="#tbl-ch5-m-parms" class="quarto-xref">Table&nbsp;<span>5.1</span></a>. To make the muscle model suitable for a direct collocation approach (see later), the force-length-velocity relationship and activation dynamics were slightly reformulated to a continuous and differentiable form <span class="citation" data-cites="kistemaker_cost_2014">(see also <a href="references.html#ref-kistemaker_cost_2014" role="doc-biblioref">Kistemaker et al. 2014</a>)</span>. The musculoskeletal model as a whole had 26 states (9 <span class="math inline">\(l_{CE}\)</span>, 9 <span class="math inline">\(\gamma_{rel}\)</span>, 4 segment angles, and 4 segment angular velocities). The trunk was implicitly modeled with a fixed angle and zero angular velocity. The independent inputs to the model were the crank angular velocity (set to a fixed value) and <span class="math inline">\(STIM\)</span>.</p>
+</section>
+<section id="constrained-optimization" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="constrained-optimization"><span class="header-section-number">5.2.2</span> Constrained Optimization</h3>
+<p>The goal of the optimization was to find the optimal muscle activations over time [<span class="math inline">\(STIM(t)\)</span>] that maximized the average mechanical power output during a full cycle (AMPO), for different levels of allowed radial pedal forces. The optimization criterion for our (constrained) optimization problem was to maximize the total amount of mechanical work done on the crank (<span class="math inline">\(W_{cr}\)</span>) over a full crank cycle with a particular cycle frequency (cf):</p>
+<p><span class="math display">\[
+W_{cr} = \int_0^{1/cf} M_{cr} \cdot \dot{\phi}_{cr} \ dt = \int_0^{1/cf} F_{tan} \cdot l_{cr} \cdot \dot{\phi}_{cr} \ dt
+\]</span></p>
+<p>Here, <span class="math inline">\(M_{cr}\)</span> represents the torque around the bottom bracket on the crank, <span class="math inline">\(\phi_{cr} = 2\pi \cdot cf\)</span> represents the crank angular velocity and is positive when the crank rotates clockwise (see <a href="#fig-m-musmodel" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>). Alternatively, <span class="math inline">\(W_{cr}\)</span> can be expressed in terms of <span class="math inline">\(F_{tan}\)</span> and the length of the crank (<span class="math inline">\(l_{cr}\)</span>). AMPO equals <span class="math inline">\(W_{cr} \cdot cf\)</span>.</p>
+<p><span class="math inline">\(STIM(t)\)</span> for the nine modeled muscles of one leg were optimized to maximize Wcr. We only needed to optimize <span class="math inline">\(STIM(t)\)</span> for one leg as during isokinetic cycling legs are mechanically decoupled and we assumed symmetry between the legs. In the remainder of this article, we will provide values of the left and right leg muscles together, unless specifically stated otherwise. To ensure fully periodic behavior, we added constraints on all 9 <span class="math inline">\(STIM(t)\)</span> and 26 states of the musculoskeletal model [<span class="math inline">\(x(t)\)</span>] such that [<span class="math inline">\(STIM(0) \ x(0)\)</span>]=[<span class="math inline">\(STIM(1/cf) \ x(1/cf)\)</span>]. Finally, to investigate the influence of IE on maximal AMPO, we defined seven conditions by constraining the instantaneous radial pedal force at different values:</p>
+<p><span class="math display">\[
+\left|F_{rad}(t) \leq F_{rad\_max} \right|
+\]</span> with <span class="math inline">\(F_{rad}(t)\)</span> the absolute of the radial pedal force and <span class="math inline">\(F_{rad,max}\)</span> set to either 0, 100, 200, 300, 400, 500, or <span class="math inline">\(\infty\)</span> N. When <span class="math inline">\(F_{rad,max}\)</span> was set to 0 N, no radial pedal forces were allowed; hence IE is one. When, for example, <span class="math inline">\(F_{rad,max}\)</span> was set to 200 N, maximal allowed instantaneous radial pedal force was 200 N, and <span class="math inline">\(F_{rad,max}\)</span> when set to <span class="math inline">\(\infty\)</span> N there was no limit on <span class="math inline">\(F_{rad}\)</span>.</p>
+<p>To identify optimal <span class="math inline">\(STIM(t)\)</span>, we used a direct collocation approach <span class="citation" data-cites="betts_practical_2010">(<a href="references.html#ref-betts_practical_2010" role="doc-biblioref">Betts 2010</a>)</span>. To do so, all states and inputs were parameterized and all differential equations of the musculoskeletal model (activation, contraction, and skeletal dynamics) were discretized at every collocation point <span class="citation" data-cites="kistemaker_control_2013 van_den_bogert_implicit_2011 de_groote_evaluation_2016 kistemaker_cost_2014">(<a href="references.html#ref-kistemaker_control_2013" role="doc-biblioref">Kistemaker et al. 2013</a>, <a href="references.html#ref-kistemaker_cost_2014" role="doc-biblioref">2014</a>; <a href="references.html#ref-van_den_bogert_implicit_2011" role="doc-biblioref">Bogert et al. 2011</a>; <a href="references.html#ref-de_groote_evaluation_2016" role="doc-biblioref">De Groote et al. 2016</a>)</span>. These discretized differential equations, together with the constraint equations and optimization criterion described earlier, form a large-scale nonlinear programming problem, which was solved using sparse nonlinear optimal controller (SNOPT; TOMLAB Optimization, Pullman, WA). The derivatives and second derivatives of the constraints and cost function were computed analytically using PROPT (TOMLAB Optimization, Pullman, WA).</p>
+<p>To check if we used enough collocation points to adequately discretize the musculoskeletal dynamics, we performed a forward simulation with the results obtained from the optimal control model. It was found that the states obtained from a forward simulation and those obtained from our optimal control model were nearly identical when using 50 collocation points (on average ~1 collocation point per 10 ms).</p>
+<p>To avoid the possibilities of arriving at (getting stuck in) a local minimum, each condition was optimized ten times, with each optimization starting from a random initial guess for all parameterized inputs and states. For each condition, we selected the solution leading to the highest AMPO.</p>
+</section>
+<section id="optimal-cycling-frequency-and-saddle-position" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="optimal-cycling-frequency-and-saddle-position"><span class="header-section-number">5.2.3</span> Optimal Cycling Frequency and Saddle Position</h3>
+<p>Before investigating the influence of limiting radial pedal forces, we first identified the optimal cf and saddle position for unconstrained cycling (with <span class="math inline">\(F_{rad,max} = \infty\)</span>) To do so, we added three additional optimization parameters to the optimal control problem described earlier, being cf itself and the x- and y-position of the hip with respect to the position of the bottom bracket. We then found the optimal cf and the hip position simultaneously with <span class="math inline">\(STIM(t)\)</span> that maximized AMPO. For all other optimizations, we fixed <span class="math inline">\(cf\)</span> and hip position to these values.</p>
+</section>
+<section id="index-of-effectiveness" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="index-of-effectiveness"><span class="header-section-number">5.2.4</span> Index of Effectiveness</h3>
+<p>In the literature, there seems to be a lack of consensus over the exact definition of IE; the index of effectiveness <span class="citation" data-cites="bini_pedal_2013 mornieux_effects_2008 mornieux_influence_2006 lafortune_effectiveness_1983 coyle_physiological_1991 zameziati_relationship_2006">(cf. <a href="references.html#ref-bini_pedal_2013" role="doc-biblioref">Bini et al. 2013</a>; <a href="references.html#ref-mornieux_effects_2008" role="doc-biblioref">Mornieux et al. 2008</a>, <a href="references.html#ref-mornieux_influence_2006" role="doc-biblioref">2006</a>; <a href="references.html#ref-lafortune_effectiveness_1983" role="doc-biblioref">Lafortune and Cavanagh 1983</a>; <a href="references.html#ref-coyle_physiological_1991" role="doc-biblioref">Coyle et al. 1991</a>; and <a href="references.html#ref-zameziati_relationship_2006" role="doc-biblioref">Zameziati et al. 2006</a>)</span>. Moreover, sometimes IE is defined unclearly or even in a mathematically unsound way. Although different definitions (e.g., using <span class="math inline">\(F_{tan}\)</span> or the absolute of <span class="math inline">\(F_{tan}\)</span>) may lead to (slightly) different values, we found that for this study these differences only marginally affected our solutions. Here, we have chosen to define IE along the lines of <span class="citation" data-cites="lafortune_effectiveness_1983">Lafortune and Cavanagh (<a href="references.html#ref-lafortune_effectiveness_1983" role="doc-biblioref">1983</a>)</span>: IE is the ratio of the magnitude of <span class="math inline">\(F_{tan}\)</span> and the magnitude of <span class="math inline">\(F_{p}\)</span> both integrated over crank angle (<span class="math inline">\(\phi_{cr}\)</span>) for a complete cycle:</p>
+<p><span class="math display">\[
+IE = \frac{\int_0^{2\pi}\left| F_{tan} \right| d\phi_{cr}}{\int_0^{2\pi}\left| F_{p} \right| d\phi_{cr}}
+\]</span></p>
+<p><span class="math inline">\(F_{tan}\)</span> was defined positive when it pointed in the direction of pedal movement and <span class="math inline">\(F_{rad}\)</span> was defined positive when it pointed (inward) to the crank origin (see also <a href="#fig-m-musmodel" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>).</p>
+</section>
+<section id="pdr-average-muscle-mechanical-power-dissipation-ratio" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="pdr-average-muscle-mechanical-power-dissipation-ratio"><span class="header-section-number">5.2.5</span> PDR; Average Muscle Mechanical Power Dissipation Ratio</h3>
+<p>To assess and compare the contribution of all muscles to the average positive and negative mechanical power delivered at different values of AMPO, we define average mechanical muscle power dissipation ratio (PDR); the ratio of average negative mechanical power dissipated (AMPO<sup>-</sup>) per unit of average positive power delivered (AMPO<sup>+</sup>) in one full cycle:</p>
+<p><span class="math display">\[
+PDR = \frac{AMPO^-}{AMPO^+} =
+\frac{cf \cdot \sum_{n=1}^9 \int_0^{1/cf} P_{MTC\_n}^- \ dt}{cf \cdot \sum_{n=1}^9 \int_0^{1/cf} P_{MTC\_n}^+ \ dt} =
+\frac{cf \cdot \sum_{n=1}^9 \int_0^{1/cf} [F_{MTC\_n} \cdot v_{MTC\_n}]^- \ dt}{cf \cdot \sum_{n=1}^9 \int_0^{1/cf} [F_{MTC\_n} \cdot v_{MTC\_n}]^+ \ dt}
+\]</span></p>
+<p><span class="math inline">\(P_{MTC\_n}\)</span> is the instantaneous mechanical power delivered by the <span class="math inline">\(n\)</span>th muscle-tendon complex and equals the product of the muscle-tendon complex force (<span class="math inline">\(F_{MTC\_n}\)</span>) and contraction velocity (<span class="math inline">\(v_{MTC\_n}\)</span>). <span class="math inline">\(P_{MTC\_n}^-\)</span> denotes the negative instantaneous mechanical power of muscle <span class="math inline">\(n\)</span>; it equaled <span class="math inline">\(P_{MTC\_n}\)</span> when it was <span class="math inline">\(\leq\)</span> 0 and was set to 0 otherwise. Likewise, <span class="math inline">\(P_{MTC\_n}^+\)</span> denotes the positive instantaneous mechanical power of muscle <span class="math inline">\(n\)</span>.</p>
+</section>
+</section>
+<section id="results" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="results"><span class="header-section-number">5.3</span> Results</h2>
+<section id="optimal-saddle-position-and-cycle-frequency" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="optimal-saddle-position-and-cycle-frequency"><span class="header-section-number">5.3.1</span> Optimal Saddle Position and Cycle Frequency</h3>
+<p>We first identified the optimal cf and hip position that yielded the highest AMPO. The identified optimal pedaling rate for unconstrained cycling was very close to 110 rpm. The results in terms of kinematics and AMPO were close to that found in <span class="citation" data-cites="van_soest_which_2000">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span>, and close to the pedaling rate observed experimentally in sprint cycling <span class="citation" data-cites="vandewalle_force-velocity_1987">(<a href="references.html#ref-vandewalle_force-velocity_1987" role="doc-biblioref">Vandewalle et al. 1987</a>)</span>. For this article, cf was fixed to 1.83 Hz (equaling to cycle frequency of 110 rpm). The hip position was set to the optimal hip position for unconstrained cycling, which was [-0.055 0.87] m (effective seat tube angle of 1.63 rad with respect to positive x-axis) relative to the origin of the crank (bottom bracket) and was close to that used by <span class="citation" data-cites="van_soest_which_2000">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span>.</p>
+</section>
+<section id="convergence-of-optimal-control-solutions" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="convergence-of-optimal-control-solutions"><span class="header-section-number">5.3.2</span> Convergence of Optimal Control Solutions</h3>
+<p>We were able to successfully identify the optimal <span class="math inline">\(STIM(t)\)</span> for maximal AMPO for all levels of constrained radial forces investigated. Furthermore, we were successful in constraining radial pedal forces at different levels of maximally allowed radial pedal forces. For example, the maximal value of radial force in the condition in which no radial pedal forces were allowed (<span class="math inline">\(F_{rad\_max} = 0\)</span>) was only ~2 <span class="math inline">\(\cdot\)</span> 10<sup>-9</sup> N (rms = ~5 <span class="math inline">\(\cdot\)</span> 10<sup>-10</sup> N). Visualizations of the cycling model for <span class="math inline">\(F_{rad\_max} = \infty\)</span> and <span class="math inline">\(F_{rad\_max} = 0\)</span> can be found online (Supplemental Material; see https://doi.org/10.6084/m9.figshare.21711020).</p>
+</section>
+<section id="comparison-with-literature" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="comparison-with-literature"><span class="header-section-number">5.3.3</span> Comparison with Literature</h3>
+<p>The unconstrained (<span class="math inline">\(F_{rad\_max} = \infty\)</span>) AMPO was found to be 1,115 W, which agrees with values reported in the literature on sprint cycling (see <a href="#tbl-ch5-r-ampo" class="quarto-xref">Table&nbsp;<span>5.2</span></a>). In addition, the identified maximal AMPO is very close to that found by <span class="citation" data-cites="van_soest_which_2000">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span>. Note that this is not trivial, since they used a different approach in which they used “bang-bang” control (muscles were allowed to switched fully on or off once during each crank cycle) and in which they added the constraints on periodicity (see <a href="#sec-methods" class="quarto-xref"><span>Section 5.2</span></a>) as penalty terms in their optimization criterion. Reassuringly, in our optimal control solution for the unconstrained condition, we found that the muscle activation pattern was similar to earlier work of our group: muscles were either fully turned on or turned off <span class="citation" data-cites="bobbert_relationship_2016">(see also <a href="references.html#ref-bobbert_relationship_2016" role="doc-biblioref">Bobbert, Casius, et al. 2016</a>)</span>.</p>
+<div id="fig-r-compare" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-r-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/frad-sprint-ampo/r_compare.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: <strong>Tangential (<span class="math inline">\(F_{tan}\)</span>) and radial (<span class="math inline">\(F_{rad}\)</span>) component of the pedal force as a function of crank angle.</strong> Crank angle is equal to that defined in <a href="#fig-m-musmodel" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> (0° is top-dead center). Black dotted lines are the experimentally observed force histories of three full crank cycles of a typical subject cycling at 120 rpm <span class="citation" data-cites="beelen_effect_1991">(<a href="references.html#ref-beelen_effect_1991" role="doc-biblioref">Beelen and Sargeant 1991</a>)</span>. Solid black lines are the pedal force histories obtained by <span class="citation" data-cites="van_soest_which_2000">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span> and the orange lines are the pedal force histories of our optimal control model cycling at 110 rpm.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-embed-nb-cell" data-notebook="/home/david/Nextcloud/Edwin/VU/Thesis/thesis/tables/frad-sprint-ampo/all_tables.ipynb" data-notebook-title="Tables" data-notebook-cellid="cell-tbl-ch5-r-ampo">
+<div class="cell">
+<div id="tbl-ch5-r-ampo" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ch5-r-ampo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.2: Reported values for two-leg AMPO in the literature on sprint cycling
+</figcaption>
+<div aria-describedby="tbl-ch5-r-ampo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div id="udxibujvdc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>
+#udxibujvdc table {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+#udxibujvdc thead, tbody, tfoot, tr, td, th { border-style: none !important; }
+ tr { background-color: transparent !important; }
+#udxibujvdc p { margin: 0 !important; padding: 0 !important; }
+ #udxibujvdc .gt_table { display: table !important; border-collapse: collapse !important; line-height: normal !important; margin-left: auto !important; margin-right: auto !important; color: #333333 !important; font-size: 16px !important; font-weight: normal !important; font-style: normal !important; background-color: #FFFFFF !important; width: auto !important; border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #A8A8A8 !important; border-right-style: none !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #A8A8A8 !important; border-left-style: none !important; border-left-width: 2px !important; border-left-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_caption { padding-top: 4px !important; padding-bottom: 4px !important; }
+ #udxibujvdc .gt_title { color: #333333 !important; font-size: 125% !important; font-weight: initial !important; padding-top: 4px !important; padding-bottom: 4px !important; padding-left: 5px !important; padding-right: 5px !important; border-bottom-color: #FFFFFF !important; border-bottom-width: 0 !important; }
+ #udxibujvdc .gt_subtitle { color: #333333 !important; font-size: 85% !important; font-weight: initial !important; padding-top: 3px !important; padding-bottom: 5px !important; padding-left: 5px !important; padding-right: 5px !important; border-top-color: #FFFFFF !important; border-top-width: 0 !important; }
+ #udxibujvdc .gt_heading { background-color: #FFFFFF !important; text-align: center !important; border-bottom-color: #FFFFFF !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_bottom_border { border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_col_headings { border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_col_heading { color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: bold !important; text-transform: inherit !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; vertical-align: bottom !important; padding-top: 5px !important; padding-bottom: 5px !important; padding-left: 5px !important; padding-right: 5px !important; overflow-x: hidden !important; }
+ #udxibujvdc .gt_column_spanner_outer { color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: bold !important; text-transform: inherit !important; padding-top: 0 !important; padding-bottom: 0 !important; padding-left: 4px !important; padding-right: 4px !important; }
+ #udxibujvdc .gt_column_spanner_outer:first-child { padding-left: 0 !important; }
+ #udxibujvdc .gt_column_spanner_outer:last-child { padding-right: 0 !important; }
+ #udxibujvdc .gt_column_spanner { border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; vertical-align: bottom !important; padding-top: 5px !important; padding-bottom: 5px !important; overflow-x: hidden !important; display: inline-block !important; width: 100% !important; }
+ #udxibujvdc .gt_spanner_row { border-bottom-style: hidden !important; }
+ #udxibujvdc .gt_group_heading { padding-top: 8px !important; padding-bottom: 8px !important; padding-left: 5px !important; padding-right: 5px !important; color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: initial !important; text-transform: inherit !important; border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; vertical-align: middle !important; text-align: left !important; }
+ #udxibujvdc .gt_empty_group_heading { padding: 0.5px !important; color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: initial !important; border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; vertical-align: middle !important; }
+ #udxibujvdc .gt_from_md> :first-child { margin-top: 0 !important; }
+ #udxibujvdc .gt_from_md> :last-child { margin-bottom: 0 !important; }
+ #udxibujvdc .gt_row { padding-top: 8px !important; padding-bottom: 8px !important; padding-left: 5px !important; padding-right: 5px !important; margin: 10px !important; border-top-style: solid !important; border-top-width: 1px !important; border-top-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 1px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 1px !important; border-right-color: #D3D3D3 !important; vertical-align: middle !important; overflow-x: hidden !important; }
+ #udxibujvdc .gt_stub { color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: initial !important; text-transform: inherit !important; border-right-style: solid !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; padding-left: 5px !important; padding-right: 5px !important; }
+ #udxibujvdc .gt_indent_1 { text-indent: 5px !important; }
+ #udxibujvdc .gt_indent_2 { text-indent: calc(5px * 2) !important; }
+ #udxibujvdc .gt_indent_3 { text-indent: calc(5px * 3) !important; }
+ #udxibujvdc .gt_indent_4 { text-indent: calc(5px * 4) !important; }
+ #udxibujvdc .gt_indent_5 { text-indent: calc(5px * 5) !important; }
+ #udxibujvdc .gt_stub_row_group { color: #333333 !important; background-color: #FFFFFF !important; font-size: 100% !important; font-weight: initial !important; text-transform: inherit !important; border-right-style: solid !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; padding-left: 5px !important; padding-right: 5px !important; vertical-align: top !important; }
+ #udxibujvdc .gt_row_group_first td { border-top-width: 2px !important; }
+ #udxibujvdc .gt_row_group_first th { border-top-width: 2px !important; }
+ #udxibujvdc .gt_striped { color: #333333 !important; background-color: #F4F4F4 !important; }
+ #udxibujvdc .gt_table_body { border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_summary_row { color: #333333 !important; background-color: #FFFFFF !important; text-transform: inherit !important; padding-top: 8px !important; padding-bottom: 8px !important; padding-left: 5px !important; padding-right: 5px !important; }
+ #udxibujvdc .gt_first_summary_row { border-top-style: solid !important; border-top-width: 2px !important; border-top-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_last_summary_row_top { border-bottom-style: solid !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_grand_summary_row { color: #333333 !important; background-color: #FFFFFF !important; text-transform: inherit !important; padding-top: 8px !important; padding-bottom: 8px !important; padding-left: 5px !important; padding-right: 5px !important; }
+ #udxibujvdc .gt_first_grand_summary_row_bottom { border-top-style: double !important; border-top-width: 6px !important; border-top-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_last_grand_summary_row_top { border-bottom-style: double !important; border-bottom-width: 6px !important; border-bottom-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_sourcenotes { color: #333333 !important; background-color: #FFFFFF !important; border-bottom-style: none !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 2px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_sourcenote { font-size: 90% !important; padding-top: 4px !important; padding-bottom: 4px !important; padding-left: 5px !important; padding-right: 5px !important; text-align: left !important; }
+ #udxibujvdc .gt_left { text-align: left !important; }
+ #udxibujvdc .gt_center { text-align: center !important; }
+ #udxibujvdc .gt_right { text-align: right !important; font-variant-numeric: tabular-nums !important; }
+ #udxibujvdc .gt_font_normal { font-weight: normal !important; }
+ #udxibujvdc .gt_font_bold { font-weight: bold !important; }
+ #udxibujvdc .gt_font_italic { font-style: italic !important; }
+ #udxibujvdc .gt_super { font-size: 65% !important; }
+ #udxibujvdc .gt_footnotes { color: font-color(#FFFFFF) !important; background-color: #FFFFFF !important; border-bottom-style: none !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 2px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_footnote { margin: 0px !important; font-size: 90% !important; padding-top: 4px !important; padding-bottom: 4px !important; padding-left: 5px !important; padding-right: 5px !important; }
+ #udxibujvdc .gt_sourcenotes { color: #333333 !important; background-color: #FFFFFF !important; border-bottom-style: none !important; border-bottom-width: 2px !important; border-bottom-color: #D3D3D3 !important; border-left-style: none !important; border-left-width: 2px !important; border-left-color: #D3D3D3 !important; border-right-style: none !important; border-right-width: 2px !important; border-right-color: #D3D3D3 !important; }
+ #udxibujvdc .gt_sourcenote { font-size: 90% !important; padding-top: 4px !important; padding-bottom: 4px !important; padding-left: 5px !important; padding-right: 5px !important; text-align: left !important; }
+ #udxibujvdc .gt_footnote_marks { font-size: 75% !important; vertical-align: 0.4em !important; position: initial !important; }
+ #udxibujvdc .gt_asterisk { font-size: 100% !important; vertical-align: 0 !important; }
+ 
+</style>
+
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Source" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Source</th>
+<th id="AMPO" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">AMPO</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left"><a href="references.html#ref-dorel_force-velocity_2010">Dorel et al. (2010)</a></td>
+<td class="gt_row gt_center">1250 ± 117 (<em>n</em>=14) W</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left"><a href="references.html#ref-vandewalle_force-velocity_1987">Vandewalle et al. (1987)</a><sup>a</sup></td>
+<td class="gt_row gt_center">1150 ± 127 (<em>n</em>=7) W</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left"><a href="references.html#ref-elmer_joint-specific_2011">Elmer et al. (2011)</a><sup>b</sup></td>
+<td class="gt_row gt_center">1126 ± 38 (<em>n</em>=11) W</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left"><a href="references.html#ref-mcdaniel_joint-specific_2014">McDaniel et al. (2014)</a><sup>b</sup></td>
+<td class="gt_row gt_center">1098 ± 34 (<em>n</em>=10) W</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left"><a href="references.html#ref-martin_joint-specific_2009">Martin &amp; Brown (2009)</a><sup>b</sup></td>
+<td class="gt_row gt_center">1080 ± 62 (<em>n</em>=13) W</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left"><a href="references.html#ref-van_soest_which_2000">Van Soest &amp; Casius (2004)</a></td>
+<td class="gt_row gt_center">1076 W</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left">Current study</td>
+<td class="gt_row gt_center">1115 W</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="2" class="gt_sourcenote"><span class="gt_from_md">AMPO, average mechanical power output.</span></td>
+</tr>
+<tr class="gt_sourcenotes even">
+<td colspan="2" class="gt_sourcenote"><span class="gt_from_md"><sup>a</sup> Vandewalle et al. reported on many different types of athletes; the value displayed here is for track cyclists (the other types of athletes scored similar values).</span></td>
+</tr>
+<tr class="gt_sourcenotes odd">
+<td colspan="2" class="gt_sourcenote"><span class="gt_from_md"><sup>b</sup> These studies only reported power output for one leg; right-left symmetry has been assumed to calculate the AMPO for two legs.</span></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-r-compare" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> shows the optimal unconstrained (<span class="math inline">\(F_{rad\_max} = \infty\)</span>) radial and tangential pedal forces as a function of crank angle found in this study, as well as those found by <span class="citation" data-cites="van_soest_which_2000">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span> and those obtained experimentally by <span class="citation" data-cites="beelen_effect_1991">Beelen and Sargeant (<a href="references.html#ref-beelen_effect_1991" role="doc-biblioref">1991</a>)</span>. In general, the tangential pedal forces profiles look very similar. As with the study of <span class="citation" data-cites="van_soest_which_2000">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span>, the radial pedal forces of the model are substantially higher around bottom-dead-center (crank angle = 180°) than experimental values. These higher radial pedal forces occur when tangential pedal forces are very small and thus when little power is delivered. As argued by <span class="citation" data-cites="van_soest_which_2000">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span>, it may be that subjects avoid high radial pedal forces when mechanical power output is low. Be that as it may, we found that the radial pedal forces at bottom-dead-center were also influenced by the positioning of the hip, as illustrated by the differences in peak radial force between this study (note that we optimized the hip position for maximal AMPO for <span class="math inline">\(F_{rad\_max} = \infty\)</span>; see <a href="#sec-methods" class="quarto-xref"><span>Section 5.2</span></a>) and that of <span class="citation" data-cites="van_soest_which_2000">Soest and Casius (<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">2000</a>)</span>. In addition, we found that peak radial pedal forces were influenced by the values of the maximal isometric forces of the muscles modeled (data not shown). Since the values of the muscle properties originate from elite jumpers <span class="citation" data-cites="van_soest_contribution_1993 van_soest_influence_1993">(<a href="references.html#ref-van_soest_contribution_1993" role="doc-biblioref">Soest and Bobbert 1993</a>; <a href="references.html#ref-van_soest_influence_1993" role="doc-biblioref">Soest et al. 1993</a>)</span>, it is very well possible that the differences in radial pedal forces between our model and those of elite cyclists are partly caused by differences in muscle properties <span class="citation" data-cites="bobbert_relationship_2016">(see also <a href="references.html#ref-bobbert_relationship_2016" role="doc-biblioref">Bobbert, Casius, et al. 2016</a>)</span>. Nevertheless, we believe that our model is capable of adequately capturing the important features of real cycling (visualizations of the model can be found in Supplemental Data).</p>
+</section>
+<section id="influence-of-limiting-radial-pedal-forces-on-maximal-attainable-ampo" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="influence-of-limiting-radial-pedal-forces-on-maximal-attainable-ampo"><span class="header-section-number">5.3.4</span> Influence of Limiting Radial Pedal Forces on Maximal Attainable AMPO</h3>
+<p>In <a href="#fig-r-ie" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>, AMPO is plotted as a function of maximally allowed radial pedal force. As expected (see <a href="#sec-introduction" class="quarto-xref"><span>Section 5.1</span></a>), the highest value of AMPO was found when the radial force was unconstrained (<span class="math inline">\(F_{rad\_max} = \infty\)</span>): 1,115 W. Also in line with our expectations is the clear reduction in AMPO with a reduction in the allowed radial force. When no radial pedal forces were allowed, maximal AMPO was reduced by as much as 53%, to a value of 528 W. In <a href="#fig-r-ie" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>, we also plotted the IE calculated from our optimal solutions; clearly the highest IE does not coincide with the highest attainable AMPO. This furthermore indicates that the radial pedal forces are, as suggested in <a href="#sec-introduction" class="quarto-xref"><span>Section 5.1</span></a>, unavoidable “by-products” when maximizing AMPO.</p>
+<div id="fig-r-ie" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-r-ie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/frad-sprint-ampo/r_ie.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-ie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: <strong>Maximal attainable average mechanical power output (AMPO) and accompanying index of effectiveness (IE) as a function of the maximal allowed “ineffective” radial pedal force.</strong>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="influence-of-limiting-radial-pedal-forces-on-maximal-tangential-pedal-forces" class="level3" data-number="5.3.5">
+<h3 data-number="5.3.5" class="anchored" data-anchor-id="influence-of-limiting-radial-pedal-forces-on-maximal-tangential-pedal-forces"><span class="header-section-number">5.3.5</span> Influence of Limiting Radial Pedal Forces on Maximal Tangential Pedal Forces</h3>
+<p>To understand why reducing the maximal allowed radial pedal force reduces the maximal attainable AMPO, we first looked at the pedal forces. In <a href="#fig-r-pedalforce" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>, the optimal pedal force as a function of crank angle is plotted at fixed intervals for all levels of <span class="math inline">\(F_{tan\_max}\)</span> investigated. Clearly, the magnitude of the total pedal force (length of the arrows) increased monotonically with increased allowed radial pedal forces. This is even more apparent when plotting time histories of <span class="math inline">\(F_{rad}\)</span> and <span class="math inline">\(F_{tan}\)</span> as a function of crank angle for different levels of <span class="math inline">\(F_{rad\_max}\)</span> (<a href="#fig-r-fradftan" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>). When no radial pedal forces were allowed, pedal forces were obviously always tangential (i.e., <span class="math inline">\(F_{rad} = 0\)</span>), but apparently this constraint comes with a substantial cost: tangential pedal forces are much lower, leading to a reduced AMPO. This leads to the obvious question: why is AMPO reduced when limiting radial pedal forces? Here, we will identify the muscles responsible for loss in power of our model, and in <a href="#sec-discussion" class="quarto-xref"><span>Section 5.4</span></a> we will try to unravel the underlying mechanism.</p>
+<div id="fig-r-pedalforce" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-r-pedalforce-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/frad-sprint-ampo/r_pedalforce.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-pedalforce-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: <strong>Pedal force as a function of crank angle, for all seven conditions.</strong> Pedal forces were drawn as vectors at fixed crank angle intervals.
+</figcaption>
+</figure>
+</div>
+<div id="fig-r-fradftan" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-r-fradftan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/frad-sprint-ampo/r_frad_ftan.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-fradftan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.5: <strong>Tangential (<span class="math inline">\(F_{tan}\)</span>) and radial (<span class="math inline">\(F_{rad}\)</span>) component of the pedal force as a function of crank angle for four different conditions.</strong>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="influence-of-limiting-radial-pedal-forces-on-muscle-power" class="level3" data-number="5.3.6">
+<h3 data-number="5.3.6" class="anchored" data-anchor-id="influence-of-limiting-radial-pedal-forces-on-muscle-power"><span class="header-section-number">5.3.6</span> Influence of Limiting Radial Pedal Forces on Muscle Power</h3>
+<p>In <a href="#fig-r-phaseportret" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>, we show for each modeled muscle (summed over both legs) the net mechanical work, total positive work (<span class="math inline">\(W^+\)</span>) and the total negative work (<span class="math inline">\(W^-\)</span>) done during one full crank cycle (note that AMPO equals net mechanical work delivered during one crank revolution multiplied by cycle frequency). In addition, we show for each muscle (summed over both legs) the instantaneous power delivered as a function of crank angle during one full crank revolution. This is shown for both the unconstrained (<span class="math inline">\(F_{rad\_max} = \infty\)</span>) and the fully constrained situation (<span class="math inline">\(F_{rad\_max} = 0\)</span>). Three clear observations about loss in power production can be made when closely observing muscle power. First, the biggest difference in average power production is caused by a reduction in power of mm. vasti: these muscles deliver ~195 W less per cycle when avoiding radial pedal forces. Second, the muscles spanning the ankle joint are not capable of delivering power when avoiding radial pedal forces. In fact, instead of delivering positive power at a rate of 185 W, the muscles spanning the ankle joint deliver -21 W in the fully constrained condition; note that delivering negative power means that that they dissipated power. The third main reason for the loss in AMPO in the maximally constrained situation is a reduction of net power of m. iliopsoas. Even though m. iliopsoas delivers, perhaps counter-intuitively, more positive power when radial pedal forces are limited (by 25 W), it also delivers much more negative power (by -150 W); hence the contribution of m. iliopsoas to AMPO drops by ~125 W. In summary, constraining radial pedal forces causes mm. vastii to deliver much less positive power, causes plantar flexors to stop producing any power, and causes m. iliopsoas to dissipate more power. From the individual muscle contributions to AMPO, we calculated the average muscle mechanical power dissipation ratio (see <a href="#sec-methods" class="quarto-xref"><span>Section 5.2</span></a>). For the unconstrained condition, PDR was -0.20 and increased to -0.45 in the fully constrained condition.</p>
+<div id="fig-r-phaseportret" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-env="sidewaysfigure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-r-phaseportret-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/frad-sprint-ampo/r_phaseportret.svg" class="img-fluid figure-img" data-fig-env="sidewaysfigure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-phaseportret-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.6: <strong>Instantaneous mechanical (muscle tendon complex) power delivered by each of the modeled muscles as a function of crank angle.</strong> Top row: unconstrained (<span class="math inline">\(F_{rad\_max} = \infty\)</span>) cycling. Bottom row: fully constrained (<span class="math inline">\(F_{rad\_max} = 0\)</span>). Outer dashed circle was drawn at 1,000 W and the inner solid line circle at 0 W. Green denotes when muscles deliver positive power and orange when delivering negative power. The total work, total positive work (<span class="math inline">\(W^+\)</span>) and total negative work (<span class="math inline">\(W^-\)</span>) done during one full cycle are given for each muscle separately. Note that the green and orange area scales (nonlinearly) with positive and negative work. Furthermore, note that average mechanical power output (AMPO) equals the sum of all work done by each muscle multiplied by the cycle frequency (=1.83 Hz).
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-discussion" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sec-discussion"><span class="header-section-number">5.4</span> Discussion</h2>
+<p>In this study, we presented an optimal control model of a cyclist and showed that radial pedal forces in cycling occur as a “by-product” for maximal tangential pedal force, which means that reducing radial pedal forces reduces the maximal average mechanical power output (AMPO). When completely avoiding radial pedal forces (leading to a “perfect” IE of 1), maximal AMPO during one cycle drops by more than 50% compared with the unconstrained condition (leading to an IE of 0.66). In the next section, we will first attempt to explain the mechanisms responsible for the decrease in AMPO when avoiding radial pedal forces. Then we will argue that sprint cycling efficiency will also decrease when avoiding radial pedal forces.</p>
+<section id="why-does-ampo-decrease-when-avoiding-radial-pedal-forces" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="why-does-ampo-decrease-when-avoiding-radial-pedal-forces"><span class="header-section-number">5.4.1</span> Why Does AMPO Decrease When Avoiding Radial Pedal Forces?</h3>
+<p>In <a href="#fig-r-phaseportret" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>, we showed the power delivered and work done by the individual muscles during a full cycle, both for unconstrained cycling and constrained cycling when completely avoiding radial pedal forces. It is clear that in the latter case, muscles not only deliver less positive power, but also deliver more negative power (and thus dissipate energy). To get an intuitive idea of why this is the case, we will look at the at the optimal isometric (static) contributions of three muscles (mm. vastii, m. iliopsoas, and m. soleus) to the pedal force (green arrows; <a href="#fig-d-illustration" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>) for a crank angle of ~55° (see appendix for the calculation of the force contributions). As explained in appendix, in general, the contribution of a unit of force of a muscle to the pedal force decreases with increasing distance from joint(s) that the muscle spans to the pedal. Thus, during cycling, 1 N delivered with an ankle plantar flexor leads to a much higher pedal force than 1 N delivered by a hip flexor (in fact, up to two orders of magnitude). Without a constraint on radial pedal forces (<span class="math inline">\(F_{rad\_max} = \infty\)</span>), finding the optimal combination of isometric muscle forces for maximal <span class="math inline">\(F_{tan}\)</span> is straightforward: just activate maximally all muscles that have a positive <span class="math inline">\(F_{tan}\)</span> component; in this case both m. soleus as well as mm. vastii (<a href="#fig-d-illustration" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>B). This leads to a large <span class="math inline">\(F_{tan}\)</span> (blue arrow) and a substantial <span class="math inline">\(F_{rad}\)</span> (red arrow). When avoiding radial pedal forces, the optimal solution for maximal static <span class="math inline">\(F_{tan}\)</span> is far less straightforward (<a href="#fig-d-illustration" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>C). The mm. vastii are activated maximally and the outward radial component of the generated pedal force is compensated by an inward radial component of m. soleus. However, since m. soleus has a much larger inward radial component than the outward <span class="math inline">\(F_{rad}\)</span> component of mm. vastii [this is augmented as the ankle joint (spanned by the m. soleus) is closer to the pedal than the knee joint (spanned by the mm. vastii); see appendix], the activation of m. soleus is very limited. The activation of m. soleus can be increased if m. iliopsoas is activated, such that m. iliopsoas compensates for the inward <span class="math inline">\(F_{rad}\)</span> component of m. soleus. This is beneficial as the positive <span class="math inline">\(F_{tan}\)</span> component of the m. soleus is larger than the negative <span class="math inline">\(F_{tan}\)</span> component of the m. iliopsoas. In the optimal isometric solution (<span class="math inline">\(F_{tan\_max} = 0\)</span>), m. soleus is submaximally activated, whereas m. iliopsoas—which negatively contributes <span class="math inline">\(F_{tan}\)</span>—needs to be fully activated to avoid radial pedal forces. Consistent with the experimental findings of <span class="citation" data-cites="onasch_active_2024">Onasch and Herzog (<a href="references.html#ref-onasch_active_2024" role="doc-biblioref">2024</a>)</span>, our isometric muscle force optimization example shows that avoiding radial pedal forces leads to a decrease in activity of muscles that can contribute positively to <span class="math inline">\(F_{tan}\)</span>. In addition, it shows that avoiding radial pedal forces may lead to an increase in activity of muscles that contribute negatively to <span class="math inline">\(F_{tan}\)</span>.</p>
+<div id="fig-d-illustration" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-d-illustration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/frad-sprint-ampo/d_illustration.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-d-illustration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.7: <strong>Illustration of the maximal static <span class="math inline">\(F_{tan}\)</span> from three muscles (note that the length of the vectors are not drawn to size; see <a href="#sec-frad-appendix" class="quarto-xref"><span>Section 5.5</span></a>).</strong> A: maximal pedal force contribution of three muscles (blue arrows). Note that the contribution of a muscle to the pedal force diminishes with increasing distance from the pedal to the joint(s) that muscle spans (see also <a href="#sec-frad-appendix" class="quarto-xref"><span>Section 5.5</span></a>). B: optimal muscle force distribution for maximal <span class="math inline">\(F_{tan}\)</span> (green arrow) when <span class="math inline">\(F_{rad}\)</span> is unconstrained (<span class="math inline">\(F_{rad\_max} = \infty\)</span>). mm. vastii (VAS) and m. soleus (SOL) can be activated maximally. The pedal force (<span class="math inline">\(F_p\)</span>; black dashed arrow) has a substantial radial component (<span class="math inline">\(F_{rad}\)</span>; orange arrow) C: optimal muscle force distribution for maximal <span class="math inline">\(F_{tan}\)</span> when <span class="math inline">\(F_{rad}\)</span> is fully constrained (<span class="math inline">\(F_{rad\_max} = 0\)</span>). VAS is maximally activated. m. iliopsoas (ILI) cannot contribute to a positive Ftan but is maximally activated to compensate for submaximally activated SOL. Here, <span class="math inline">\(F_p\)</span> equals <span class="math inline">\(F_{tan}\)</span> since <span class="math inline">\(F_{rad}\)</span> is constrained to be zero. D: optimal “quasi-static” solution; when taking into account capability of delivering positive instantaneous muscle power, m iliopsoas is no longer activated, which further reduces the activation of the m. soleus.
+</figcaption>
+</figure>
+</div>
+<p>Although a static/isometric analysis yields insight, it does not tell the full story. Several important factors play a role that complicate understanding the optimal muscle activation for maximal AMPO. First, activation dynamics causes a delay between the change in muscle activation and corresponding change in muscle force. In previous research, we have shown that activation dynamics plays an important role in explaining the optimal pedaling frequency <span class="citation" data-cites="van_soest_which_2000">(<a href="references.html#ref-van_soest_which_2000" role="doc-biblioref">Soest and Casius 2000</a>)</span> and the linear relationship between pedal force and crank angular velocity <span class="citation" data-cites="bobbert_relationship_2016">(<a href="references.html#ref-bobbert_relationship_2016" role="doc-biblioref">Bobbert, Casius, et al. 2016</a>)</span>. Here, we show that activation dynamics augments the reduction in muscle power when avoiding radial pedal forces. For example, this is the explanation of the vast reduction in power (by 195 W) of mm. vastii. From about a crank angle of 135° to a crank angle of 180°, mm. vastii and m. gluteus maximus produce a large outward radial force. This radial force becomes very large mostly due to the mm. vastii (a muscle crossing the knee joint has a greater effect on the pedal force than a muscle crossing the hip joint; see appendix). Only the bi-articular hamstring can compensate for this outward radial force while producing positive power, but is much smaller than the mm. vastii. To avoid radial forces, the mm. vastii is switched off much earlier even though it can contribute greatly to power production. Due to activation dynamics, shutting this muscle group off needs to be done ahead in time. The result is that not only the mm. vastii are generating less instantaneous power, they are also doing so over a much smaller range in crank angles (cf. <a href="#fig-r-phaseportret" class="quarto-xref">Figure&nbsp;<span>5.6</span></a> VAS 1st and 2nd row). Since the m. gluteus maximus is crossing the hip joint, its effect on the radial pedal force is much smaller compared with that of the mm. vastii. The bi-articular hamstring can be fully activated to compensate for most of the outward radial forces caused by the m. gluteus maximus. In fact, the bi-articular hamstring is the only muscle that is not affected by the constraint on the pedal force (it actually delivers a little bit more power when <span class="math inline">\(F_{rad} = 0\)</span>, but this is due to small differences in cycling kinematics). Around 135°, the inward radial force of the bi-articular hamstring is too small. The m. gluteus maximus needs to be shut off, but, due to activation dynamics this is relatively slow (and thus would cause a great decrease in positive power) and the optimal solution is to both decrease the activity of the m. gluteus maximus and to increase its antagonist the m. iliopsoas, causing a large increase in negative AMPO (from ~-60 to -210 W cf. <a href="#fig-r-phaseportret" class="quarto-xref">Figure&nbsp;<span>5.6</span></a> ILI 1st and 2nd row).</p>
+<p>A second complicating factor is that there is no direct relation between instantaneous crank power and instantaneous muscle power. As discussed earlier, in <a href="#fig-d-illustration" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> we plotted the contribution of the muscle forces to the pedal forces. When looking at the power delivered by the muscles, such a static analysis is not insightful. It is true that over a full cycle average mechanical crank power equals average mechanical muscle power, because the movement is periodic. However, in general, the instantaneous crank power (<span class="math inline">\(P_{crank}\)</span>) is not equal to instantaneous muscle (-tendon complex) power (<span class="math inline">\(P_{MTC}\)</span>). <span class="math inline">\(P_{MTC}\)</span> equals <span class="math inline">\(P_{crank}\)</span> plus the rate of change in kinetic and potential energy [<span class="math inline">\(P_{K+P}\)</span>; <span class="citation" data-cites="ingen_schenau_power_1990">Ingen Schenau and Cavanagh (<a href="references.html#ref-ingen_schenau_power_1990" role="doc-biblioref">1990</a>)</span>, <span class="citation" data-cites="chen_induced_2006">Chen (<a href="references.html#ref-chen_induced_2006" role="doc-biblioref">2006</a>)</span>]. <a href="#fig-d-powerhistories" class="quarto-xref">Figure&nbsp;<span>5.8</span></a> shows these power terms as a function of crank angle for the optimal unconstraint solution. We found that the peak rate of change in kinetic energy can be as large as -550 W (independent of a constraint on radial forces). Thus, maximizing instantaneous crank power would yield instantaneous joint accelerations that are inconsistent with a cycling motion.</p>
+<p>A third complicating factor is that although muscle force contributions to the pedal force are insightful for understanding how to coordinate muscles to avoid radial pedal forces, they are not insightful when it comes to understanding how (instantaneous) muscle power relates to crank power. The reason is that there is no direct relationship between the instantaneous power delivered by a muscle and the direction/magnitude of its contribution to the pedal force <span class="citation" data-cites="chen_induced_2006">(to explain this in detail goes beyond the scope of this article, but see <a href="references.html#ref-chen_induced_2006" role="doc-biblioref">Chen 2006</a>)</span>. For example, this means that a muscle contributing to a large tangential pedal force may not produce any power at the muscle level, but simply “transfers” power from other muscles <span class="citation" data-cites="zajac_understanding_2002">Zajac et al. (<a href="references.html#ref-zajac_biomechanics_2002" role="doc-biblioref">2002</a>)</span>. In the end, the power delivered by a muscle force is fully determined by the angular velocity of the joint(s) the muscle spans. As an example, we look again at <a href="#fig-d-illustration" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>C. In this figure, we plotted the optimal isometric muscle forces for maximal tangential force while avoiding radial force (<span class="math inline">\(F_{rad\_max} = 0\)</span>). We see that m. iliopsoas is substantially activated in order to compensate for the radial pedal force component of the m. soleus. However, during cycling, at this crank angle, the hip joint is extending/retro flexing, which would lead to a large instantaneous negative muscle power of m. iliopsoas. This is obviously not optimal when considering that the task is to maximize average mechanical power output over a full cycle (in the optimal control solution, this muscle is indeed not activated around this crank angle; see <a href="#fig-r-phaseportret" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>). When allowing only the use of muscles that deliver positive instantaneous muscle power, m. iliopsoas is no longer activated. Since m. iliopsoas was required to compensate for the radial pedal force component of the m. soleus, the consequence is that the m. soleus activation is reduced to almost zero (<a href="#fig-d-illustration" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>D). This is in fact a general “problem” for the muscles spanning the ankle joint during a full cycle. The ankle is close to the pedal and therefore the muscles spanning the ankle joint have a large contribution to the (radial) pedal force. Thus, when avoiding radial pedal forces, ankle spanning muscles can hardly be activated. This is the reason why m. soleus, m. gastrocnemius. and m. tibialis anterior are not able to contribute to AMPO when no radial pedal forces are allowed, leading to a 170 W reduction in AMPO (see <a href="#fig-r-phaseportret" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>).</p>
+<div id="fig-d-powerhistories" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-d-powerhistories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/frad-sprint-ampo/d_powerhistories.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-d-powerhistories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.8: <strong>Time histories of the instantaneous mechanical power terms of our bike model as a function of crank angle for the optimal unconstraint solution.</strong> <span class="math inline">\(P_{MTC}\)</span> = muscle-tendon complex power, <span class="math inline">\(P_{crank}\)</span> = mechanical power delivered on the crank, and <span class="math inline">\(P_{K+P}\)</span> = sum of the rate of change of kinetic and potential energy. Given the definitions of directions of forces, the power equation equals <span class="math inline">\(\sum P = P_{MTC} - P_{crank} = P_{K+P}\)</span> (see <span class="citation" data-cites="ingen_schenau_power_1990">Ingen Schenau and Cavanagh (<a href="references.html#ref-ingen_schenau_power_1990" role="doc-biblioref">1990</a>)</span>)
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="ie-and-efficiency" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="ie-and-efficiency"><span class="header-section-number">5.4.2</span> IE and Efficiency</h3>
+<p>One may argue <span class="citation" data-cites="leirdal_relationship_2011">(see e.g., <a href="references.html#ref-leirdal_relationship_2011" role="doc-biblioref">Leirdal and Ettema 2011</a>)</span> that since radial pedal forces are ineffective (not producing power) and are the consequence of active muscles that use metabolic energy, avoiding radial pedal forces may lead to more efficient cycling (i.e., less metabolic power needed for a given value of AMPO). Although this argument may sound reasonable at first glance, it is incorrect. First, the theoretical argument in <a href="#sec-introduction" class="quarto-xref"><span>Section 5.1</span></a> also holds for efficiency: if the goal is to maximize efficiency (at a given fixed value of AMPO), then adding a constraint (to avoid radial pedal forces) cannot lead to a better efficiency. Second, we can see from our analyses that avoiding radial pedal forces not only greatly diminished maximal AMPO, it also greatly increased the dissipation of power. From <a href="#fig-r-phaseportret" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>, we calculated the PDR: the ratio of negative to positive AMPO. This ratio allows us to compare the muscle power dissipation between conditions, as it is independent of the net AMPO delivered. In the unconstrained condition, PDR is about -0.2, which means that for every W of positive mechanical power delivered, muscles dissipate 0.2 W. PDR increases when limiting radial pedal forces and more than doubles to a value of -0.45 when completely avoiding radial pedal forces. From this increased PDR, it follows that the net amount of negative muscle power for a given amount of positive muscle power increases. This increase will result in a reduction in metabolic efficiency during sprint cycling while avoiding radial forces.</p>
+</section>
+<section id="conclusions" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">5.4.3</span> Conclusions</h3>
+<p>Using an optimal control model of a cyclist, we showed and explained that the radial pedal forces that occur during cycling are unavoidable when maximizing average mechanical power output during a full cycle. It is true that the “ineffective” radial pedal forces do not contribute to the power delivered by the cyclist to the crank. However, the idea that avoiding these radial pedal forces will lead to more efficient pedaling is incorrect. In fact, the opposite is true: avoiding radial pedal forces causes ineffective use of muscles that not only leads to a decrease in maximal AMPO in sprint cycling, but also to a decrease in pedaling efficiency.</p>
+</section>
+</section>
+<section id="sec-frad-appendix" class="level2 chapter-appendix" data-number="5.5">
+<h2 class="chapter-appendix anchored" data-number="5.5" data-anchor-id="sec-frad-appendix"><span class="header-section-number">5.5</span> Appendix</h2>
+<section id="contribution-of-muscle-forces-to-pedal-forces" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="contribution-of-muscle-forces-to-pedal-forces"><span class="header-section-number">5.5.1</span> Contribution of Muscle Forces to Pedal Forces</h3>
+<p>To analyze differences in outcome for different levels of constrained radial pedal forces, we calculated the (potential) contribution of each muscle to the pedal force, along the lines of the work of Zajac and coworkers <span class="citation" data-cites="zajac_understanding_2002 zajac_biomechanics_2002">(<a href="references.html#ref-zajac_understanding_2002" role="doc-biblioref">Zajac 2002</a>; <a href="references.html#ref-zajac_biomechanics_2002" role="doc-biblioref">Zajac et al. 2002</a>)</span> described our differential equations of the skeletal dynamics (see Methods section, <em>Musculoskeletal Model</em>) as follows:</p>
+<p><span class="math display">\[
+A \cdot [\vec{F}_j \ \vec{\ddot{\phi}} \ \vec{F}_{con} \ M_{crank} \ \vec{F}_{pedal}]^T = \vec{b}
+\]</span> here <span class="math inline">\(A\)</span> is a matrix describing the system dynamics pertaining to all unknown joint reaction forces (<span class="math inline">\(\vec{F}_j\)</span>), joint angular accelerations (<span class="math inline">\(\vec{\ddot{\phi}}\)</span>, constraint forces (<span class="math inline">\(\vec{F}_{con}\)</span>; forces constraining the ﬁxed position of the hip and bottom bracket), constraint moment (<span class="math inline">\(M_{crank}\)</span>; moment enforcing the constant crank angular velocity), and pedal forces (<span class="math inline">\(\vec{F}_{pedal}\)</span>. <span class="math inline">\(\vec{b}\)</span> is a vector pertaining to the gravitational and Coriolis forces and, importantly, the sum of the muscle moments around each joint. We structured our differential equations by identifying several blocks:</p>
+<p><span class="math display">\[
+\begin{bmatrix} A_1 &amp; A_2\\A_3 &amp; A_4 \end{bmatrix} \cdot \begin{bmatrix}\vec{x} \\ \vec{F}_{pedal} \end{bmatrix} = \begin{bmatrix}\vec{b}_1 \\ \vec{b}_2 \end{bmatrix}
+\]</span> Here, <span class="math inline">\(\vec{x}\)</span> are all unkowns except <span class="math inline">\(\vec{F}_{pedal}\)</span>. We then used some basic general linear algebra manipulations to eliminate all unknowns other than <span class="math inline">\(\vec{F}_{pedal}\)</span>:</p>
+<p><span class="math display">\[
+\vec{F}_{pedal} = \begin{bmatrix} A_4 - A_3 A_1^{-1} \cdot A_2 \end{bmatrix}^{-1} \cdot (\vec{b}_2 - A_3 A_1^{-1} \vec{b}_1)
+\]</span></p>
+<p>This allowed us to calculate the pedal forces for any given state of the system (i.e., joint angles and angular velocities) and any net joint torque. Moreover, for any point along the cycle, we were able to use the states and joint torques obtained from our optimization and express the pedal forces as a function of net joint moments around the hip (<span class="math inline">\(M_{hip}\)</span>), knee (<span class="math inline">\(M_{knee}\)</span>), and ankle (<span class="math inline">\(M_{ankle}\)</span>) and a term that represents the inertial component of the pedal forces (<span class="math inline">\(\vec{F}_{dyn}\)</span>):</p>
+<p><span class="math display">\[
+\vec{F}_{pedal} = \begin{bmatrix} a_x \\ a_y \end{bmatrix} M_{hip} + \begin{bmatrix} b_x \\ b_y \end{bmatrix} M_{knee} + \begin{bmatrix} c_x \\ c_y \end{bmatrix} M_{ankle} + \vec{F}_{dyn}
+\]</span></p>
+<p>Since the net joint moment is simply the sum of all muscle joint torques, pedal force can be expressed as a sum of eight muscle contributions:</p>
+<p><span class="math display">\[
+\vec{F}_{pedal} = \sum_{i=1}^8 \left (\begin{bmatrix} a_x \\ a_y \end{bmatrix} M_{hip,i} + \begin{bmatrix} b_x \\ b_y \end{bmatrix} M_{knee,i} + \begin{bmatrix} c_x \\ c_y \end{bmatrix} M_{ankle,i} \right) + \vec{F}_{dyn}
+\]</span> Here, <span class="math inline">\(M_{hip,i}\)</span> means the hip moment of the <span class="math inline">\(i\)</span>th muscle, etc. Finally, by taking the summations apart one can calculate the contribution of any muscle to the pedal force (<span class="math inline">\(F_{pedal,i}\)</span>):</p>
+<p><span class="math display">\[
+\vec{F}_{pedal,i} = \begin{bmatrix} a_x \\ a_y \end{bmatrix} M_{hip,i} + \begin{bmatrix} b_x \\ b_y \end{bmatrix} M_{knee,i} + \begin{bmatrix} c_x \\ c_y \end{bmatrix} M_{ankle,i}
+\]</span></p>
+<p>To give an example, for <a href="#fig-d-illustration" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> we calculated the directions of the contributions of the several muscles at a crank angle of 55° (0° being top-dead center):</p>
+<p><span class="math display">\[
+\vec{F}_{pedal,i} = \begin{bmatrix} 0.02 \\ 0.03 \end{bmatrix} M_{hip,i} + \begin{bmatrix} 1.66 \\ -1.43 \end{bmatrix} M_{knee,i} + \begin{bmatrix} 2.17 \\ 5.95 \end{bmatrix} M_{ankle,i}
+\]</span> From this transfer function from joint torque to pedal force it can be appreciated that the contribution of a joint torque (and hence the muscle force producing that torque) to the pedal force greatly diminishes with increasing distance to the origin of the pedal force. In fact, for this angle, contribution of hip muscle to the pedal force is about two orders of magnitude smaller than the ankle muscles. The (normalized) direction of the force delivered by the m. soleus is <span class="math inline">\(\begin{bmatrix} -0.34 &amp; -0.94 \end{bmatrix}^T\)</span> (note that the m. soleus delivers a negative torque around the ankle joint), that of the m. vastus is <span class="math inline">\(\begin{bmatrix} 0.76 &amp; -0.65 \end{bmatrix}^T\)</span> and that of the m. iliopsoas is <span class="math inline">\(\begin{bmatrix} 0.55 &amp; 0.83 \end{bmatrix}^T\)</span>.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="data-availability" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="data-availability">Data availability</h2>
+<p>Data will be made available upon reasonable request.</p>
+</section>
+<section id="supplemental-data" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="supplemental-data">Supplemental data</h2>
+<p>Supplemental Material: <a href="https://doi.org/10.6084/m9.figshare.21711020" class="uri">https://doi.org/10.6084/m9.figshare.21711020</a></p>
+</section>
+<section id="acknowledgments" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
+<p>The authors would like to thank Gijs van der Woerdt for his help in preparing this study and analyzing model outcomes and thank Koen Lemaire for insightful discussions.</p>
+</section>
+<section id="disclosures" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="disclosures">Disclosures</h2>
+<p>No conflicts of interest, financial or otherwise, are declared by the authors.</p>
+</section>
+<section id="author-contributions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="author-contributions">Author contributions</h2>
+<p>D.A.K., R.M.T., E.D.H.M.R., and M.F.B. conceived and designed research; D.A.K. and R.M.T. analyzed data; D.A.K. and M.F.B. interpreted results of experiments; D.A.K. and R.M.T. prepared figures; D.A.K. drafted manuscript; D.A.K., R.M.T., E.D.H.M.R., and M.F.B. edited and revised manuscript; D.A.K., R.M.T., E.D.H.M.R., and M.F.B. approved final version of manuscript.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ackermann_optimality_2010" class="csl-entry" role="listitem">
+Ackermann, Marko, and Antonie J. van den Bogert. 2010. <span>“Optimality Principles for Model-Based Prediction of Human Gait.”</span> <em>Journal of Biomechanics</em> 43 (6): 1055–60. <a href="https://doi.org/10.1016/j.jbiomech.2009.12.012">https://doi.org/10.1016/j.jbiomech.2009.12.012</a>.
+</div>
+<div id="ref-beelen_effect_1991" class="csl-entry" role="listitem">
+Beelen, A., and A. J. Sargeant. 1991. <span>“Effect of Fatigue on Maximal Power Output at Different Contraction Velocities in Humans.”</span> <em>Journal of Applied Physiology</em> 71 (6): 2332–37. <a href="https://doi.org/10.1152/jappl.1991.71.6.2332">https://doi.org/10.1152/jappl.1991.71.6.2332</a>.
+</div>
+<div id="ref-betts_practical_2010" class="csl-entry" role="listitem">
+Betts, John T. 2010. <em>Practical <span>Methods</span> for <span>Optimal</span> <span>Control</span> and <span>Estimation</span> <span>Using</span> <span>Nonlinear</span> <span>Programming</span>, <span>Second</span> <span>Edition</span></em>. Second. Society for Industrial; Applied Mathematics. <a href="https://doi.org/10.1137/1.9780898718577">https://doi.org/10.1137/1.9780898718577</a>.
+</div>
+<div id="ref-bini_pedal_2013" class="csl-entry" role="listitem">
+Bini, Rodrigo, Patria Hume, James L Croft, and Andrew Kilding. 2013. <em>Pedal Force Effectiveness in Cycling: <span>A</span> Review of Constraints and Training Effects</em>.
+</div>
+<div id="ref-blake_muscle_2012" class="csl-entry" role="listitem">
+Blake, Ollie M., Yvan Champux, and James M. Wakeling. 2012. <span>“Muscle <span>Coordination</span> <span>Patterns</span> for <span>Efficient</span> <span>Cycling</span>.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 44 (5). <a href="https://doi.org/10.1249/MSS.0b013e3182404d4b">https://doi.org/10.1249/MSS.0b013e3182404d4b</a>.
+</div>
+<div id="ref-bobbert_effect_2020" class="csl-entry" role="listitem">
+Bobbert, Maarten F., L. J. Richard Casius, Stephan van der Zwaard, and Richard T. Jaspers. 2020. <span>“Effect of Vasti Morphology on Peak Sprint Cycling Power of a Human Musculoskeletal Simulation Model.”</span> <em>Journal of Applied Physiology</em> 128 (2): 445–55. <a href="https://doi.org/10.1152/japplphysiol.00674.2018">https://doi.org/10.1152/japplphysiol.00674.2018</a>.
+</div>
+<div id="ref-bobbert_relationship_2016" class="csl-entry" role="listitem">
+Bobbert, Maarten F., Richard L. J. Casius, and Arthur J. ’Knoek’Van Soest. 2016. <span>“The <span>Relationship</span> Between <span>Pedal</span> <span>Force</span> and <span>Crank</span> <span>Angular</span> <span>Velocity</span> in <span>Sprint</span> <span>Cycling</span>.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 48 (5). <a href="https://doi.org/10.1249/MSS.0000000000000845">https://doi.org/10.1249/MSS.0000000000000845</a>.
+</div>
+<div id="ref-bobbert_searching_2016" class="csl-entry" role="listitem">
+Bobbert, Maarten F., Dinant A. Kistemaker, Marco Aurélio Vaz, and Marko Ackermann. 2016. <span>“Searching for Strategies to Reduce the Mechanical Demands of the Sit-to-Stand Task with a Muscle-Actuated Optimal Control Model.”</span> <em>Clinical Biomechanics</em> 37 (August): 83–90. <a href="https://doi.org/10.1016/j.clinbiomech.2016.06.008">https://doi.org/10.1016/j.clinbiomech.2016.06.008</a>.
+</div>
+<div id="ref-van_den_bogert_implicit_2011" class="csl-entry" role="listitem">
+Bogert, Antonie J. van den, Dimitra Blana, and Dieter Heinrich. 2011. <span>“Implicit Methods for Efficient Musculoskeletal Simulation and Optimal Control.”</span> <em>IUTAM Symposium on Human Body Dynamics</em> 2 (January): 297–316. <a href="https://doi.org/10.1016/j.piutam.2011.04.027">https://doi.org/10.1016/j.piutam.2011.04.027</a>.
+</div>
+<div id="ref-bohm_effects_2008" class="csl-entry" role="listitem">
+Böhm, Harald, Stefan Siebert, and Mark Walsh. 2008. <span>“Effects of Short-Term Training Using <span>SmartCranks</span> on Cycle Work Distribution and Power Output During Cycling.”</span> <em>European Journal of Applied Physiology</em> 103 (2): 225–32. <a href="https://doi.org/10.1007/s00421-008-0692-z">https://doi.org/10.1007/s00421-008-0692-z</a>.
+</div>
+<div id="ref-bortolotto_mhc_2000" class="csl-entry" role="listitem">
+Bortolotto, Susan K., Maria Cellini, D. George Stephenson, and Gabriela M. M. Stephenson. 2000. <span>“<span>MHC</span> Isoform Composition and <span>Ca2</span>+- or <span>Sr2</span>+-Activation Properties of Rat Skeletal Muscle Fibers.”</span> <em>American Journal of Physiology-Cell Physiology</em> 279 (5): C1564–77. <a href="https://doi.org/10.1152/ajpcell.2000.279.5.C1564">https://doi.org/10.1152/ajpcell.2000.279.5.C1564</a>.
+</div>
+<div id="ref-burkholder_sarcomere_2001" class="csl-entry" role="listitem">
+Burkholder, Thomas J., and Richard L. Lieber. 2001. <span>“Sarcomere <span>Length</span> <span>Operating</span> <span>Range</span> of <span>Vertebrate</span> <span>Muscles</span> <span>During</span> <span>Movement</span>.”</span> <em>Journal of Experimental Biology</em> 204 (9): 1529–36. <a href="https://doi.org/10.1242/jeb.204.9.1529">https://doi.org/10.1242/jeb.204.9.1529</a>.
+</div>
+<div id="ref-casius_forward_2004" class="csl-entry" role="listitem">
+Casius, L. J. Richard, Maarten F. Bobbert, and Arthur J. van Soest. 2004. <span>“Forward <span>Dynamics</span> of <span>Two</span>-<span>Dimensional</span> <span>Skeletal</span> <span>Models</span>. <span>A</span> <span>Newton</span>-<span>Euler</span> <span>Approach</span>.”</span> <em>Journal of Applied Biomechanics</em> 20 (4): 421–49. <a href="https://doi.org/10.1123/jab.20.4.421">https://doi.org/10.1123/jab.20.4.421</a>.
+</div>
+<div id="ref-chen_induced_2006" class="csl-entry" role="listitem">
+Chen, George. 2006. <span>“Induced Acceleration Contributions to Locomotion Dynamics Are Not Physically Well Defined.”</span> <em>Gait &amp; Posture</em> 23 (1): 37–44. <a href="https://doi.org/10.1016/j.gaitpost.2004.11.016">https://doi.org/10.1016/j.gaitpost.2004.11.016</a>.
+</div>
+<div id="ref-coyle_physiological_1991" class="csl-entry" role="listitem">
+Coyle, E. F., M. E. Feltner, S. A. Kautz, et al. 1991. <span>“Physiological and Biomechanical Factors Associated with Elite Endurance Cycling Performance.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 23 (1). <a href="https://journals.lww.com/acsm-msse/fulltext/1991/01000/physiological_and_biomechanical_factors_associated.15.aspx">https://journals.lww.com/acsm-msse/fulltext/1991/01000/physiological_and_biomechanical_factors_associated.15.aspx</a>.
+</div>
+<div id="ref-davis_measurement_1981" class="csl-entry" role="listitem">
+Davis, R. R., and M. L. Hull. 1981. <span>“Measurement of Pedal Loading in Bicycling: <span>II</span>. <span>Analysis</span> and Results.”</span> <em>Journal of Biomechanics</em> 14 (12): 857–72. <a href="https://doi.org/10.1016/0021-9290(81)90013-0">https://doi.org/10.1016/0021-9290(81)90013-0</a>.
+</div>
+<div id="ref-de_groote_evaluation_2016" class="csl-entry" role="listitem">
+De Groote, Friedl, Allison L. Kinney, Anil V. Rao, and Benjamin J. Fregly. 2016. <span>“Evaluation of <span>Direct</span> <span>Collocation</span> <span>Optimal</span> <span>Control</span> <span>Problem</span> <span>Formulations</span> for <span>Solving</span> the <span>Muscle</span> <span>Redundancy</span> <span>Problem</span>.”</span> <em>Annals of Biomedical Engineering</em> 44 (10): 2922–36. <a href="https://doi.org/10.1007/s10439-016-1591-9">https://doi.org/10.1007/s10439-016-1591-9</a>.
+</div>
+<div id="ref-doorenbosch_effectiveness_1997" class="csl-entry" role="listitem">
+Doorenbosch, Caroline A. M., Dirkjan H. E. J. Veeger, Jan Peter van Zandwijk, and Gerrit Jan van Ingen Schenau. 1997. <span>“On the <span>Effectiveness</span> of <span>Force</span> <span>Application</span> in <span>Guided</span> <span>Leg</span> <span>Movements</span>.”</span> <em>Journal of Motor Behavior</em> 29 (1): 27–34. <a href="https://doi.org/10.1080/00222899709603467">https://doi.org/10.1080/00222899709603467</a>.
+</div>
+<div id="ref-dorel_influence_2009" class="csl-entry" role="listitem">
+Dorel, Sylvain, Antoine Couturier, and François Hug. 2009. <span>“Influence of Different Racing Positions on Mechanical and Electromyographic Patterns During Pedalling.”</span> <em>Scandinavian Journal of Medicine &amp; Science in Sports</em> 19 (1): 44–54. <a href="https://doi.org/10.1111/j.1600-0838.2007.00765.x">https://doi.org/10.1111/j.1600-0838.2007.00765.x</a>.
+</div>
+<div id="ref-dorel_force-velocity_2010" class="csl-entry" role="listitem">
+Dorel, Sylvain, Antoine Couturier, Jean-René Lacour, Henry Vandewalle, Christophe Hautier, and François Hug. 2010. <span>“Force-<span>Velocity</span> <span>Relationship</span> in <span>Cycling</span> <span>Revisited</span>: <span>Benefit</span> of <span>Two</span>-<span>Dimensional</span> <span>Pedal</span> <span>Forces</span> <span>Analysis</span>.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 42 (6). <a href="https://doi.org/10.1249/MSS.0b013e3181c91f35">https://doi.org/10.1249/MSS.0b013e3181c91f35</a>.
+</div>
+<div id="ref-dorel_changes_2009" class="csl-entry" role="listitem">
+Dorel, Sylvain, Jean-Marc Drouet, Antoine Couturier, Yvan Champoux, and François Hug. 2009. <span>“Changes of <span>Pedaling</span> <span>Technique</span> and <span>Muscle</span> <span>Coordination</span> During an <span>Exhaustive</span> <span>Exercise</span>.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 41 (6). <a href="https://doi.org/10.1249/MSS.0b013e31819825f8">https://doi.org/10.1249/MSS.0b013e31819825f8</a>.
+</div>
+<div id="ref-ebashi_calcium_1968" class="csl-entry" role="listitem">
+Ebashi, S., and M. Endo. 1968. <span>“Calcium and Muscle Contraction.”</span> <em>Progress in Biophysics and Molecular Biology</em> 18 (January): 123–83. <a href="https://doi.org/10.1016/0079-6107(68)90023-0">https://doi.org/10.1016/0079-6107(68)90023-0</a>.
+</div>
+<div id="ref-elmer_joint-specific_2011" class="csl-entry" role="listitem">
+Elmer, Steven J., Paul R. Barratt, Thomas Korff, and James C. Martin. 2011. <span>“Joint-<span>Specific</span> <span>Power</span> <span>Production</span> During <span>Submaximal</span> and <span>Maximal</span> <span>Cycling</span>.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 43 (10). <a href="https://journals.lww.com/acsm-msse/fulltext/2011/10000/joint_specific_power_production_during_submaximal.17.aspx">https://journals.lww.com/acsm-msse/fulltext/2011/10000/joint_specific_power_production_during_submaximal.17.aspx</a>.
+</div>
+<div id="ref-falisse_algorithmic_2019" class="csl-entry" role="listitem">
+Falisse, Antoine, Gil Serrancolí, Christopher L. Dembia, Joris Gillis, and Friedl De Groote. 2019. <span>“Algorithmic Differentiation Improves the Computational Efficiency of <span>OpenSim</span>-Based Trajectory Optimization of Human Movement.”</span> <em>PLOS ONE</em> 14 (10): e0217730. <a href="https://doi.org/10.1371/journal.pone.0217730">https://doi.org/10.1371/journal.pone.0217730</a>.
+</div>
+<div id="ref-faria_energy_1992" class="csl-entry" role="listitem">
+Faria, Irvin E. 1992. <span>“Energy <span>Expenditure</span>, <span>Aerodynamics</span> and <span>Medical</span> <span>Problems</span> in <span>Cycling</span>.”</span> <em>Sports Medicine</em> 14 (1): 43–63. <a href="https://doi.org/10.2165/00007256-199214010-00004">https://doi.org/10.2165/00007256-199214010-00004</a>.
+</div>
+<div id="ref-fregly_bicycle_2000" class="csl-entry" role="listitem">
+Fregly, Benjamin J., Felix E. Zajac, and Christine A. Dairaghi. 2000. <span>“Bicycle <span>Drive</span> <span>System</span> <span>Dynamics</span>: <span>Theory</span> and <span>Experimental</span> <span>Validation</span>.”</span> <em>Journal of Biomechanical Engineering</em> 122 (4): 446–52. <a href="https://doi.org/10.1115/1.1286678">https://doi.org/10.1115/1.1286678</a>.
+</div>
+<div id="ref-hatze_myocybernetic_1981" class="csl-entry" role="listitem">
+Hatze, Herbert. 1981. <em>Myocybernetic Control Models of Skeletal Muscle</em>. University of South Africa.
+</div>
+<div id="ref-hochtl_prediction_2010" class="csl-entry" role="listitem">
+Höchtl, Franz, Harald Böhm, and Veit Senner. 2010. <span>“Prediction of Energy Efficient Pedal Forces in Cycling Using Musculoskeletal Simulation Models.”</span> <em>The Engineering of Sport 8 - Engineering Emotion</em> 2 (2): 3211–15. <a href="https://doi.org/10.1016/j.proeng.2010.04.134">https://doi.org/10.1016/j.proeng.2010.04.134</a>.
+</div>
+<div id="ref-ingen_schenau_power_1990" class="csl-entry" role="listitem">
+Ingen Schenau, G. J.van, and P. R. Cavanagh. 1990. <span>“Power Equations in Endurance Sports.”</span> <em>Journal of Biomechanics</em> 23 (9): 865–81. <a href="https://doi.org/10.1016/0021-9290(90)90352-4">https://doi.org/10.1016/0021-9290(90)90352-4</a>.
+</div>
+<div id="ref-jobson_gross_2012" class="csl-entry" role="listitem">
+Jobson, Simon A, James G Hopker, Thomas Korff, and Louis Passfield. 2012. <span>“Gross Efficiency and Cycling Performance: A Brief Review.”</span> <em>Journal of Science and Cycling</em> 1 (1): 3–8. <a href="https://jsc-journal.com/index.php/JSC/article/view/12">https://jsc-journal.com/index.php/JSC/article/view/12</a>.
+</div>
+<div id="ref-katz_relation_1939" class="csl-entry" role="listitem">
+Katz, Bernhard. 1939. <span>“The Relation Between Force and Speed in Muscular Contraction.”</span> <em>The Journal of Physiology</em> 96 (1): 45–64. <a href="https://doi.org/10.1113/jphysiol.1939.sp003756">https://doi.org/10.1113/jphysiol.1939.sp003756</a>.
+</div>
+<div id="ref-kautz_theoretical_1993" class="csl-entry" role="listitem">
+Kautz, S. A., and M. L. Hull. 1993. <span>“A Theoretical Basis for Interpreting the Force Applied to the Pedal in Cycling.”</span> <em>Journal of Biomechanics</em> 26 (2): 155–65. <a href="https://doi.org/10.1016/0021-9290(93)90046-H">https://doi.org/10.1016/0021-9290(93)90046-H</a>.
+</div>
+<div id="ref-kistemaker_control_2013" class="csl-entry" role="listitem">
+Kistemaker, Dinant A., Arthur J. Knoek Van Soest, Jeremy D. Wong, Isaac Kurtzer, and Paul L. Gribble. 2013. <span>“Control of Position and Movement Is Simplified by Combined Muscle Spindle and <span>Golgi</span> Tendon Organ Feedback.”</span> <em>Journal of Neurophysiology</em> 109 (4): 1126–39. <a href="https://doi.org/10.1152/jn.00751.2012">https://doi.org/10.1152/jn.00751.2012</a>.
+</div>
+<div id="ref-kistemaker_length-dependent_2005" class="csl-entry" role="listitem">
+Kistemaker, Dinant A., Arthur (Knoek) J. Van Soest, and Maarten F. Bobbert. 2005. <span>“Length-Dependent [<span>Ca2</span>+] Sensitivity Adds Stiffness to Muscle.”</span> <em>Journal of Biomechanics</em> 38 (9): 1816–21. <a href="https://doi.org/10.1016/j.jbiomech.2004.08.025">https://doi.org/10.1016/j.jbiomech.2004.08.025</a>.
+</div>
+<div id="ref-kistemaker_is_2006" class="csl-entry" role="listitem">
+Kistemaker, Dinant A., Arthur (Knoek) J. Van Soest, and Maarten F. Bobbert. 2006. <span>“Is <span>Equilibrium</span> <span>Point</span> <span>Control</span> <span>Feasible</span> for <span>Fast</span> <span>Goal</span>-<span>Directed</span> <span>Single</span>-<span>Joint</span> <span>Movements</span>?”</span> <em>Journal of Neurophysiology</em> 95 (5): 2898–912. <a href="https://doi.org/10.1152/jn.00983.2005">https://doi.org/10.1152/jn.00983.2005</a>.
+</div>
+<div id="ref-kistemaker_equilibrium_2007" class="csl-entry" role="listitem">
+Kistemaker, Dinant A., Arthur (Knoek) J. Van Soest, and Maarten F. Bobbert. 2007. <span>“Equilibrium <span>Point</span> <span>Control</span> <span>Cannot</span> Be <span>Refuted</span> by <span>Experimental</span> <span>Reconstruction</span> of <span>Equilibrium</span> <span>Point</span> <span>Trajectories</span>.”</span> <em>Journal of Neurophysiology</em> 98 (3): 1075–82. <a href="https://doi.org/10.1152/jn.00287.2007">https://doi.org/10.1152/jn.00287.2007</a>.
+</div>
+<div id="ref-kistemaker_central_2010" class="csl-entry" role="listitem">
+Kistemaker, Dinant A., Jeremy D. Wong, and Paul L. Gribble. 2010. <span>“The <span>Central</span> <span>Nervous</span> <span>System</span> <span>Does</span> <span>Not</span> <span>Minimize</span> <span>Energy</span> <span>Cost</span> in <span>Arm</span> <span>Movements</span>.”</span> <em>Journal of Neurophysiology</em> 104 (6): 2985–94. <a href="https://doi.org/10.1152/jn.00483.2010">https://doi.org/10.1152/jn.00483.2010</a>.
+</div>
+<div id="ref-kistemaker_cost_2014" class="csl-entry" role="listitem">
+Kistemaker, Dinant A., Jeremy D. Wong, and Paul L. Gribble. 2014. <span>“The Cost of Moving Optimally: Kinematic Path Selection.”</span> <em>Journal of Neurophysiology</em> 112 (8): 1815–24. <a href="https://doi.org/10.1152/jn.00291.2014">https://doi.org/10.1152/jn.00291.2014</a>.
+</div>
+<div id="ref-korff_effect_2007" class="csl-entry" role="listitem">
+Korff, Thomas, Lee M. Romer, Ian Mayhew, and James C. Martin. 2007. <span>“Effect of <span>Pedaling</span> <span>Technique</span> on <span>Mechanical</span> <span>Effectiveness</span> and <span>Efficiency</span> in <span>Cyclists</span>.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 39 (6). <a href="https://doi.org/10.1249/mss.0b013e318043a235">https://doi.org/10.1249/mss.0b013e318043a235</a>.
+</div>
+<div id="ref-lafortune_effectiveness_1983" class="csl-entry" role="listitem">
+Lafortune, MA, and PR Cavanagh. 1983. <span>“Effectiveness and Efficiency During Bicycle Riding.”</span> <em>International Series on Biomechanics</em> 8: 928–36.
+</div>
+<div id="ref-leirdal_relationship_2011" class="csl-entry" role="listitem">
+Leirdal, Stig, and Gertjan Ettema. 2011. <span>“The Relationship Between Cadence, Pedalling Technique and Gross Efficiency in Cycling.”</span> <em>European Journal of Applied Physiology</em> 111 (12): 2885–93. <a href="https://doi.org/10.1007/s00421-011-1914-3">https://doi.org/10.1007/s00421-011-1914-3</a>.
+</div>
+<div id="ref-martin_joint-specific_2009" class="csl-entry" role="listitem">
+Martin, James C., and Nicholas A. T. Brown. 2009. <span>“Joint-Specific Power Production and Fatigue During Maximal Cycling.”</span> <em>Journal of Biomechanics</em> 42 (4): 474–79. <a href="https://doi.org/10.1016/j.jbiomech.2008.11.015">https://doi.org/10.1016/j.jbiomech.2008.11.015</a>.
+</div>
+<div id="ref-mcdaniel_joint-specific_2014" class="csl-entry" role="listitem">
+McDaniel, John, N. Scott Behjani, Steven J. Elmer, Nicholas A. T. Brown, and James C. Martin. 2014. <span>“Joint-<span>Specific</span> <span>Power</span>-<span>Pedaling</span> <span>Rate</span> <span>Relationships</span> <span>During</span> <span>Maximal</span> <span>Cycling</span>.”</span> <em>Journal of Applied Biomechanics</em> (Champaign IL, USA) 30 (3): 423–30. <a href="https://doi.org/10.1123/jab.2013-0246">https://doi.org/10.1123/jab.2013-0246</a>.
+</div>
+<div id="ref-mornieux_effects_2008" class="csl-entry" role="listitem">
+Mornieux, Guillaume, Björn Stapelfeldt, Albert Gollhofer, and Alain Belli. 2008. <span>“Effects of <span>Pedal</span> <span>Type</span> and <span>Pull</span>-<span>Up</span> <span>Action</span> During <span>Cycling</span>.”</span> <em>International Journal of Sports Medicine</em> 29 (10): 817–22. <a href="https://doi.org/10.1055/s-2008-1038374">https://doi.org/10.1055/s-2008-1038374</a>.
+</div>
+<div id="ref-mornieux_influence_2006" class="csl-entry" role="listitem">
+Mornieux, Guillaume, Karim Zameziati, David Rouffet, Björn Stapelfeldt, Albert Gollhofer, and Alain Belli. 2006. <span>“Influence of Pedalling Effectiveness on the Inter-Individual Variations of Muscular Efficiency in Cycling.”</span> <em>Isokinetics and Exercise Science</em> 14 (1): 63–70.
+</div>
+<div id="ref-onasch_active_2024" class="csl-entry" role="listitem">
+Onasch, Franziska, and Walter Herzog. 2024. <span>“Active Control of Static Pedal Force Direction Decreases Maximum Isometric Force Output.”</span> <em>Journal of Biomechanics</em> 163 (January): 111958. <a href="https://doi.org/10.1016/j.jbiomech.2024.111958">https://doi.org/10.1016/j.jbiomech.2024.111958</a>.
+</div>
+<div id="ref-patterson_bicycle_1990" class="csl-entry" role="listitem">
+Patterson, Robert P., and Maria I. Moreno. 1990. <span>“Bicycle Pedalling Forces as a Function of Pedalling Rate and Power Output.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 22 (4). <a href="https://journals.lww.com/acsm-msse/fulltext/1990/08000/bicycle_pedalling_forces_as_a_function_of.16.aspx">https://journals.lww.com/acsm-msse/fulltext/1990/08000/bicycle_pedalling_forces_as_a_function_of.16.aspx</a>.
+</div>
+<div id="ref-rijkelijkhuizen_forcevelocity_2003" class="csl-entry" role="listitem">
+Rijkelijkhuizen, J. M., C. J. de Ruiter, P. A. Huijing, and A. de Haan. 2003. <span>“Force/Velocity Curves of Fast Oxidative and Fast Glycolytic Parts of Rat Medial Gastrocnemius Muscle Vary for Concentric but Not Eccentric Activity.”</span> <em>Pflügers Archiv</em> 446 (4): 497–503. <a href="https://doi.org/10.1007/s00424-003-1052-9">https://doi.org/10.1007/s00424-003-1052-9</a>.
+</div>
+<div id="ref-rossato_cadence_2008" class="csl-entry" role="listitem">
+Rossato, F. P.; Diefenthaeler, R. R.; Carpes. 2008. <span>“Cadence and <span>Workload</span> <span>Effects</span> on <span>Pedaling</span> <span>Technique</span> of <span>Well</span>-<span>Trained</span> <span>Cyclists</span>.”</span> <em>International Journal of Sports Medicine</em> 29 (09): 746–52. <a href="https://doi.org/10.1055/s-2008-1038375">https://doi.org/10.1055/s-2008-1038375</a>.
+</div>
+<div id="ref-van_soest_which_2000" class="csl-entry" role="listitem">
+Soest, A. J. ‘Knoek’van, and L. J. Richard Casius. 2000. <span>“Which Factors Determine the Optimal Pedaling Rate in Sprint Cycling?”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 32 (11). <a href="https://journals.lww.com/acsm-msse/fulltext/2000/11000/which_factors_determine_the_optimal_pedaling_rate.17.aspx">https://journals.lww.com/acsm-msse/fulltext/2000/11000/which_factors_determine_the_optimal_pedaling_rate.17.aspx</a>.
+</div>
+<div id="ref-van_soest_influence_1993" class="csl-entry" role="listitem">
+Soest, A. J. ‘Knoek’van, Arend L. Schwab, Maarten F. Bobbert, and Gerrit Jan van Ingen Schenau. 1993. <span>“The Influence of the Biarticularity of the Gastrocnemius Muscle on Vertical-Jumping Achievement.”</span> <em>Journal of Biomechanics</em> 26 (1): 1–8. <a href="https://doi.org/10.1016/0021-9290(93)90608-H">https://doi.org/10.1016/0021-9290(93)90608-H</a>.
+</div>
+<div id="ref-van_soest_contribution_1993" class="csl-entry" role="listitem">
+Soest, Arthur J. van, and Maarten F. Bobbert. 1993. <span>“The Contribution of Muscle Properties in the Control of Explosive Movements.”</span> <em>Biological Cybernetics</em> 69 (3): 195–204. <a href="https://doi.org/10.1007/BF00198959">https://doi.org/10.1007/BF00198959</a>.
+</div>
+<div id="ref-theurel_effects_2012" class="csl-entry" role="listitem">
+Theurel, J., M. Crepin, M. Foissac, and J. J. Temprado. 2012. <span>“Effects of Different Pedalling Techniques on Muscle Fatigue and Mechanical Efficiency During Prolonged Cycling.”</span> <em>Scandinavian Journal of Medicine &amp; Science in Sports</em> 22 (6): 714–21. <a href="https://doi.org/10.1111/j.1600-0838.2011.01313.x">https://doi.org/10.1111/j.1600-0838.2011.01313.x</a>.
+</div>
+<div id="ref-van_den_bogert_direct_2009" class="csl-entry" role="listitem">
+Van den Bogert, Antonie J., and Marko Ackermann. 2009. <span>“Direct Collocation for Simulation and Optimization of Movement.”</span> <em>Proceedings of the 12th <span>International</span> <span>Symposium</span> on <span>Computer</span> <span>Simulation</span> in <span>Biomechanics</span></em> (Cape Town, South Africa).
+</div>
+<div id="ref-vandewalle_force-velocity_1987" class="csl-entry" role="listitem">
+Vandewalle, H., G. Peres, J. Heller, J. Panel, and H. Monod. 1987. <span>“Force-Velocity Relationship and Maximal Power on a Cycle Ergometer.”</span> <em>European Journal of Applied Physiology and Occupational Physiology</em> 56 (6): 650–56. <a href="https://doi.org/10.1007/BF00424805">https://doi.org/10.1007/BF00424805</a>.
+</div>
+<div id="ref-ward_are_2009" class="csl-entry" role="listitem">
+Ward, Samuel R., Carolyn M. Eng, Laura H. Smallwood, and Richard L. Lieber. 2009. <span>“Are <span>Current</span> <span>Measurements</span> of <span>Lower</span> <span>Extremity</span> <span>Muscle</span> <span>Architecture</span> <span>Accurate</span>?”</span> <em>Clinical Orthopaedics and Related Research</em> 467 (4): 1074–82. <a href="https://doi.org/10.1007/s11999-008-0594-8">https://doi.org/10.1007/s11999-008-0594-8</a>.
+</div>
+<div id="ref-zajac_understanding_2002" class="csl-entry" role="listitem">
+Zajac, Felix E. 2002. <span>“Understanding Muscle Coordination of the Human Leg with Dynamical Simulations.”</span> <em>Journal of Biomechanics</em> 35 (8): 1011–18. <a href="https://doi.org/10.1016/S0021-9290(02)00046-5">https://doi.org/10.1016/S0021-9290(02)00046-5</a>.
+</div>
+<div id="ref-zajac_biomechanics_2002" class="csl-entry" role="listitem">
+Zajac, Felix E., Richard R. Neptune, and Steven A. Kautz. 2002. <span>“Biomechanics and Muscle Coordination of Human Walking: <span>Part</span> <span>I</span>: <span>Introduction</span> to Concepts, Power Transfer, Dynamics and Simulations.”</span> <em>Gait &amp; Posture</em> 16 (3): 215–32. <a href="https://doi.org/10.1016/S0966-6362(02)00068-1">https://doi.org/10.1016/S0966-6362(02)00068-1</a>.
+</div>
+<div id="ref-zameziati_relationship_2006" class="csl-entry" role="listitem">
+Zameziati, Karim, Guillaume Mornieux, David Rouffet, and Alain Belli. 2006. <span>“Relationship Between the Increase of Effectiveness Indexes and the Increase of Muscular Efficiency with Cycling Power.”</span> <em>European Journal of Applied Physiology</em> 96 (3): 274–81. <a href="https://doi.org/10.1007/s00421-005-0077-5">https://doi.org/10.1007/s00421-005-0077-5</a>.
+</div>
+<div id="ref-van_zandwijk_control_2000" class="csl-entry" role="listitem">
+Zandwijk, Jan Peter van, Maarten F. Bobbert, Marten Munneke, and Pieter Pas. 2000. <span>“Control of Maximal and Submaximal Vertical Jumps.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em> 32 (2). <a href="https://journals.lww.com/acsm-msse/fulltext/2000/02000/control_of_maximal_and_submaximal_vertical_jumps.33.aspx">https://journals.lww.com/acsm-msse/fulltext/2000/02000/control_of_maximal_and_submaximal_vertical_jumps.33.aspx</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const renumberSection = (section, suffix) => {
+    const original = section.dataset.number;
+    const chapter = original.split(".")[0];
+    const replacement = `${chapter}.${suffix}`;
+
+    const renumber = (element) => {
+      const number = element.dataset.number;
+      if (number !== original && !number.startsWith(`${original}.`)) return;
+
+      const updated = replacement + number.slice(original.length);
+      element.dataset.number = updated;
+      const label = element.querySelector(":scope > h2 .header-section-number, :scope > h3 .header-section-number, :scope > h4 .header-section-number, :scope > h5 .header-section-number, :scope > h6 .header-section-number");
+      if (label) label.textContent = updated;
+    };
+
+    renumber(section);
+    section.querySelectorAll("section[data-number]").forEach(renumber);
+  };
+
+  document.querySelectorAll("section.chapter-appendix[data-number]").forEach((appendix, index) => {
+    const letter = String.fromCharCode("A".charCodeAt(0) + index);
+    renumberSection(appendix, letter);
+  });
+
+  document.querySelectorAll("section.chapter-suppmat[data-number]").forEach((supplement) => {
+    renumberSection(supplement, "S");
+  });
+
+  document.querySelectorAll("#TOC a[data-scroll-target]").forEach((link) => {
+    const target = document.querySelector(link.dataset.scrollTarget);
+    const label = link.querySelector(".header-section-number");
+    if (target?.dataset.number && label) {
+      label.textContent = target.dataset.number;
+    }
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const numbers = new Map();
+  document.querySelectorAll(
+    "section.chapter-suppmat[data-number], section.chapter-appendix[data-number]"
+  ).forEach((section) => {
+    const counters = { Figure: 0, Table: 0 };
+    // Het eerdere script heeft de sectie al genummerd als 2.S of 4.A.
+    const prefix = section.dataset.number;
+    section.querySelectorAll("figcaption.quarto-float-tbl[id], figcaption.quarto-float-fig[id]").forEach((caption) => {
+      if (caption.closest("section.chapter-suppmat, section.chapter-appendix") !== section) return;
+
+      const float = caption.closest(".quarto-float[id]");
+      if (!float) return;
+
+      const kind = caption.classList.contains("quarto-float-tbl") ? "Table" : "Figure";
+      const number = `${prefix}.${++counters[kind]}`;
+      numbers.set(float.id, number);
+      const labelPattern = new RegExp(`${kind}\\s+[\\d.]+`);
+
+      // Vervang alleen het nummer; behoud het bijschrift en de opmaak.
+      const walker = document.createTreeWalker(
+        caption, NodeFilter.SHOW_TEXT
+      );
+
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (labelPattern.test(node.textContent)) {
+          node.textContent = node.textContent.replace(
+            labelPattern,
+            `${kind} ${number}`
+          );
+          break;
+        }
+      }
+    });
+  });
+
+  // Werk verwijzingen naar deze figuren en tabellen op dezelfde pagina bij.
+  document.querySelectorAll("a.quarto-xref[href]").forEach((link) => {
+    const url = new URL(link.getAttribute("href"), document.baseURI);
+    if (url.pathname !== window.location.pathname) return;
+
+    const id = decodeURIComponent(url.hash.slice(1));
+    const number = numbers.get(id);
+    if (!number) return;
+
+    const span = link.querySelector("span");
+    if (span) {
+      span.textContent = number;
+    } else {
+      link.textContent = link.textContent.replace(
+        /\d+(?:\.\d+)*/, number
+      );
+    }
+  });
+});
+</script>
+<style>
+strong .quarto-xref {
+  font-weight: 700;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".quarto-xref").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href.includes("#")) return;
+
+    const reference = link.querySelector("span");
+    const number = reference?.textContent.match(/^\s*([0-9]+(?:\.[0-9]+)*)/u)?.[1];
+
+    if (!number) return;
+
+    const hasCustomPrefix = Array.from(link.childNodes).some(
+      (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim()
+    );
+    reference.textContent = hasCustomPrefix ? number : `Chapter ${number}`;
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/hq-ampo.html" class="pagination-link" aria-label="Chapter 4">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 4</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/general-discussion.html" class="pagination-link" aria-label="Chapter 6">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 6</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
